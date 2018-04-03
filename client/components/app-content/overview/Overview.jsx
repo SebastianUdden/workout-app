@@ -26,12 +26,12 @@ class Overview extends React.Component {
             <div>
                 <h1 style={sp.textMargin}>Overview</h1>
                 <p style={sp.headerMargin}>
-                    <span onClick={() => this.setState({tab: 1})}><img key="1" style={s.icon} src="/images/pushup.svg" alt="Push-Ups" /></span>                
-                    <span onClick={() => this.setState({tab: 2})}><img key="2" style={s.icon} src="/images/situp.svg" alt="Sit-Ups" /></span>
-                    <span onClick={() => this.setState({tab: 3})}><img key="3" style={s.icon} src="/images/pullup.svg" alt="Pull-Ups" /></span>
-                    <span onClick={() => this.setState({tab: 4})}><img key="4" style={s.icon} src="/images/squats.svg" alt="Squats" /></span>
-                    <span onClick={() => this.setState({tab: 5})}><img key="5" style={s.icon} src="/images/running.svg" alt="Running" /></span>
-                    <span onClick={() => this.setState({tab: 6})}><img key="6" style={s.icon} src="/images/weight.svg" alt="Weight" /></span>
+                    <span onClick={() => this.setState({tab: 1})}><img key="1" style={s.icon} src="images/pushup.svg" alt="Push-Ups" /></span>                
+                    <span onClick={() => this.setState({tab: 2})}><img key="2" style={s.icon} src="images/situp.svg" alt="Sit-Ups" /></span>
+                    <span onClick={() => this.setState({tab: 3})}><img key="3" style={s.icon} src="images/pullup.svg" alt="Pull-Ups" /></span>
+                    <span onClick={() => this.setState({tab: 4})}><img key="4" style={s.icon} src="images/squats.svg" alt="Squats" /></span>
+                    <span onClick={() => this.setState({tab: 5})}><img key="5" style={s.icon} src="images/running.svg" alt="Running" /></span>
+                    <span onClick={() => this.setState({tab: 6})}><img key="6" style={s.icon} src="images/weight.svg" alt="Weight" /></span>
                 </p>
                 {this.state.tab === 1 ? 
                     <Graph 
