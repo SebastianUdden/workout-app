@@ -2798,200 +2798,10 @@ exports.default = {
 };
 
 /***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    header: 'Pull-Ups',
-    type: 'rep',
-    placeholder: 'Pull-ups completed',
-    values: [{
-        value: 8,
-        date: '2018-03-28'
-    }, {
-        value: 6,
-        date: '2018-03-25'
-    }, {
-        value: 4,
-        date: '2018-03-18'
-    }, {
-        value: 6,
-        date: '2018-03-15'
-    }, {
-        value: 4,
-        date: '2018-03-12'
-    }, {
-        value: 3,
-        date: '2018-03-10'
-    }, {
-        value: 3,
-        date: '2018-03-08'
-    }, {
-        value: 2,
-        date: '2018-03-04'
-    }, {
-        value: 4,
-        date: '2018-03-03'
-    }, {
-        value: 2,
-        date: '2018-03-01'
-    }]
-};
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    header: 'Push-Ups',
-    type: 'rep',
-    placeholder: 'Push-ups completed',
-    values: [{
-        value: 20,
-        date: '2018-04-02'
-    }, {
-        value: 15,
-        date: '2018-04-01'
-    }, {
-        value: 10,
-        date: '2018-03-28'
-    }, {
-        value: 6,
-        date: '2018-03-18'
-    }, {
-        value: 5,
-        date: '2018-03-15'
-    }, {
-        value: 7,
-        date: '2018-03-12'
-    }, {
-        value: 4,
-        date: '2018-03-10'
-    }, {
-        value: 4,
-        date: '2018-03-08'
-    }, {
-        value: 3,
-        date: '2018-03-04'
-    }, {
-        value: 2,
-        date: '2018-03-03'
-    }, {
-        value: 1,
-        date: '2018-03-01'
-    }]
-};
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    header: 'Sit-Ups',
-    type: 'rep',
-    placeholder: 'Sit-ups completed',
-    values: [{
-        value: 80,
-        date: '2018-03-31'
-    }, {
-        value: 75,
-        date: '2018-03-27'
-    }, {
-        value: 76,
-        date: '2018-03-18'
-    }, {
-        value: 67,
-        date: '2018-03-15'
-    }, {
-        value: 65,
-        date: '2018-03-12'
-    }, {
-        value: 54,
-        date: '2018-03-10'
-    }, {
-        value: 62,
-        date: '2018-03-08'
-    }, {
-        value: 53,
-        date: '2018-03-04'
-    }, {
-        value: 52,
-        date: '2018-03-03'
-    }, {
-        value: 41,
-        date: '2018-03-01'
-    }]
-};
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    header: 'Squats',
-    type: 'rep',
-    placeholder: 'Squats completed',
-    values: [{
-        value: 90,
-        date: '2018-03-29'
-    }, {
-        value: 85,
-        date: '2018-03-25'
-    }, {
-        value: 60,
-        date: '2018-03-22'
-    }, {
-        value: 66,
-        date: '2018-03-18'
-    }, {
-        value: 57,
-        date: '2018-03-15'
-    }, {
-        value: 55,
-        date: '2018-03-12'
-    }, {
-        value: 44,
-        date: '2018-03-10'
-    }, {
-        value: 52,
-        date: '2018-03-08'
-    }, {
-        value: 43,
-        date: '2018-03-04'
-    }, {
-        value: 32,
-        date: '2018-03-03'
-    }, {
-        value: 31,
-        date: '2018-03-01'
-    }]
-};
-
-/***/ }),
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3050,7 +2860,7 @@ exports.default = {
     placeholder: 'Current Weight',
     values: [{
         value: 103,
-        date: '2018-03-29'
+        date: '2018-04-03'
     }, {
         value: 104,
         date: '2018-03-25'
@@ -3100,11 +2910,11 @@ exports.default = {
     'weight': 80,
     'bodyFat': 20,
     'targets': {
-        'pullups': 20,
-        'pushups': 50,
+        'pullup': 20,
+        'pushup': 50,
         'running': 45,
-        'situps': 100,
-        'squats': 150,
+        'situp': 100,
+        'squat': 150,
         'weight': 100
     }
 };
@@ -26604,6 +26414,30 @@ var _Stamp = __webpack_require__(155);
 
 var _Stamp2 = _interopRequireDefault(_Stamp);
 
+var _pullup = __webpack_require__(161);
+
+var _pullup2 = _interopRequireDefault(_pullup);
+
+var _pushup = __webpack_require__(162);
+
+var _pushup2 = _interopRequireDefault(_pushup);
+
+var _situp = __webpack_require__(163);
+
+var _situp2 = _interopRequireDefault(_situp);
+
+var _squat = __webpack_require__(164);
+
+var _squat2 = _interopRequireDefault(_squat);
+
+var _running = __webpack_require__(48);
+
+var _running2 = _interopRequireDefault(_running);
+
+var _weight = __webpack_require__(49);
+
+var _weight2 = _interopRequireDefault(_weight);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26618,7 +26452,19 @@ var AppContent = function (_React$Component) {
     function AppContent(props) {
         _classCallCheck(this, AppContent);
 
-        return _possibleConstructorReturn(this, (AppContent.__proto__ || Object.getPrototypeOf(AppContent)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (AppContent.__proto__ || Object.getPrototypeOf(AppContent)).call(this, props));
+
+        _this.state = {
+            mockData: {
+                'pullup': _pullup2.default,
+                'pushup': _pushup2.default,
+                'situp': _situp2.default,
+                'squat': _squat2.default,
+                'running': _running2.default,
+                'weight': _weight2.default
+            }
+        };
+        return _this;
     }
 
     _createClass(AppContent, [{
@@ -26636,7 +26482,7 @@ var AppContent = function (_React$Component) {
                 this.props.page === 1 ? _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Workout2.default, { style: _appContentStyle2.default }),
+                    _react2.default.createElement(_Workout2.default, { style: _appContentStyle2.default, data: this.state.mockData }),
                     _react2.default.createElement(_Stamp2.default, {
                         onTop: false,
                         text: this.props.source,
@@ -26662,7 +26508,7 @@ var AppContent = function (_React$Component) {
                 this.props.page === 3 ? _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Overview2.default, { style: _appContentStyle2.default }),
+                    _react2.default.createElement(_Overview2.default, { style: _appContentStyle2.default, data: this.state.mockData }),
                     _react2.default.createElement(_Stamp2.default, {
                         onTop: false,
                         text: this.props.source,
@@ -26740,30 +26586,6 @@ var _Box = __webpack_require__(40);
 
 var _Box2 = _interopRequireDefault(_Box);
 
-var _pullups = __webpack_require__(44);
-
-var _pullups2 = _interopRequireDefault(_pullups);
-
-var _pushups = __webpack_require__(45);
-
-var _pushups2 = _interopRequireDefault(_pushups);
-
-var _situps = __webpack_require__(46);
-
-var _situps2 = _interopRequireDefault(_situps);
-
-var _squats = __webpack_require__(47);
-
-var _squats2 = _interopRequireDefault(_squats);
-
-var _running = __webpack_require__(48);
-
-var _running2 = _interopRequireDefault(_running);
-
-var _weight = __webpack_require__(49);
-
-var _weight2 = _interopRequireDefault(_weight);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -26782,14 +26604,19 @@ var WorkoutComponent = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (WorkoutComponent.__proto__ || Object.getPrototypeOf(WorkoutComponent)).call(this, props));
 
+        var types = [];
+        for (var type in _this.props.data) {
+            types.push(type);
+        }
         _this.state = {
             tab: 1,
-            pullupValues: _pullups2.default.values,
-            pushupValues: _pushups2.default.values,
-            situpValues: _situps2.default.values,
-            squatValues: _squats2.default.values,
-            runningValues: _running2.default.values,
-            weightValues: _weight2.default.values
+            pullup: _this.props.data.pullup.values,
+            pushup: _this.props.data.pushup.values,
+            situp: _this.props.data.situp.values,
+            squat: _this.props.data.squat.values,
+            running: _this.props.data.running.values,
+            weight: _this.props.data.weight.values,
+            types: types
         };
         return _this;
     }
@@ -26798,27 +26625,22 @@ var WorkoutComponent = function (_React$Component) {
         key: 'newWorkout',
         value: function newWorkout(input, type) {
             if (input !== '') {
-                var workOutValues = this.state[type + 'Values'];
-                var newWorkoutValues = [{
+                var workout = this.state[type];
+                var newWorkout = [{
                     value: input,
                     date: new Date().toISOString().substring(0, 10)
-                }].concat(workOutValues);
-                this.setState(_defineProperty({}, type + 'Values', newWorkoutValues));
+                }].concat(workout);
+                this.setState(_defineProperty({}, type, newWorkout));
             }
         }
     }, {
-        key: 'newRunningWorkout',
-        value: function newRunningWorkout(distance, time, type) {
+        key: 'getRunningValue',
+        value: function getRunningValue(distance, time, type) {
             if (distance !== '' && time !== '') {
-                var workOutValues = this.state[type + 'Values'];
                 var targetDistance = 10;
                 var modifier = 1.15;
-
-                var newWorkoutValues = [{
-                    value: Math.round(time * Math.pow(targetDistance / distance, modifier)),
-                    date: new Date().toISOString().substring(0, 10)
-                }].concat(workOutValues);
-                this.setState(_defineProperty({}, type + 'Values', newWorkoutValues));
+                var input = Math.round(time * Math.pow(targetDistance / distance, modifier));
+                this.newWorkout(input, type);
             }
         }
     }, {
@@ -26826,6 +26648,38 @@ var WorkoutComponent = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
+            var icons = this.state.types.map(function (type, index) {
+                return _react2.default.createElement(
+                    'span',
+                    { key: index + 1, onClick: function onClick() {
+                            return _this2.setState({ tab: index + 1 });
+                        } },
+                    _react2.default.createElement('img', { key: index + 1, style: _workoutStyle2.default.icon, src: '/images/' + type + '.svg', alt: type })
+                );
+            });
+            var box = this.state.types.map(function (type, index) {
+                if (_this2.state.tab === index + 1 && type !== 'running') {
+                    return _react2.default.createElement(_Box2.default, {
+                        key: index + 1,
+                        onClick: function onClick(input, workoutType) {
+                            return _this2.newWorkout(input, type);
+                        },
+                        header: _this2.props.data[type].header,
+                        type: _this2.props.data[type].type,
+                        placeholder: _this2.props.data[type].placeholder,
+                        values: _this2.state[type] });
+                } else if (_this2.state.tab === index + 1 && type === 'running') {
+                    return _react2.default.createElement(_Box2.default, {
+                        key: index + 1,
+                        addRunningValue: function addRunningValue(km, min, workoutType) {
+                            return _this2.getRunningValue(km, min, type);
+                        },
+                        header: _this2.props.data[type].header,
+                        type: _this2.props.data[type].type,
+                        placeholder: _this2.props.data[type].placeholder,
+                        values: _this2.state[type] });
+                }
+            });
             var sp = this.props.style;
             return _react2.default.createElement(
                 'div',
@@ -26838,97 +26692,9 @@ var WorkoutComponent = function (_React$Component) {
                 _react2.default.createElement(
                     'p',
                     { style: sp.headerMargin },
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 1 });
-                            } },
-                        _react2.default.createElement('img', { key: '1', style: _workoutStyle2.default.icon, src: '/images/pushup.svg', alt: 'Push-Ups' })
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 2 });
-                            } },
-                        _react2.default.createElement('img', { key: '2', style: _workoutStyle2.default.icon, src: '/images/situp.svg', alt: 'Sit-Ups' })
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 3 });
-                            } },
-                        _react2.default.createElement('img', { key: '3', style: _workoutStyle2.default.icon, src: '/images/pullup.svg', alt: 'Pull-Ups' })
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 4 });
-                            } },
-                        _react2.default.createElement('img', { key: '4', style: _workoutStyle2.default.icon, src: '/images/squats.svg', alt: 'Squats' })
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 5 });
-                            } },
-                        _react2.default.createElement('img', { key: '5', style: _workoutStyle2.default.icon, src: '/images/running.svg', alt: 'Running' })
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 6 });
-                            } },
-                        _react2.default.createElement('img', { key: '6', style: _workoutStyle2.default.icon, src: '/images/weight.svg', alt: 'Weight' })
-                    )
+                    icons
                 ),
-                this.state.tab === 1 ? _react2.default.createElement(_Box2.default, {
-                    onClick: function onClick(input, type) {
-                        return _this2.newWorkout(input, 'pushup');
-                    },
-                    header: _pushups2.default.header,
-                    type: _pushups2.default.type,
-                    placeholder: _pushups2.default.placeholder,
-                    values: this.state.pushupValues }) : '',
-                this.state.tab === 2 ? _react2.default.createElement(_Box2.default, {
-                    onClick: function onClick(input, type) {
-                        return _this2.newWorkout(input, 'situp');
-                    },
-                    header: _situps2.default.header,
-                    type: _situps2.default.type,
-                    placeholder: _situps2.default.placeholder,
-                    values: this.state.situpValues }) : '',
-                this.state.tab === 3 ? _react2.default.createElement(_Box2.default, {
-                    onClick: function onClick(input, type) {
-                        return _this2.newWorkout(input, 'pullup');
-                    },
-                    header: _pullups2.default.header,
-                    type: _pullups2.default.type,
-                    placeholder: _pullups2.default.placeholder,
-                    values: this.state.pullupValues }) : '',
-                this.state.tab === 4 ? _react2.default.createElement(_Box2.default, {
-                    onClick: function onClick(input, type) {
-                        return _this2.newWorkout(input, 'squat');
-                    },
-                    header: _squats2.default.header,
-                    type: _squats2.default.type,
-                    placeholder: _squats2.default.placeholder,
-                    values: this.state.squatValues }) : '',
-                this.state.tab === 5 ? _react2.default.createElement(_Box2.default, {
-                    addRunningValue: function addRunningValue(distance, time, type) {
-                        return _this2.newRunningWorkout(distance, time, 'running');
-                    },
-                    header: _running2.default.header,
-                    type: _running2.default.type,
-                    placeholder: _running2.default.placeholder,
-                    values: this.state.runningValues }) : '',
-                this.state.tab === 6 ? _react2.default.createElement(_Box2.default, {
-                    onClick: function onClick(input, type) {
-                        return _this2.newWorkout(input, 'weight');
-                    },
-                    header: _weight2.default.header,
-                    type: _weight2.default.type,
-                    placeholder: _weight2.default.placeholder,
-                    values: this.state.weightValues }) : ''
+                box
             );
         }
     }]);
@@ -27233,6 +26999,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
@@ -27250,30 +27018,6 @@ var _overviewStyle2 = _interopRequireDefault(_overviewStyle);
 var _Graph = __webpack_require__(153);
 
 var _Graph2 = _interopRequireDefault(_Graph);
-
-var _pushups = __webpack_require__(45);
-
-var _pushups2 = _interopRequireDefault(_pushups);
-
-var _situps = __webpack_require__(46);
-
-var _situps2 = _interopRequireDefault(_situps);
-
-var _pullups = __webpack_require__(44);
-
-var _pullups2 = _interopRequireDefault(_pullups);
-
-var _squats = __webpack_require__(47);
-
-var _squats2 = _interopRequireDefault(_squats);
-
-var _running = __webpack_require__(48);
-
-var _running2 = _interopRequireDefault(_running);
-
-var _weight = __webpack_require__(49);
-
-var _weight2 = _interopRequireDefault(_weight);
 
 var _defaultProfile = __webpack_require__(50);
 
@@ -27295,8 +27039,13 @@ var Overview = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Overview.__proto__ || Object.getPrototypeOf(Overview)).call(this, props));
 
+        var types = [];
+        for (var type in _this.props.data) {
+            types.push(type);
+        }
         _this.state = {
-            tab: 6
+            tab: 6,
+            types: types
         };
         return _this;
     }
@@ -27306,6 +27055,32 @@ var Overview = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
+            var icons = this.state.types.map(function (type, index) {
+                return _react2.default.createElement(
+                    'span',
+                    { key: index + 1,
+                        onClick: function onClick() {
+                            return _this2.setState({ tab: index + 1 });
+                        } },
+                    _react2.default.createElement('img', {
+                        key: index + 1,
+                        style: _extends({}, _overviewStyle2.default.icon, { width: 100 / (_this2.state.types.length * 1.4) + 'vw' }),
+                        src: '/images/' + type + '.svg',
+                        alt: type })
+                );
+            });
+            var graph = this.state.types.map(function (type, index) {
+                if (_this2.state.tab === index + 1) {
+                    return _react2.default.createElement(_Graph2.default, {
+                        key: index + 1,
+                        header: _this2.props.data[type].header,
+                        height: document.documentElement.clientHeight * 0.5,
+                        width: document.documentElement.clientWidth * 0.8,
+                        values: _this2.props.data[type].values,
+                        target: _defaultProfile2.default.targets[type]
+                    });
+                }
+            });
             var sp = this.props.style;
             return _react2.default.createElement(
                 'div',
@@ -27318,91 +27093,9 @@ var Overview = function (_React$Component) {
                 _react2.default.createElement(
                     'p',
                     { style: sp.headerMargin },
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 1 });
-                            } },
-                        _react2.default.createElement('img', { key: '1', style: _overviewStyle2.default.icon, src: 'images/pushup.svg', alt: 'Push-Ups' })
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 2 });
-                            } },
-                        _react2.default.createElement('img', { key: '2', style: _overviewStyle2.default.icon, src: 'images/situp.svg', alt: 'Sit-Ups' })
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 3 });
-                            } },
-                        _react2.default.createElement('img', { key: '3', style: _overviewStyle2.default.icon, src: 'images/pullup.svg', alt: 'Pull-Ups' })
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 4 });
-                            } },
-                        _react2.default.createElement('img', { key: '4', style: _overviewStyle2.default.icon, src: 'images/squats.svg', alt: 'Squats' })
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 5 });
-                            } },
-                        _react2.default.createElement('img', { key: '5', style: _overviewStyle2.default.icon, src: 'images/running.svg', alt: 'Running' })
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { onClick: function onClick() {
-                                return _this2.setState({ tab: 6 });
-                            } },
-                        _react2.default.createElement('img', { key: '6', style: _overviewStyle2.default.icon, src: 'images/weight.svg', alt: 'Weight' })
-                    )
+                    icons
                 ),
-                this.state.tab === 1 ? _react2.default.createElement(_Graph2.default, {
-                    header: _pushups2.default.header,
-                    height: '300',
-                    width: '300',
-                    values: _pushups2.default.values,
-                    target: _defaultProfile2.default.targets.pushups
-                }) : '',
-                this.state.tab === 2 ? _react2.default.createElement(_Graph2.default, {
-                    header: _situps2.default.header,
-                    height: '300',
-                    width: '300',
-                    values: _situps2.default.values,
-                    target: _defaultProfile2.default.targets.situps
-                }) : '',
-                this.state.tab === 3 ? _react2.default.createElement(_Graph2.default, {
-                    header: _pullups2.default.header,
-                    height: '300',
-                    width: '300',
-                    values: _pullups2.default.values,
-                    target: _defaultProfile2.default.targets.pullups
-                }) : '',
-                this.state.tab === 4 ? _react2.default.createElement(_Graph2.default, {
-                    header: _squats2.default.header,
-                    height: '300',
-                    width: '300',
-                    values: _squats2.default.values,
-                    target: _defaultProfile2.default.targets.squats
-                }) : '',
-                this.state.tab === 5 ? _react2.default.createElement(_Graph2.default, {
-                    header: _running2.default.header,
-                    height: '300',
-                    width: '300',
-                    values: _running2.default.values,
-                    target: _defaultProfile2.default.targets.running
-                }) : '',
-                this.state.tab === 6 ? _react2.default.createElement(_Graph2.default, {
-                    header: _weight2.default.header,
-                    height: '300',
-                    width: '300',
-                    values: _weight2.default.values,
-                    target: _defaultProfile2.default.targets.weight
-                }) : ''
+                graph
             );
         }
     }]);
@@ -27411,44 +27104,6 @@ var Overview = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _radium2.default)(Overview);
-
-// <h2>Table</h2>
-//                 <ul>
-//                     <li>All excercises listed</li>
-//                     <li>Startvalue, currentvalue, % gain</li>
-//                     <li>Target value</li>
-//                     <li>Estimated target arrival</li>
-//                 </ul>
-//                 <ul>
-//                     <li>Example, pullups</li>
-//                     <li>Y-axis: amount of pullups 0-Max</li>
-//                     <li>X-axis: Dates, start-Current</li>
-//                     <li>Target value as roof-line
-// </li>
-//                 </ul> 
-// <h3 style={sp.textMargin}>Today</h3>
-// <ul style={sp.headerMargin}>
-//     <li style={sp.listItem}>Pull-Ups: 10 rep</li>
-//     <li style={sp.listItem}>Push-Ups: 20 rep</li>
-//     <li style={sp.listItem}>Sit-Ups: 80 rep</li>
-//     <li style={sp.listItem}>10 km: 54 min</li>
-// </ul>
-
-// <h3 style={sp.textMargin}>This week</h3>
-// <ul style={sp.headerMargin}>
-//     <li style={sp.listItem}>Pull-Ups: 18 rep</li>
-//     <li style={sp.listItem}>Push-Ups: 42 rep</li>
-//     <li style={sp.listItem}>Sit-Ups: 153 rep</li>
-//     <li style={sp.listItem}>20 km: 112 min</li>
-// </ul>
-
-// <h3 style={sp.textMargin}>This month</h3>
-// <ul style={sp.headerMargin}>
-//     <li style={sp.listItem}>Pull-Ups: 38 rep</li>
-//     <li style={sp.listItem}>Push-Ups: 74 rep</li>
-//     <li style={sp.listItem}>Sit-Ups: 273 rep</li>
-//     <li style={sp.listItem}>40 km: 242 min</li>
-// </ul>
 
 /***/ }),
 /* 152 */
@@ -27462,9 +27117,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     icon: {
-        width: '100%',
-        maxWidth: '50px',
         backgroundColor: '#ddd',
+        maxWidth: 70,
         margin: '0 5px',
         padding: '10px',
         borderRadius: '10px',
@@ -27523,22 +27177,36 @@ var Graph = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Graph.__proto__ || Object.getPrototypeOf(Graph)).call(this, props));
 
-        var currentDate = new Date().toISOString().substring(0, 10);
+        var currentDate = new Date();
+        var currentDateISO = currentDate.toISOString().substring(0, 10);
+        var firstDate = _this.props.values[_this.props.values.length - 1].date;
+        var startTime = new Date(firstDate).getTime(firstDate);
+        var currentTime = currentDate.getTime();
+        var timeDiff = currentTime - startTime;
+        var timeDiffIncrement = timeDiff / 3;
+        var secondDate = new Date(startTime + timeDiffIncrement).toISOString().substring(0, 10);
+        var thirdDate = new Date(startTime + timeDiffIncrement * 2).toISOString().substring(0, 10);
         var wp = _this.props.width / 100;
         var hp = _this.props.height / 100;
 
         _this.state = {
             wp: wp,
             hp: hp,
-            verticalLineXpos: wp * 15,
             verticalLineTextXpos: wp * 12,
+            activeChartLeft: wp * 15,
+            activeChartRight: wp * 100,
+            activeChartWidth: wp * 85,
             activeChartTop: hp * 20,
             activeChartBottom: hp * 99,
             activeChartHeight: hp * 79,
             horizontalLineTextYpos: hp * 95,
-            horizontalLineTextXposMax: wp * 100,
-            startDate: _this.props.values[_this.props.values.length - 1].date.split('-')[1] + '-' + _this.props.values[_this.props.values.length - 1].date.split('-')[2],
-            currentDate: currentDate.split('-')[1] + '-' + currentDate.split('-')[2],
+            currentDate: currentDateISO.split('-')[1] + '-' + currentDateISO.split('-')[2],
+            startDate: firstDate.split('-')[1] + '-' + firstDate.split('-')[2],
+            secondDate: secondDate.split('-')[1] + '-' + secondDate.split('-')[2],
+            thirdDate: thirdDate.split('-')[1] + '-' + thirdDate.split('-')[2],
+            startTime: startTime,
+            currentTime: currentTime,
+            timeDiff: timeDiff,
             xLabelWidth: 50,
             maxValueLogged: Math.max.apply(Math, _this.props.values.map(function (v) {
                 return v.value;
@@ -27552,18 +27220,16 @@ var Graph = function (_React$Component) {
         value: function getDataPoints(maxValue) {
             var _this2 = this;
 
-            var startX = (this.state.verticalLineXpos - this.state.horizontalLineTextXposMax) * 1 + this.state.horizontalLineTextXposMax + 30;
-            var endX = (this.state.verticalLineXpos - this.state.horizontalLineTextXposMax) * 0.25 + this.state.horizontalLineTextXposMax;
-            var currentDate = new Date().getTime();
-            var diff = currentDate - new Date(this.props.values[this.props.values.length - 1].date).getTime();
+            var startX = this.state.activeChartLeft + 20;
+            var endX = this.state.activeChartRight - 20;
 
             return this.props.values.map(function (point) {
                 return {
                     key: point.date + point.value,
-                    x: startX + (endX + 55 - startX) * (1 - (currentDate - new Date(point.date).getTime()) / diff),
+                    x: startX + (endX - startX) * (1 - (_this2.state.currentTime - new Date(point.date).getTime()) / _this2.state.timeDiff),
                     y: _this2.state.activeChartTop + _this2.state.activeChartHeight / (maxValue / (maxValue - point.value)),
                     dataValue: point.value,
-                    radius: 3
+                    radius: 4
                 };
             });
         }
@@ -27625,27 +27291,27 @@ var Graph = function (_React$Component) {
                         'g',
                         { style: _graphStyle2.default.gridLine },
                         _react2.default.createElement('line', {
-                            x1: this.state.verticalLineXpos,
+                            x1: this.state.activeChartLeft,
                             y1: this.state.activeChartTop - 25,
-                            x2: this.state.verticalLineXpos,
+                            x2: this.state.activeChartLeft,
                             y2: this.state.activeChartBottom })
                     ),
                     _react2.default.createElement(
                         'g',
                         { style: _graphStyle2.default.gridLine },
                         _react2.default.createElement('line', {
-                            x1: this.state.verticalLineXpos,
+                            x1: this.state.activeChartLeft,
                             y1: this.state.activeChartBottom,
-                            x2: this.state.horizontalLineTextXposMax,
+                            x2: this.state.activeChartRight,
                             y2: this.state.activeChartBottom })
                     ),
                     _react2.default.createElement(
                         'g',
                         { style: _graphStyle2.default.targetLine },
                         _react2.default.createElement('line', {
-                            x1: this.state.verticalLineXpos,
+                            x1: this.state.activeChartLeft,
                             y1: targetLineHeight,
-                            x2: this.state.horizontalLineTextXposMax,
+                            x2: this.state.activeChartRight,
                             y2: targetLineHeight })
                     ),
                     _react2.default.createElement(
@@ -27679,18 +27345,18 @@ var Graph = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         'g',
-                        { className: 'data', 'data-setname': 'Circles' },
-                        circles
+                        { className: 'data', 'data-setname': 'Lines' },
+                        lines
                     ),
                     _react2.default.createElement(
                         'g',
-                        { className: 'data', 'data-setname': 'Lines' },
-                        lines
+                        { className: 'data', 'data-setname': 'Circles' },
+                        circles
                     )
                 ),
                 _react2.default.createElement(
                     'div',
-                    { style: _extends({}, _graphStyle2.default.xLabels, { marginLeft: this.state.verticalLineXpos, width: this.state.horizontalLineTextXposMax - this.state.verticalLineXpos }) },
+                    { style: _extends({}, _graphStyle2.default.xLabels, { marginLeft: this.state.activeChartLeft, width: this.state.activeChartRight - this.state.activeChartLeft }) },
                     _react2.default.createElement(
                         'svg',
                         { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
@@ -27713,7 +27379,7 @@ var Graph = function (_React$Component) {
                             _react2.default.createElement(
                                 'text',
                                 { x: '-20', y: '35', transform: 'rotate(-45)' },
-                                this.state.startDate
+                                this.state.secondDate
                             )
                         )
                     ),
@@ -27726,7 +27392,7 @@ var Graph = function (_React$Component) {
                             _react2.default.createElement(
                                 'text',
                                 { x: '-20', y: '35', transform: 'rotate(-45)' },
-                                this.state.startDate
+                                this.state.thirdDate
                             )
                         )
                     ),
@@ -27752,17 +27418,6 @@ var Graph = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _radium2.default)(Graph);
-
-// <circle 
-//                         key={point.date + point.value}
-//                         cx={startX + (endX + 55 - startX) * (1 - (currentDate - new Date(point.date).getTime()) / diff)}
-//                         cy={this.state.activeChartTop + 
-//                             (this.state.activeChartHeight) /
-//                                 (maxValue / 
-//                                     (maxValue - point.value))}
-//                         data-value={point.value}
-//                         r="3">
-//                     </circle>
 
 /***/ }),
 /* 154 */
@@ -28060,6 +27715,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// import Overview from './overview/Overview.jsx';
 var AppFooterButton = function (_React$Component) {
     _inherits(AppFooterButton, _React$Component);
 
@@ -28118,6 +27774,200 @@ exports.default = {
     text: {
         fontSize: '4vw'
     }
+};
+
+/***/ }),
+/* 161 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    header: 'Pull-Ups',
+    type: 'rep',
+    placeholder: 'Pull-ups completed',
+    values: [{
+        value: 8,
+        date: '2018-03-28'
+    }, {
+        value: 6,
+        date: '2018-03-25'
+    }, {
+        value: 4,
+        date: '2018-03-18'
+    }, {
+        value: 6,
+        date: '2018-03-15'
+    }, {
+        value: 4,
+        date: '2018-03-12'
+    }, {
+        value: 3,
+        date: '2018-03-10'
+    }, {
+        value: 3,
+        date: '2018-03-08'
+    }, {
+        value: 2,
+        date: '2018-03-04'
+    }, {
+        value: 4,
+        date: '2018-03-03'
+    }, {
+        value: 2,
+        date: '2018-03-01'
+    }]
+};
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    header: 'Push-Ups',
+    type: 'rep',
+    placeholder: 'Push-ups completed',
+    values: [{
+        value: 20,
+        date: '2018-04-02'
+    }, {
+        value: 15,
+        date: '2018-04-01'
+    }, {
+        value: 10,
+        date: '2018-03-28'
+    }, {
+        value: 6,
+        date: '2018-03-18'
+    }, {
+        value: 5,
+        date: '2018-03-15'
+    }, {
+        value: 7,
+        date: '2018-03-12'
+    }, {
+        value: 4,
+        date: '2018-03-10'
+    }, {
+        value: 4,
+        date: '2018-03-08'
+    }, {
+        value: 3,
+        date: '2018-03-04'
+    }, {
+        value: 2,
+        date: '2018-03-03'
+    }, {
+        value: 1,
+        date: '2018-03-01'
+    }]
+};
+
+/***/ }),
+/* 163 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    header: 'Sit-Ups',
+    type: 'rep',
+    placeholder: 'Sit-ups completed',
+    values: [{
+        value: 80,
+        date: '2018-03-31'
+    }, {
+        value: 75,
+        date: '2018-03-27'
+    }, {
+        value: 76,
+        date: '2018-03-18'
+    }, {
+        value: 67,
+        date: '2018-03-15'
+    }, {
+        value: 65,
+        date: '2018-03-12'
+    }, {
+        value: 54,
+        date: '2018-03-10'
+    }, {
+        value: 62,
+        date: '2018-03-08'
+    }, {
+        value: 53,
+        date: '2018-03-04'
+    }, {
+        value: 52,
+        date: '2018-03-03'
+    }, {
+        value: 41,
+        date: '2018-03-01'
+    }]
+};
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    header: 'Squats',
+    type: 'rep',
+    placeholder: 'Squats completed',
+    values: [{
+        value: 90,
+        date: '2018-03-29'
+    }, {
+        value: 85,
+        date: '2018-03-25'
+    }, {
+        value: 60,
+        date: '2018-03-22'
+    }, {
+        value: 66,
+        date: '2018-03-18'
+    }, {
+        value: 57,
+        date: '2018-03-15'
+    }, {
+        value: 55,
+        date: '2018-03-12'
+    }, {
+        value: 44,
+        date: '2018-03-10'
+    }, {
+        value: 52,
+        date: '2018-03-08'
+    }, {
+        value: 43,
+        date: '2018-03-04'
+    }, {
+        value: 32,
+        date: '2018-03-03'
+    }, {
+        value: 31,
+        date: '2018-03-01'
+    }]
 };
 
 /***/ })

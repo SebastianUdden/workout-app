@@ -4,11 +4,11 @@ export default {
     'weight': 80,
     'bodyFat': 20,
     'targets': {
-        'pullups': 20,
-        'pushups': 50,
+        'pullup': 20,
+        'pushup': 50,
         'running': 45,
-        'situps': 100,
-        'squats': 150,
+        'situp': 100,
+        'squat': 150,
         'weight': 100
     }
 }

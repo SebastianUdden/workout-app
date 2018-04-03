@@ -8,9 +8,27 @@ import Overview from './overview/Overview.jsx';
 
 import Stamp from '../tools/stamp/Stamp.jsx';
 
+import pullup from '../../mock-data/pullup';
+import pushup from '../../mock-data/pushup';
+import situp from '../../mock-data/situp';
+import squat from '../../mock-data/squat';
+import running from '../../mock-data/running';
+import weight from '../../mock-data/weight';
+
 class AppContent extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            mockData: {
+                'pullup': pullup,
+                'pushup': pushup,
+                'situp': situp,
+                'squat': squat,
+                'running': running,
+                'weight': weight
+            }
+        }
     }
 
     render() {
@@ -24,7 +42,7 @@ class AppContent extends React.Component {
             <div style={s.container}>                
                 {this.props.page === 1 ? 
                     <div>
-                        <Workout style={s} />
+                        <Workout style={s} data={this.state.mockData} />
                         <Stamp 
                             onTop={false}
                             text={this.props.source} 
@@ -50,7 +68,7 @@ class AppContent extends React.Component {
                 : ''}
                 {this.props.page === 3 ? 
                     <div>
-                        <Overview style={s} />
+                        <Overview style={s} data={this.state.mockData} />
                         <Stamp 
                             onTop={false}
                             text={this.props.source} 

@@ -5,7 +5,7 @@ export default {
     values: [
         {
             value: 103,
-            date: '2018-03-29'
+            date: '2018-04-03'
         },
         {
             value: 104,

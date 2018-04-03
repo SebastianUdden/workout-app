@@ -6,23 +6,36 @@ class Graph extends React.Component {
     constructor(props) {
         super(props);                
         
-        let currentDate = new Date().toISOString().substring(0, 10);
+        let currentDate = new Date();
+        let currentDateISO = currentDate.toISOString().substring(0, 10);
+        let firstDate = this.props.values[this.props.values.length - 1].date;
+        let startTime = new Date(firstDate).getTime(firstDate);
+        let currentTime = currentDate.getTime();
+        let timeDiff = currentTime - startTime;
+        let timeDiffIncrement = timeDiff / 3;
+        let secondDate = new Date(startTime + timeDiffIncrement).toISOString().substring(0, 10);
+        let thirdDate = new Date(startTime + timeDiffIncrement * 2).toISOString().substring(0, 10);
         let wp = this.props.width / 100;
         let hp = this.props.height / 100;        
         
         this.state = {
             wp: wp,
             hp: hp,
-            verticalLineXpos: wp * 15,
             verticalLineTextXpos: wp * 12,
+            activeChartLeft: wp * 15,
+            activeChartRight: wp * 100,
+            activeChartWidth: wp * 85,
             activeChartTop: hp * 20,
             activeChartBottom: hp * 99,
             activeChartHeight: hp * 79,
             horizontalLineTextYpos: hp * 95, 
-            horizontalLineTextXposMax: wp * 100,
-            startDate: this.props.values[this.props.values.length - 1].date.split('-')[1]
-               + '-' + this.props.values[this.props.values.length - 1].date.split('-')[2], 
-            currentDate: currentDate.split('-')[1] + '-' +  currentDate.split('-')[2],
+            currentDate: currentDateISO.split('-')[1] + '-' +  currentDateISO.split('-')[2],
+            startDate: firstDate.split('-')[1] + '-' + firstDate.split('-')[2], 
+            secondDate: secondDate.split('-')[1] + '-' + secondDate.split('-')[2],
+            thirdDate: thirdDate.split('-')[1] + '-' + thirdDate.split('-')[2],
+            startTime: startTime,
+            currentTime: currentTime,
+            timeDiff: timeDiff,
             xLabelWidth: 50,
             maxValueLogged: Math.max.apply(
                 Math, 
@@ -33,21 +46,19 @@ class Graph extends React.Component {
     }
 
     getDataPoints(maxValue) {
-        let startX = (this.state.verticalLineXpos - this.state.horizontalLineTextXposMax) * 1 + this.state.horizontalLineTextXposMax + 30;
-        let endX = (this.state.verticalLineXpos - this.state.horizontalLineTextXposMax) * 0.25 + this.state.horizontalLineTextXposMax;
-        let currentDate = new Date().getTime();
-        let diff = currentDate - new Date(this.props.values[this.props.values.length - 1].date).getTime();
+        let startX = this.state.activeChartLeft + 20;
+        let endX = this.state.activeChartRight - 20;
 
         return this.props.values.map((point) => {
             return {
                 key: point.date + point.value,
-                x: startX + (endX + 55 - startX) * (1 - (currentDate - new Date(point.date).getTime()) / diff),
+                x: startX + (endX - startX) * (1 - (this.state.currentTime - new Date(point.date).getTime()) / this.state.timeDiff),
                 y: this.state.activeChartTop + 
                 (this.state.activeChartHeight) /
                     (maxValue / 
                         (maxValue - point.value)),
                 dataValue: point.value,
-                radius: 3
+                radius: 4
             };
         });
     }
@@ -101,23 +112,23 @@ class Graph extends React.Component {
                 <svg style={s.chart} width={this.props.width} height={this.props.height}>
                     <g style={s.gridLine}>
                         <line 
-                            x1={this.state.verticalLineXpos}
+                            x1={this.state.activeChartLeft}
                             y1={this.state.activeChartTop - 25} 
-                            x2={this.state.verticalLineXpos}
+                            x2={this.state.activeChartLeft}
                             y2={this.state.activeChartBottom}></line>
                     </g>
                     <g style={s.gridLine}>
                         <line 
-                            x1={this.state.verticalLineXpos}
+                            x1={this.state.activeChartLeft}
                             y1={this.state.activeChartBottom} 
-                            x2={this.state.horizontalLineTextXposMax}
+                            x2={this.state.activeChartRight}
                             y2={this.state.activeChartBottom}></line>
                     </g>
                     <g style={s.targetLine}>
                         <line 
-                            x1={this.state.verticalLineXpos}
+                            x1={this.state.activeChartLeft}
                             y1={targetLineHeight} 
-                            x2={this.state.horizontalLineTextXposMax}
+                            x2={this.state.activeChartRight}
                             y2={targetLineHeight}></line>
                     </g>
                     
@@ -128,22 +139,22 @@ class Graph extends React.Component {
                         <text x={this.state.verticalLineTextXpos} y={(this.state.activeChartBottom - this.state.activeChartTop) * 0.75 + this.state.activeChartTop} textAnchor="end">{Math.round(maxValue * 0.25)}</text>
                         <text x={this.state.verticalLineTextXpos} y={this.state.activeChartBottom} textAnchor="end">0</text>
                     </g>
-                    <g className="data" data-setname="Circles">
-                        {circles}
-                    </g>
                     <g className="data" data-setname="Lines">
                         {lines}
                     </g>
+                    <g className="data" data-setname="Circles">
+                        {circles}
+                    </g>
                 </svg>
-                <div style={{...s.xLabels, marginLeft: this.state.verticalLineXpos, width: this.state.horizontalLineTextXposMax - this.state.verticalLineXpos}}>
+                <div style={{...s.xLabels, marginLeft: this.state.activeChartLeft, width: this.state.activeChartRight - this.state.activeChartLeft}}>
                     <svg style={{...s.xLabel}} width={this.state.xLabelWidth} height={this.state.xLabelWidth}>
                         <g><text x="-20" y="35" transform="rotate(-45)">{this.state.startDate}</text></g>
                     </svg>
                     <svg style={{...s.xLabel}} width={this.state.xLabelWidth} height={this.state.xLabelWidth}>
-                        <g><text x="-20" y="35" transform="rotate(-45)">{this.state.startDate}</text></g>
+                        <g><text x="-20" y="35" transform="rotate(-45)">{this.state.secondDate}</text></g>
                     </svg>
                     <svg style={{...s.xLabel}} width={this.state.xLabelWidth} height={this.state.xLabelWidth}>
-                        <g><text x="-20" y="35" transform="rotate(-45)">{this.state.startDate}</text></g>
+                        <g><text x="-20" y="35" transform="rotate(-45)">{this.state.thirdDate}</text></g>
                     </svg>
                     <svg style={{...s.xLabel}} width={this.state.xLabelWidth} height={this.state.xLabelWidth}>
                         <g><text x="-20" y="35" transform="rotate(-45)">{this.state.currentDate}</text></g>
@@ -155,14 +166,3 @@ class Graph extends React.Component {
 }
 
 export default Radium(Graph);
-
-// <circle 
-//                         key={point.date + point.value}
-//                         cx={startX + (endX + 55 - startX) * (1 - (currentDate - new Date(point.date).getTime()) / diff)}
-//                         cy={this.state.activeChartTop + 
-//                             (this.state.activeChartHeight) /
-//                                 (maxValue / 
-//                                     (maxValue - point.value))}
-//                         data-value={point.value}
-//                         r="3">
-//                     </circle>
