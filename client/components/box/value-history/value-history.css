@@ -1,0 +1,11 @@
+.percentage:after {
+    content: "";
+    display: block;
+    background-color: #3d9970;
+  }
+  .percentage-20:after {
+    width: 20%;
+  }
+  .percentage-30:after {
+    width: 30%;
+  }

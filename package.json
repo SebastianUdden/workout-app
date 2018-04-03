@@ -1,0 +1,42 @@
+{
+  "name": "workout-app",
+  "version": "1.0.0",
+  "description": "An app created with React.js to update and track workout progress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch",
+    "serve": "node ./app.js",
+    "start": "concurrently \"npm run watch\" \"npm run serve\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastianUdden/workout-app.git"
+  },
+  "author": "Sebastian Udden <sebastian.udden@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SebastianUdden/workout-app/issues"
+  },
+  "homepage": "https://github.com/SebastianUdden/workout-app#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.2",
+    "path": "^0.12.7",
+    "radium": "^0.22.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.23.6",
+    "browser-sync-webpack-plugin": "^2.0.1",
+    "webpack": "^3.10.0"
+  }
+}
