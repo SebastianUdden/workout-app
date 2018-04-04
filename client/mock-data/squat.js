@@ -40,11 +40,11 @@ export default {
             date: '2018-03-04'
         },
         {
-            value: 32,
+            value: 34,
             date: '2018-03-03'
         },
         {
-            value: 31,
+            value: 51,
             date: '2018-03-01'
         }
     ]

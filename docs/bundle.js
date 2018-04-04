@@ -2668,7 +2668,7 @@ exports.default = {
         padding: '1vh',
         margin: '5px',
         borderRadius: '10px',
-        height: '60vh'
+        height: '58vh'
     },
     header: {
         color: '#000',
@@ -27884,7 +27884,7 @@ exports.default = {
         value: 2,
         date: '2018-03-03'
     }, {
-        value: 1,
+        value: 3,
         date: '2018-03-01'
     }]
 };
@@ -27978,10 +27978,10 @@ exports.default = {
         value: 43,
         date: '2018-03-04'
     }, {
-        value: 32,
+        value: 34,
         date: '2018-03-03'
     }, {
-        value: 31,
+        value: 51,
         date: '2018-03-01'
     }]
 };
