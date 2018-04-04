@@ -43,7 +43,7 @@ class Graph extends React.Component {
         let currentDateArray = currentDate.toISOString().substring(0, 10).split('-');
         let targetDateArray = targetDate.toISOString().substring(0, 10).split('-');
 
-        let widthPercentage = this.props.width / 100;
+        let widthPercentage = this.props.width < 1000 ? this.props.width / 100 : 10;
         let heightPercentage = this.props.height / 100;
         let maxValueLogged = Math.max.apply(
             Math, 
@@ -190,7 +190,10 @@ class Graph extends React.Component {
 
         return (
             <div style={s.container}>            
-                <h2 onClick={() => this.toggleTarget()} style={{fontSize: '29px'}}>
+                <h2 
+                    key={'h2-' + this.props.header}
+                    onClick={() => this.toggleTarget()} 
+                    style={s.h2}>
                     {this.props.header} 
                     
                     <div style={s.icon}>

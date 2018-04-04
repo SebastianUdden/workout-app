@@ -20,9 +20,29 @@ export default class App extends React.Component {
     
     render() {
         return(
-            <div>
-                <AppContent page={this.state.page} source="Mock Data" />
-                <AppFooter switchPage={(number) => this.switchPage(number)} />
+            <div style={{
+                // border: '1px solid green',
+                width: '100%',
+                minWidth: '300px',
+                margin: '0 auto'
+            }}>
+                <div 
+                    id="Container"
+                    style={{
+                        maxWidth: '1200px',
+                        minWidth: '300px',
+                        margin: '0 auto',
+                        display: 'block', 
+                        // border: '1px solid red',                    
+                    }}> 
+                    <AppContent 
+                        page={this.state.page} 
+                        source="Mock Data" 
+                        width={document.getElementById('Container')} />
+                </div>
+                <AppFooter 
+                    switchPage={(number) => this.switchPage(number)} 
+                    width={document.body.clientWidth} />
             </div>
         );
     }

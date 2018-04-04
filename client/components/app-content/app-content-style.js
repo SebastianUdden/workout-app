@@ -1,7 +1,8 @@
 export default {
     container: {
         margin: '10px',
-        padding: '10px'
+        padding: '10px',
+        // border: '1px solid blue',
     },
     headerMargin: {
         margin: '0 0 15px 0'

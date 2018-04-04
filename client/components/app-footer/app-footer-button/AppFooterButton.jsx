@@ -20,7 +20,9 @@ class AppFooterButton extends React.Component {
                 {this.props.icon === 'Workout' ? <Workout width={width} color={color} /> : ''}
                 {this.props.icon === 'Profile' ? <Profile width={width} color={color} /> : ''}
                 {this.props.icon === 'Overview' ? <Overview width={width} color={color} /> : ''}
-                <p style={{fontSize: 'calc(1.5em - 0.8vw)', color: color}}>{this.props.icon}</p>
+                {this.props.width > 300 &&  this.props.width < 1000 ? 
+                    <p style={{fontSize: 'calc(1.5em - 0.8vw)', color: color}}>{this.props.icon}</p>
+                : ''}
             </div>
         );
     }

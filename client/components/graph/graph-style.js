@@ -1,6 +1,7 @@
 export default {
     container: {
-        // border: '1px solid red'        
+        // border: '1px solid purple',
+        maxWidth: '1200px'    
     },
     icon: {        
         display: 'inline-block',
@@ -10,26 +11,42 @@ export default {
         padding: '2px 3px',
         borderRadius: '10px'
     },
+    h2: {
+        fontSize: '29px',
+        userSelect: 'none',
+        ':hover': {
+            cursor: 'pointer'
+        }
+    },
     target: {
         width: '24px', 
         position: 'relative',
         top: '2px',
+        ':hover': { fill: '#ea9363' },
+        ':focus': { fill: '#ea9363' },
+        ':active': { fill: '#ea9363' }
     },
     hideTarget: {        
         fontSize: '28.5px',
         position: 'relative',
         top: '-2px',
-        left: '8px'
+        left: '8px', 
+        ':hover': {
+            color: '#ea9363',
+        }       
     },
     chart: {
         // border: '1px solid blue',
-        display: 'block'
+        display: 'block',
+        maxWidth: '1100px',
+        minWidth: '240px',
     },
     xLabels: {
         // border: '2px solid black',        
         marginTop: '3px',
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        maxWidth: '850px'
     },
     xLabel: {
         // border: '1px solid green'        

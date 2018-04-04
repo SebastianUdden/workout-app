@@ -20170,7 +20170,7 @@ var _AppContent = __webpack_require__(137);
 
 var _AppContent2 = _interopRequireDefault(_AppContent);
 
-var _AppFooter = __webpack_require__(157);
+var _AppFooter = __webpack_require__(163);
 
 var _AppFooter2 = _interopRequireDefault(_AppFooter);
 
@@ -20208,11 +20208,33 @@ var App = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                null,
-                _react2.default.createElement(_AppContent2.default, { page: this.state.page, source: 'Mock Data' }),
-                _react2.default.createElement(_AppFooter2.default, { switchPage: function switchPage(number) {
+                { style: {
+                        // border: '1px solid green',
+                        width: '100%',
+                        minWidth: '300px',
+                        margin: '0 auto'
+                    } },
+                _react2.default.createElement(
+                    'div',
+                    {
+                        id: 'Container',
+                        style: {
+                            maxWidth: '1200px',
+                            minWidth: '300px',
+                            margin: '0 auto',
+                            display: 'block'
+                            // border: '1px solid red',                    
+                        } },
+                    _react2.default.createElement(_AppContent2.default, {
+                        page: this.state.page,
+                        source: 'Mock Data',
+                        width: document.getElementById('Container') })
+                ),
+                _react2.default.createElement(_AppFooter2.default, {
+                    switchPage: function switchPage(number) {
                         return _this2.switchPage(number);
-                    } })
+                    },
+                    width: document.body.clientWidth })
             );
         }
     }]);
@@ -25808,8 +25830,6 @@ var CurrentValue = function (_React$Component) {
 
 exports.default = (0, _radium2.default)(CurrentValue);
 
-// <h1>{this.props.value} {this.props.type}</h1>
-
 /***/ }),
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -26305,11 +26325,11 @@ var _Workout = __webpack_require__(139);
 
 var _Workout2 = _interopRequireDefault(_Workout);
 
-var _Profile = __webpack_require__(141);
+var _Profile = __webpack_require__(140);
 
 var _Profile2 = _interopRequireDefault(_Profile);
 
-var _Overview = __webpack_require__(145);
+var _Overview = __webpack_require__(144);
 
 var _Overview2 = _interopRequireDefault(_Overview);
 
@@ -26341,27 +26361,27 @@ var _weight = __webpack_require__(156);
 
 var _weight2 = _interopRequireDefault(_weight);
 
-var _PullupSVG = __webpack_require__(169);
+var _PullupSVG = __webpack_require__(157);
 
 var _PullupSVG2 = _interopRequireDefault(_PullupSVG);
 
-var _PushupSVG = __webpack_require__(170);
+var _PushupSVG = __webpack_require__(158);
 
 var _PushupSVG2 = _interopRequireDefault(_PushupSVG);
 
-var _SitupSVG = __webpack_require__(171);
+var _SitupSVG = __webpack_require__(159);
 
 var _SitupSVG2 = _interopRequireDefault(_SitupSVG);
 
-var _SquatSVG = __webpack_require__(172);
+var _SquatSVG = __webpack_require__(160);
 
 var _SquatSVG2 = _interopRequireDefault(_SquatSVG);
 
-var _RunningSVG = __webpack_require__(173);
+var _RunningSVG = __webpack_require__(161);
 
 var _RunningSVG2 = _interopRequireDefault(_RunningSVG);
 
-var _WeightSVG = __webpack_require__(174);
+var _WeightSVG = __webpack_require__(162);
 
 var _WeightSVG2 = _interopRequireDefault(_WeightSVG);
 
@@ -26417,7 +26437,11 @@ var AppContent = function (_React$Component) {
                 this.props.page === 1 ? _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Workout2.default, { svgs: this.state.svgs, style: _appContentStyle2.default, data: this.state.mockData }),
+                    _react2.default.createElement(_Workout2.default, {
+                        svgs: this.state.svgs,
+                        style: _appContentStyle2.default,
+                        data: this.state.mockData,
+                        width: this.props.width }),
                     _react2.default.createElement(_Stamp2.default, {
                         onTop: false,
                         text: this.props.source,
@@ -26430,7 +26454,9 @@ var AppContent = function (_React$Component) {
                 this.props.page === 2 ? _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Profile2.default, { style: _appContentStyle2.default }),
+                    _react2.default.createElement(_Profile2.default, {
+                        style: _appContentStyle2.default,
+                        width: this.props.width }),
                     _react2.default.createElement(_Stamp2.default, {
                         onTop: false,
                         text: this.props.source,
@@ -26443,7 +26469,11 @@ var AppContent = function (_React$Component) {
                 this.props.page === 3 ? _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Overview2.default, { svgs: this.state.svgs, style: _appContentStyle2.default, data: this.state.mockData }),
+                    _react2.default.createElement(_Overview2.default, {
+                        svgs: this.state.svgs,
+                        style: _appContentStyle2.default,
+                        data: this.state.mockData,
+                        width: this.props.width }),
                     _react2.default.createElement(_Stamp2.default, {
                         onTop: false,
                         text: this.props.source,
@@ -26476,6 +26506,7 @@ exports.default = {
     container: {
         margin: '10px',
         padding: '10px'
+        // border: '1px solid blue',
     },
     headerMargin: {
         margin: '0 0 15px 0'
@@ -26655,8 +26686,7 @@ var WorkoutComponent = function (_React$Component) {
 exports.default = (0, _radium2.default)(WorkoutComponent);
 
 /***/ }),
-/* 140 */,
-/* 141 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26676,11 +26706,11 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _profileStyle = __webpack_require__(142);
+var _profileStyle = __webpack_require__(141);
 
 var _profileStyle2 = _interopRequireDefault(_profileStyle);
 
-var _ProfileSelect = __webpack_require__(143);
+var _ProfileSelect = __webpack_require__(142);
 
 var _ProfileSelect2 = _interopRequireDefault(_ProfileSelect);
 
@@ -26708,7 +26738,6 @@ var profile = function (_React$Component) {
     _createClass(profile, [{
         key: 'updateValue',
         value: function updateValue(type) {
-            console.log(type);
             switch (type) {
                 case 'Height':
                     break;
@@ -26814,7 +26843,7 @@ var profile = function (_React$Component) {
 exports.default = (0, _radium2.default)(profile);
 
 /***/ }),
-/* 142 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26826,7 +26855,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {};
 
 /***/ }),
-/* 143 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26846,7 +26875,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _profileSelectStyle = __webpack_require__(144);
+var _profileSelectStyle = __webpack_require__(143);
 
 var _profileSelectStyle2 = _interopRequireDefault(_profileSelectStyle);
 
@@ -26893,7 +26922,7 @@ var ProfileSelect = function (_React$Component) {
 exports.default = (0, _radium2.default)(ProfileSelect);
 
 /***/ }),
-/* 144 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26910,7 +26939,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 145 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26930,11 +26959,11 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _overviewStyle = __webpack_require__(146);
+var _overviewStyle = __webpack_require__(145);
 
 var _overviewStyle2 = _interopRequireDefault(_overviewStyle);
 
-var _Graph = __webpack_require__(161);
+var _Graph = __webpack_require__(146);
 
 var _Graph2 = _interopRequireDefault(_Graph);
 
@@ -26983,7 +27012,7 @@ var Overview = function (_React$Component) {
                             return _this2.setState({ tab: index + 1 });
                         } },
                     _react2.default.createElement(Svg, {
-                        width: 100 / (_this2.state.types.length * 1.4) + 'vw',
+                        width: 100 / (_this2.state.types.length * 1.4) + '%',
                         style: _this2.props.style.icon })
                 );
             });
@@ -27029,7 +27058,7 @@ exports.default = (0, _radium2.default)(Overview);
 //                                 alt={type} />
 
 /***/ }),
-/* 146 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27041,8 +27070,633 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {};
 
 /***/ }),
-/* 147 */,
-/* 148 */,
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+var _graphStyle = __webpack_require__(147);
+
+var _graphStyle2 = _interopRequireDefault(_graphStyle);
+
+var _TargetSVG = __webpack_require__(148);
+
+var _TargetSVG2 = _interopRequireDefault(_TargetSVG);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Graph = function (_React$Component) {
+    _inherits(Graph, _React$Component);
+
+    function Graph(props) {
+        _classCallCheck(this, Graph);
+
+        var _this = _possibleConstructorReturn(this, (Graph.__proto__ || Object.getPrototypeOf(Graph)).call(this, props));
+
+        var firstDate = _this.props.values[_this.props.values.length - 1].date;
+        var startTime = new Date(firstDate).getTime(firstDate);
+
+        var currentDate = new Date();
+        var currentTime = currentDate.getTime();
+        var firstValue = _this.props.values[_this.props.values.length - 1].value;
+        var lastValue = _this.props.values[0].value;
+        var percentageChange = (lastValue - firstValue) / firstValue * 100;
+        var daysDiff = Math.round((currentTime - startTime) / (1000 * 60 * 60 * 24));
+        var percentagePerDay = percentageChange / daysDiff;
+        var percentageRequired = (_this.props.target - lastValue) / lastValue * 100;
+        var daysToTarget = Math.round(percentageRequired / percentagePerDay);
+
+        var targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + daysToTarget);
+
+        var timeDiffCurrent = currentTime - startTime;
+        var timeDiffCurrentIncrement = timeDiffCurrent / 3;
+        var secondDateCurrent = new Date(startTime + timeDiffCurrentIncrement).toISOString().substring(0, 10);
+        var thirdDateCurrent = new Date(startTime + timeDiffCurrentIncrement * 2).toISOString().substring(0, 10);
+        var secondDateCurrentArray = secondDateCurrent.split('-');
+        var thirdDateCurrentArray = thirdDateCurrent.split('-');
+
+        var targetTime = targetDate.getTime();
+        var timeDiffTarget = targetTime - startTime;
+        var timeDiffTargetIncrement = timeDiffTarget / 3;
+        var secondDateTarget = new Date(startTime + timeDiffTargetIncrement).toISOString().substring(0, 10);
+        var thirdDateTarget = new Date(startTime + timeDiffTargetIncrement * 2).toISOString().substring(0, 10);
+        var secondDateTargetArray = secondDateTarget.split('-');
+        var thirdDateTargetArray = thirdDateTarget.split('-');
+
+        var firstDateArray = firstDate.split('-');
+        var currentDateArray = currentDate.toISOString().substring(0, 10).split('-');
+        var targetDateArray = targetDate.toISOString().substring(0, 10).split('-');
+
+        var widthPercentage = _this.props.width < 1000 ? _this.props.width / 100 : 10;
+        var heightPercentage = _this.props.height / 100;
+        var maxValueLogged = Math.max.apply(Math, _this.props.values.map(function (v) {
+            return v.value;
+        }));
+        var minValueLogged = Math.min.apply(Math, _this.props.values.map(function (v) {
+            return v.value;
+        }));
+
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
+        _this.state = {
+            highTarget: maxValueLogged < _this.props.target,
+            maxValueLogged: maxValueLogged,
+            minValueLogged: minValueLogged,
+            showTarget: true,
+            verticalLineTextXpos: widthPercentage * 12,
+            activeChartLeft: widthPercentage * 15,
+            activeChartRight: widthPercentage * 100,
+            activeChartWidth: widthPercentage * 85,
+            activeChartTop: heightPercentage * 20,
+            activeChartBottom: heightPercentage * 99,
+            activeChartHeight: heightPercentage * 79,
+            currentDate: months[parseInt(currentDateArray[1]) - 1] + ' ' + currentDateArray[2],
+            targetDate: months[parseInt(targetDateArray[1]) - 1] + ' ' + targetDateArray[2],
+            startDate: months[parseInt(firstDateArray[1]) - 1] + ' ' + firstDateArray[2],
+            secondDateCurrent: months[parseInt(secondDateCurrentArray[1]) - 1] + ' ' + secondDateCurrentArray[2],
+            thirdDateCurrent: months[parseInt(thirdDateCurrentArray[1]) - 1] + ' ' + thirdDateCurrentArray[2],
+            secondDateTarget: months[parseInt(secondDateTargetArray[1]) - 1] + ' ' + secondDateTargetArray[2],
+            thirdDateTarget: months[parseInt(thirdDateTargetArray[1]) - 1] + ' ' + thirdDateTargetArray[2],
+            currentTime: currentTime,
+            targetTime: targetTime,
+            timeDiffCurrent: timeDiffCurrent,
+            timeDiffTarget: timeDiffTarget,
+            xLabelWidth: 50
+        };
+        return _this;
+    }
+
+    _createClass(Graph, [{
+        key: 'getDataPoints',
+        value: function getDataPoints(spreadValue, maxValue) {
+            var _this2 = this;
+
+            var startX = this.state.activeChartLeft + 20;
+            var endX = this.state.activeChartRight - 20;
+
+            return this.props.values.map(function (point) {
+                return {
+                    key: point.date + point.value,
+                    x: startX + (endX - startX) * (_this2.state.showTarget ? 1 - (_this2.state.targetTime - new Date(point.date).getTime()) / _this2.state.timeDiffTarget : 1 - (_this2.state.currentTime - new Date(point.date).getTime()) / _this2.state.timeDiffCurrent),
+                    y: _this2.state.activeChartTop + _this2.state.activeChartHeight / (spreadValue / (maxValue - point.value)),
+                    dataValue: point.value,
+                    radius: 3
+                };
+            });
+        }
+    }, {
+        key: 'getLinePoints',
+        value: function getLinePoints(dataPoints) {
+            var linePoints = [];
+            var linePointsCounter = 0;
+            for (var i = 1; i < dataPoints.length; i++) {
+                linePoints.push({
+                    key: dataPoints[i].key,
+                    x1: dataPoints[i - 1].x,
+                    y1: dataPoints[i - 1].y,
+                    x2: dataPoints[i].x,
+                    y2: dataPoints[i].y
+                });
+            }
+            return linePoints;
+        }
+    }, {
+        key: 'getTargetLineHeight',
+        value: function getTargetLineHeight(maxValue) {
+            if (!this.state.highTarget && this.state.showTarget) {
+                return this.state.activeChartBottom;
+            } else {
+                var multiplier = this.props.target / maxValue;
+                return multiplier !== 1 ? (1 - multiplier) * this.state.activeChartHeight + this.state.activeChartTop : this.state.activeChartTop;
+            }
+        }
+    }, {
+        key: 'toggleTarget',
+        value: function toggleTarget() {
+            this.setState({ showTarget: !this.state.showTarget });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this3 = this;
+
+            var maxValue = 0;
+            if (this.state.highTarget && this.state.showTarget) {
+                maxValue = this.props.target;
+            } else {
+                maxValue = this.state.maxValueLogged;
+            }
+            var minValue = 0;
+            if (!this.state.highTarget && this.state.showTarget) {
+                minValue = this.props.target;
+            } else {
+                minValue = this.state.minValueLogged;
+            }
+            var valueSpread = maxValue - minValue;
+
+            var targetLineHeight = this.getTargetLineHeight(maxValue);
+
+            var dataPoints = this.getDataPoints(valueSpread, maxValue);
+            var linePoints = this.getLinePoints(dataPoints);
+
+            var lines = linePoints.map(function (line) {
+                return _react2.default.createElement('line', {
+                    style: _graphStyle2.default.dataLine,
+                    key: line.key,
+                    x1: line.x1,
+                    y1: line.y1,
+                    x2: line.x2,
+                    y2: line.y2 });
+            });
+            var circles = dataPoints.map(function (point) {
+                return _react2.default.createElement('circle', {
+                    style: _graphStyle2.default.dataCircle,
+                    key: point.key,
+                    cx: point.x,
+                    cy: point.y,
+                    'data-value': point.dataValue,
+                    r: point.radius });
+            });
+
+            return _react2.default.createElement(
+                'div',
+                { style: _graphStyle2.default.container },
+                _react2.default.createElement(
+                    'h2',
+                    {
+                        key: 'h2-' + this.props.header,
+                        onClick: function onClick() {
+                            return _this3.toggleTarget();
+                        },
+                        style: _graphStyle2.default.h2 },
+                    this.props.header,
+                    _react2.default.createElement(
+                        'div',
+                        { style: _graphStyle2.default.icon },
+                        this.state.showTarget ? _react2.default.createElement(_TargetSVG2.default, { style: _graphStyle2.default.target }) : _react2.default.createElement(
+                            'span',
+                            { style: _extends({}, _graphStyle2.default.hideTarget) },
+                            '-'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'svg',
+                    { style: _graphStyle2.default.chart, width: this.props.width, height: this.props.height },
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.supportLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartTop,
+                            x2: this.state.activeChartRight,
+                            y2: this.state.activeChartTop })
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.supportLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartHeight * 0.25 + this.state.activeChartTop,
+                            x2: this.state.activeChartRight,
+                            y2: this.state.activeChartHeight * 0.25 + this.state.activeChartTop })
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.supportLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartHeight * 0.5 + this.state.activeChartTop,
+                            x2: this.state.activeChartRight,
+                            y2: this.state.activeChartHeight * 0.5 + this.state.activeChartTop })
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.supportLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartHeight * 0.75 + this.state.activeChartTop,
+                            x2: this.state.activeChartRight,
+                            y2: this.state.activeChartHeight * 0.75 + this.state.activeChartTop })
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.gridLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartTop - 25,
+                            x2: this.state.activeChartLeft,
+                            y2: this.state.activeChartBottom })
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.gridLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartBottom,
+                            x2: this.state.activeChartRight,
+                            y2: this.state.activeChartBottom })
+                    ),
+                    this.state.showTarget ? _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.targetLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: targetLineHeight,
+                            x2: this.state.activeChartRight,
+                            y2: targetLineHeight })
+                    ) : '',
+                    this.state.showTarget ? _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.targetProgressLine },
+                        _react2.default.createElement('line', {
+                            x1: dataPoints[dataPoints.length - 1].x,
+                            y1: dataPoints[dataPoints.length - 1].y,
+                            x2: this.state.activeChartRight - 20,
+                            y2: targetLineHeight })
+                    ) : '',
+                    _react2.default.createElement(
+                        'g',
+                        { className: 'labels y-labels' },
+                        _react2.default.createElement(
+                            'text',
+                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartTop * 1.06, textAnchor: 'end' },
+                            Math.round(maxValue * 10) / 10
+                        ),
+                        _react2.default.createElement(
+                            'text',
+                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartHeight * 0.265 + this.state.activeChartTop, textAnchor: 'end' },
+                            Math.round((minValue + valueSpread * 0.75) * 10) / 10
+                        ),
+                        _react2.default.createElement(
+                            'text',
+                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartHeight * 0.515 + this.state.activeChartTop, textAnchor: 'end' },
+                            Math.round((minValue + valueSpread * 0.5) * 10) / 10
+                        ),
+                        _react2.default.createElement(
+                            'text',
+                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartHeight * 0.765 + this.state.activeChartTop, textAnchor: 'end' },
+                            Math.round((minValue + valueSpread * 0.25) * 10) / 10
+                        ),
+                        _react2.default.createElement(
+                            'text',
+                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartBottom, textAnchor: 'end' },
+                            Math.round(minValue * 10) / 10
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { className: 'data', 'data-setname': 'Lines' },
+                        lines
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { className: 'data', 'data-setname': 'Circles' },
+                        circles
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { style: _extends({}, _graphStyle2.default.xLabels, { marginLeft: this.state.activeChartLeft, width: this.state.activeChartRight - this.state.activeChartLeft }) },
+                    _react2.default.createElement(
+                        'svg',
+                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
+                        _react2.default.createElement(
+                            'g',
+                            null,
+                            _react2.default.createElement(
+                                'text',
+                                { x: '-25', y: '35', transform: 'rotate(-45)' },
+                                this.state.startDate
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'svg',
+                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
+                        _react2.default.createElement(
+                            'g',
+                            null,
+                            _react2.default.createElement(
+                                'text',
+                                { x: '-25', y: '35', transform: 'rotate(-45)' },
+                                this.state.showTarget ? this.state.secondDateTarget : this.state.secondDateCurrent
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'svg',
+                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
+                        _react2.default.createElement(
+                            'g',
+                            null,
+                            _react2.default.createElement(
+                                'text',
+                                { x: '-25', y: '35', transform: 'rotate(-45)' },
+                                this.state.showTarget ? this.state.thirdDateTarget : this.state.thirdDateCurrent
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'svg',
+                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
+                        _react2.default.createElement(
+                            'g',
+                            null,
+                            _react2.default.createElement(
+                                'text',
+                                { x: '-25', y: '35', transform: 'rotate(-45)' },
+                                this.state.showTarget ? this.state.targetDate : this.state.currentDate
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Graph;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(Graph);
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    container: {
+        // border: '1px solid purple',
+        maxWidth: '1200px'
+    },
+    icon: {
+        display: 'inline-block',
+        width: '35px',
+        border: '2px solid #ea9363',
+        margin: '0 5px',
+        padding: '2px 3px',
+        borderRadius: '10px'
+    },
+    h2: {
+        fontSize: '29px',
+        userSelect: 'none',
+        ':hover': {
+            cursor: 'pointer'
+        }
+    },
+    target: {
+        width: '24px',
+        position: 'relative',
+        top: '2px',
+        ':hover': { fill: '#ea9363' },
+        ':focus': { fill: '#ea9363' },
+        ':active': { fill: '#ea9363' }
+    },
+    hideTarget: {
+        fontSize: '28.5px',
+        position: 'relative',
+        top: '-2px',
+        left: '8px',
+        ':hover': {
+            color: '#ea9363'
+        }
+    },
+    chart: {
+        // border: '1px solid blue',
+        display: 'block',
+        maxWidth: '1100px',
+        minWidth: '240px'
+    },
+    xLabels: {
+        // border: '2px solid black',        
+        marginTop: '3px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        maxWidth: '850px'
+    },
+    xLabel: {
+        // border: '1px solid green'        
+    },
+    gridLine: {
+        stroke: '#ccc',
+        strokeDasharray: 0,
+        strokeWidth: 3
+    },
+    supportLine: {
+        stroke: '#eeeeee',
+        strokeDasharray: 0,
+        strokeWidth: 1
+    },
+    targetLine: {
+        stroke: '#da8353',
+        strokeDasharray: 0,
+        strokeWidth: 2
+    },
+    targetProgressLine: {
+        stroke: '#da8353',
+        strokeDasharray: 2,
+        strokeWidth: 1
+    },
+    dataLine: {
+        stroke: '#444',
+        strokeDasharray: 0,
+        strokeWidth: 2
+    },
+    dataCircle: {
+        fill: '#da8353',
+        stroke: '#fff',
+        strokeWidth: 1
+    },
+    xGrid: {
+        point1: {
+            x: 50,
+            y: 30
+        },
+        point2: {
+            x: 50,
+            y: 221
+        }
+    },
+    yGrid: {
+        point1: {
+            x: 50,
+            y: 220
+        },
+        point2: {
+            x: 295,
+            y: 220
+        }
+    }
+};
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 512 512';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('circle', {
+                            cx: '256',
+                            cy: '256',
+                            r: '32' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('path', {
+                            d: 'M461.026,236C451.573,138.344,373.656,60.427,276,50.974V0h-40v50.974C138.344,60.427,60.427,138.344,50.974,236H0v40\r h50.974c9.453,97.656,87.37,175.573,185.026,185.026V512h40v-50.974c97.656-9.453,175.573-87.371,185.026-185.026H512v-40H461.026\r z M420.792,276C411.674,351.577,351.577,411.674,276,420.792V370h-40v50.792C160.423,411.674,100.326,351.577,91.208,276H142v-40\r H91.208C100.326,160.423,160.423,100.326,236,91.208V142h40V91.208c75.577,9.117,135.674,69.214,144.792,144.792H370v40H420.792z'
+                        })
+                    )
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
 /* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27436,978 +28090,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _radium = __webpack_require__(1);
-
-var _radium2 = _interopRequireDefault(_radium);
-
-var _appFooterStyle = __webpack_require__(158);
-
-var _appFooterStyle2 = _interopRequireDefault(_appFooterStyle);
-
-var _AppFooterButton = __webpack_require__(159);
-
-var _AppFooterButton2 = _interopRequireDefault(_AppFooterButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AppFooter = function (_React$Component) {
-    _inherits(AppFooter, _React$Component);
-
-    function AppFooter(props) {
-        _classCallCheck(this, AppFooter);
-
-        return _possibleConstructorReturn(this, (AppFooter.__proto__ || Object.getPrototypeOf(AppFooter)).call(this, props));
-    }
-
-    _createClass(AppFooter, [{
-        key: 'onClick',
-        value: function onClick(number) {
-            this.props.switchPage(number);
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            return _react2.default.createElement(
-                'div',
-                { style: _appFooterStyle2.default.container },
-                _react2.default.createElement(_AppFooterButton2.default, { icon: 'Workout', onClick: function onClick() {
-                        return _this2.onClick(1);
-                    } }),
-                _react2.default.createElement(_AppFooterButton2.default, { icon: 'Profile', onClick: function onClick() {
-                        return _this2.onClick(2);
-                    } }),
-                _react2.default.createElement(_AppFooterButton2.default, { icon: 'Overview', onClick: function onClick() {
-                        return _this2.onClick(3);
-                    } })
-            );
-        }
-    }]);
-
-    return AppFooter;
-}(_react2.default.Component);
-
-exports.default = (0, _radium2.default)(AppFooter);
-
-/***/ }),
-/* 158 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    container: {
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        backgroundColor: '#ddd'
-    }
-};
-
-/***/ }),
-/* 159 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _radium = __webpack_require__(1);
-
-var _radium2 = _interopRequireDefault(_radium);
-
-var _appFooterButtonStyle = __webpack_require__(160);
-
-var _appFooterButtonStyle2 = _interopRequireDefault(_appFooterButtonStyle);
-
-var _WorkoutSVG = __webpack_require__(166);
-
-var _WorkoutSVG2 = _interopRequireDefault(_WorkoutSVG);
-
-var _ProfileSVG = __webpack_require__(167);
-
-var _ProfileSVG2 = _interopRequireDefault(_ProfileSVG);
-
-var _OverviewSVG = __webpack_require__(168);
-
-var _OverviewSVG2 = _interopRequireDefault(_OverviewSVG);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AppFooterButton = function (_React$Component) {
-    _inherits(AppFooterButton, _React$Component);
-
-    function AppFooterButton(props) {
-        _classCallCheck(this, AppFooterButton);
-
-        return _possibleConstructorReturn(this, (AppFooterButton.__proto__ || Object.getPrototypeOf(AppFooterButton)).call(this, props));
-    }
-
-    _createClass(AppFooterButton, [{
-        key: 'render',
-        value: function render() {
-            var color = '#030104';
-            var width = '60%';
-            // let color = 'red'
-            return _react2.default.createElement(
-                'div',
-                { style: _appFooterButtonStyle2.default.container, onClick: this.props.onClick },
-                this.props.icon === 'Workout' ? _react2.default.createElement(_WorkoutSVG2.default, { width: width, color: color }) : '',
-                this.props.icon === 'Profile' ? _react2.default.createElement(_ProfileSVG2.default, { width: width, color: color }) : '',
-                this.props.icon === 'Overview' ? _react2.default.createElement(_OverviewSVG2.default, { width: width, color: color }) : '',
-                _react2.default.createElement(
-                    'p',
-                    { style: { fontSize: 'calc(1.5em - 0.8vw)', color: color } },
-                    this.props.icon
-                )
-            );
-        }
-    }]);
-
-    return AppFooterButton;
-}(_react2.default.Component);
-
-exports.default = (0, _radium2.default)(AppFooterButton);
-
-// <img style={s.image} src={"/images/" + this.props.icon.toLowerCase() + ".svg"} />
-
-/***/ }),
-/* 160 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    container: {
-        width: '33%',
-        maxWidth: '150px',
-        textAlign: 'center',
-        borderRadius: '10px',
-        padding: '15px',
-        ':hover': {
-            backgroundColor: '#bbb'
-        }
-    },
-    image: {
-        maxWidth: '60%',
-        maxHeight: '100%'
-    }
-};
-
-/***/ }),
-/* 161 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _radium = __webpack_require__(1);
-
-var _radium2 = _interopRequireDefault(_radium);
-
-var _graphStyle = __webpack_require__(162);
-
-var _graphStyle2 = _interopRequireDefault(_graphStyle);
-
-var _TargetSVG = __webpack_require__(175);
-
-var _TargetSVG2 = _interopRequireDefault(_TargetSVG);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Graph = function (_React$Component) {
-    _inherits(Graph, _React$Component);
-
-    function Graph(props) {
-        _classCallCheck(this, Graph);
-
-        var _this = _possibleConstructorReturn(this, (Graph.__proto__ || Object.getPrototypeOf(Graph)).call(this, props));
-
-        var firstDate = _this.props.values[_this.props.values.length - 1].date;
-        var startTime = new Date(firstDate).getTime(firstDate);
-
-        var currentDate = new Date();
-        var currentTime = currentDate.getTime();
-        var firstValue = _this.props.values[_this.props.values.length - 1].value;
-        var lastValue = _this.props.values[0].value;
-        var percentageChange = (lastValue - firstValue) / firstValue * 100;
-        var daysDiff = Math.round((currentTime - startTime) / (1000 * 60 * 60 * 24));
-        var percentagePerDay = percentageChange / daysDiff;
-        var percentageRequired = (_this.props.target - lastValue) / lastValue * 100;
-        var daysToTarget = Math.round(percentageRequired / percentagePerDay);
-
-        var targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + daysToTarget);
-
-        var timeDiffCurrent = currentTime - startTime;
-        var timeDiffCurrentIncrement = timeDiffCurrent / 3;
-        var secondDateCurrent = new Date(startTime + timeDiffCurrentIncrement).toISOString().substring(0, 10);
-        var thirdDateCurrent = new Date(startTime + timeDiffCurrentIncrement * 2).toISOString().substring(0, 10);
-        var secondDateCurrentArray = secondDateCurrent.split('-');
-        var thirdDateCurrentArray = thirdDateCurrent.split('-');
-
-        var targetTime = targetDate.getTime();
-        var timeDiffTarget = targetTime - startTime;
-        var timeDiffTargetIncrement = timeDiffTarget / 3;
-        var secondDateTarget = new Date(startTime + timeDiffTargetIncrement).toISOString().substring(0, 10);
-        var thirdDateTarget = new Date(startTime + timeDiffTargetIncrement * 2).toISOString().substring(0, 10);
-        var secondDateTargetArray = secondDateTarget.split('-');
-        var thirdDateTargetArray = thirdDateTarget.split('-');
-
-        var firstDateArray = firstDate.split('-');
-        var currentDateArray = currentDate.toISOString().substring(0, 10).split('-');
-        var targetDateArray = targetDate.toISOString().substring(0, 10).split('-');
-
-        var widthPercentage = _this.props.width / 100;
-        var heightPercentage = _this.props.height / 100;
-        var maxValueLogged = Math.max.apply(Math, _this.props.values.map(function (v) {
-            return v.value;
-        }));
-        var minValueLogged = Math.min.apply(Math, _this.props.values.map(function (v) {
-            return v.value;
-        }));
-
-        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
-        _this.state = {
-            highTarget: maxValueLogged < _this.props.target,
-            maxValueLogged: maxValueLogged,
-            minValueLogged: minValueLogged,
-            showTarget: true,
-            verticalLineTextXpos: widthPercentage * 12,
-            activeChartLeft: widthPercentage * 15,
-            activeChartRight: widthPercentage * 100,
-            activeChartWidth: widthPercentage * 85,
-            activeChartTop: heightPercentage * 20,
-            activeChartBottom: heightPercentage * 99,
-            activeChartHeight: heightPercentage * 79,
-            currentDate: months[parseInt(currentDateArray[1]) - 1] + ' ' + currentDateArray[2],
-            targetDate: months[parseInt(targetDateArray[1]) - 1] + ' ' + targetDateArray[2],
-            startDate: months[parseInt(firstDateArray[1]) - 1] + ' ' + firstDateArray[2],
-            secondDateCurrent: months[parseInt(secondDateCurrentArray[1]) - 1] + ' ' + secondDateCurrentArray[2],
-            thirdDateCurrent: months[parseInt(thirdDateCurrentArray[1]) - 1] + ' ' + thirdDateCurrentArray[2],
-            secondDateTarget: months[parseInt(secondDateTargetArray[1]) - 1] + ' ' + secondDateTargetArray[2],
-            thirdDateTarget: months[parseInt(thirdDateTargetArray[1]) - 1] + ' ' + thirdDateTargetArray[2],
-            currentTime: currentTime,
-            targetTime: targetTime,
-            timeDiffCurrent: timeDiffCurrent,
-            timeDiffTarget: timeDiffTarget,
-            xLabelWidth: 50
-        };
-        return _this;
-    }
-
-    _createClass(Graph, [{
-        key: 'getDataPoints',
-        value: function getDataPoints(spreadValue, maxValue) {
-            var _this2 = this;
-
-            var startX = this.state.activeChartLeft + 20;
-            var endX = this.state.activeChartRight - 20;
-
-            return this.props.values.map(function (point) {
-                return {
-                    key: point.date + point.value,
-                    x: startX + (endX - startX) * (_this2.state.showTarget ? 1 - (_this2.state.targetTime - new Date(point.date).getTime()) / _this2.state.timeDiffTarget : 1 - (_this2.state.currentTime - new Date(point.date).getTime()) / _this2.state.timeDiffCurrent),
-                    y: _this2.state.activeChartTop + _this2.state.activeChartHeight / (spreadValue / (maxValue - point.value)),
-                    dataValue: point.value,
-                    radius: 3
-                };
-            });
-        }
-    }, {
-        key: 'getLinePoints',
-        value: function getLinePoints(dataPoints) {
-            var linePoints = [];
-            var linePointsCounter = 0;
-            for (var i = 1; i < dataPoints.length; i++) {
-                linePoints.push({
-                    key: dataPoints[i].key,
-                    x1: dataPoints[i - 1].x,
-                    y1: dataPoints[i - 1].y,
-                    x2: dataPoints[i].x,
-                    y2: dataPoints[i].y
-                });
-            }
-            return linePoints;
-        }
-    }, {
-        key: 'getTargetLineHeight',
-        value: function getTargetLineHeight(maxValue) {
-            if (!this.state.highTarget && this.state.showTarget) {
-                return this.state.activeChartBottom;
-            } else {
-                var multiplier = this.props.target / maxValue;
-                return multiplier !== 1 ? (1 - multiplier) * this.state.activeChartHeight + this.state.activeChartTop : this.state.activeChartTop;
-            }
-        }
-    }, {
-        key: 'toggleTarget',
-        value: function toggleTarget() {
-            this.setState({ showTarget: !this.state.showTarget });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this3 = this;
-
-            var maxValue = 0;
-            if (this.state.highTarget && this.state.showTarget) {
-                maxValue = this.props.target;
-            } else {
-                maxValue = this.state.maxValueLogged;
-            }
-            var minValue = 0;
-            if (!this.state.highTarget && this.state.showTarget) {
-                minValue = this.props.target;
-            } else {
-                minValue = this.state.minValueLogged;
-            }
-            var valueSpread = maxValue - minValue;
-
-            var targetLineHeight = this.getTargetLineHeight(maxValue);
-
-            var dataPoints = this.getDataPoints(valueSpread, maxValue);
-            var linePoints = this.getLinePoints(dataPoints);
-
-            var lines = linePoints.map(function (line) {
-                return _react2.default.createElement('line', {
-                    style: _graphStyle2.default.dataLine,
-                    key: line.key,
-                    x1: line.x1,
-                    y1: line.y1,
-                    x2: line.x2,
-                    y2: line.y2 });
-            });
-            var circles = dataPoints.map(function (point) {
-                return _react2.default.createElement('circle', {
-                    style: _graphStyle2.default.dataCircle,
-                    key: point.key,
-                    cx: point.x,
-                    cy: point.y,
-                    'data-value': point.dataValue,
-                    r: point.radius });
-            });
-
-            return _react2.default.createElement(
-                'div',
-                { style: _graphStyle2.default.container },
-                _react2.default.createElement(
-                    'h2',
-                    { onClick: function onClick() {
-                            return _this3.toggleTarget();
-                        }, style: { fontSize: '29px' } },
-                    this.props.header,
-                    _react2.default.createElement(
-                        'div',
-                        { style: _graphStyle2.default.icon },
-                        this.state.showTarget ? _react2.default.createElement(_TargetSVG2.default, { style: _graphStyle2.default.target }) : _react2.default.createElement(
-                            'span',
-                            { style: _extends({}, _graphStyle2.default.hideTarget) },
-                            '-'
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    'svg',
-                    { style: _graphStyle2.default.chart, width: this.props.width, height: this.props.height },
-                    _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.supportLine },
-                        _react2.default.createElement('line', {
-                            x1: this.state.activeChartLeft,
-                            y1: this.state.activeChartTop,
-                            x2: this.state.activeChartRight,
-                            y2: this.state.activeChartTop })
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.supportLine },
-                        _react2.default.createElement('line', {
-                            x1: this.state.activeChartLeft,
-                            y1: this.state.activeChartHeight * 0.25 + this.state.activeChartTop,
-                            x2: this.state.activeChartRight,
-                            y2: this.state.activeChartHeight * 0.25 + this.state.activeChartTop })
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.supportLine },
-                        _react2.default.createElement('line', {
-                            x1: this.state.activeChartLeft,
-                            y1: this.state.activeChartHeight * 0.5 + this.state.activeChartTop,
-                            x2: this.state.activeChartRight,
-                            y2: this.state.activeChartHeight * 0.5 + this.state.activeChartTop })
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.supportLine },
-                        _react2.default.createElement('line', {
-                            x1: this.state.activeChartLeft,
-                            y1: this.state.activeChartHeight * 0.75 + this.state.activeChartTop,
-                            x2: this.state.activeChartRight,
-                            y2: this.state.activeChartHeight * 0.75 + this.state.activeChartTop })
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.gridLine },
-                        _react2.default.createElement('line', {
-                            x1: this.state.activeChartLeft,
-                            y1: this.state.activeChartTop - 25,
-                            x2: this.state.activeChartLeft,
-                            y2: this.state.activeChartBottom })
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.gridLine },
-                        _react2.default.createElement('line', {
-                            x1: this.state.activeChartLeft,
-                            y1: this.state.activeChartBottom,
-                            x2: this.state.activeChartRight,
-                            y2: this.state.activeChartBottom })
-                    ),
-                    this.state.showTarget ? _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.targetLine },
-                        _react2.default.createElement('line', {
-                            x1: this.state.activeChartLeft,
-                            y1: targetLineHeight,
-                            x2: this.state.activeChartRight,
-                            y2: targetLineHeight })
-                    ) : '',
-                    this.state.showTarget ? _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.targetProgressLine },
-                        _react2.default.createElement('line', {
-                            x1: dataPoints[dataPoints.length - 1].x,
-                            y1: dataPoints[dataPoints.length - 1].y,
-                            x2: this.state.activeChartRight - 20,
-                            y2: targetLineHeight })
-                    ) : '',
-                    _react2.default.createElement(
-                        'g',
-                        { className: 'labels y-labels' },
-                        _react2.default.createElement(
-                            'text',
-                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartTop * 1.06, textAnchor: 'end' },
-                            Math.round(maxValue * 10) / 10
-                        ),
-                        _react2.default.createElement(
-                            'text',
-                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartHeight * 0.265 + this.state.activeChartTop, textAnchor: 'end' },
-                            Math.round((minValue + valueSpread * 0.75) * 10) / 10
-                        ),
-                        _react2.default.createElement(
-                            'text',
-                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartHeight * 0.515 + this.state.activeChartTop, textAnchor: 'end' },
-                            Math.round((minValue + valueSpread * 0.5) * 10) / 10
-                        ),
-                        _react2.default.createElement(
-                            'text',
-                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartHeight * 0.765 + this.state.activeChartTop, textAnchor: 'end' },
-                            Math.round((minValue + valueSpread * 0.25) * 10) / 10
-                        ),
-                        _react2.default.createElement(
-                            'text',
-                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartBottom, textAnchor: 'end' },
-                            Math.round(minValue * 10) / 10
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { className: 'data', 'data-setname': 'Lines' },
-                        lines
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { className: 'data', 'data-setname': 'Circles' },
-                        circles
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { style: _extends({}, _graphStyle2.default.xLabels, { marginLeft: this.state.activeChartLeft, width: this.state.activeChartRight - this.state.activeChartLeft }) },
-                    _react2.default.createElement(
-                        'svg',
-                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
-                        _react2.default.createElement(
-                            'g',
-                            null,
-                            _react2.default.createElement(
-                                'text',
-                                { x: '-25', y: '35', transform: 'rotate(-45)' },
-                                this.state.startDate
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'svg',
-                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
-                        _react2.default.createElement(
-                            'g',
-                            null,
-                            _react2.default.createElement(
-                                'text',
-                                { x: '-25', y: '35', transform: 'rotate(-45)' },
-                                this.state.showTarget ? this.state.secondDateTarget : this.state.secondDateCurrent
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'svg',
-                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
-                        _react2.default.createElement(
-                            'g',
-                            null,
-                            _react2.default.createElement(
-                                'text',
-                                { x: '-25', y: '35', transform: 'rotate(-45)' },
-                                this.state.showTarget ? this.state.thirdDateTarget : this.state.thirdDateCurrent
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'svg',
-                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
-                        _react2.default.createElement(
-                            'g',
-                            null,
-                            _react2.default.createElement(
-                                'text',
-                                { x: '-25', y: '35', transform: 'rotate(-45)' },
-                                this.state.showTarget ? this.state.targetDate : this.state.currentDate
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Graph;
-}(_react2.default.Component);
-
-exports.default = (0, _radium2.default)(Graph);
-
-/***/ }),
-/* 162 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    container: {
-        // border: '1px solid red'        
-    },
-    icon: {
-        display: 'inline-block',
-        width: '35px',
-        border: '2px solid #ea9363',
-        margin: '0 5px',
-        padding: '2px 3px',
-        borderRadius: '10px'
-    },
-    target: {
-        width: '24px',
-        position: 'relative',
-        top: '2px'
-    },
-    hideTarget: {
-        fontSize: '28.5px',
-        position: 'relative',
-        top: '-2px',
-        left: '8px'
-    },
-    chart: {
-        // border: '1px solid blue',
-        display: 'block'
-    },
-    xLabels: {
-        // border: '2px solid black',        
-        marginTop: '3px',
-        display: 'flex',
-        justifyContent: 'space-between'
-    },
-    xLabel: {
-        // border: '1px solid green'        
-    },
-    gridLine: {
-        stroke: '#ccc',
-        strokeDasharray: 0,
-        strokeWidth: 3
-    },
-    supportLine: {
-        stroke: '#eeeeee',
-        strokeDasharray: 0,
-        strokeWidth: 1
-    },
-    targetLine: {
-        stroke: '#da8353',
-        strokeDasharray: 0,
-        strokeWidth: 2
-    },
-    targetProgressLine: {
-        stroke: '#da8353',
-        strokeDasharray: 2,
-        strokeWidth: 1
-    },
-    dataLine: {
-        stroke: '#444',
-        strokeDasharray: 0,
-        strokeWidth: 2
-    },
-    dataCircle: {
-        fill: '#da8353',
-        stroke: '#fff',
-        strokeWidth: 1
-    },
-    xGrid: {
-        point1: {
-            x: 50,
-            y: 30
-        },
-        point2: {
-            x: 50,
-            y: 221
-        }
-    },
-    yGrid: {
-        point1: {
-            x: 50,
-            y: 220
-        },
-        point2: {
-            x: 295,
-            y: 220
-        }
-    }
-};
-
-/***/ }),
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _radium = __webpack_require__(1);
-
-var _radium2 = _interopRequireDefault(_radium);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var OverviewSVG = function (_React$Component) {
-    _inherits(OverviewSVG, _React$Component);
-
-    function OverviewSVG() {
-        _classCallCheck(this, OverviewSVG);
-
-        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
-    }
-
-    _createClass(OverviewSVG, [{
-        key: 'render',
-        value: function render() {
-            var view = '0 0 196.118 196.117';
-            return _react2.default.createElement(
-                'svg',
-                {
-                    viewBox: view,
-                    style: _extends({}, this.props.style, {
-                        width: this.props.width,
-                        enableBackground: 'new ' + view }) },
-                _react2.default.createElement(
-                    'g',
-                    null,
-                    _react2.default.createElement('path', {
-                        style: { fill: this.props.color },
-                        d: 'M170.918,76.589v42.948c0,6.183-5.02,11.206-11.206,11.206c-6.191,0-11.209-5.023-11.209-11.206V76.589\r c0-6.186,5.018-11.207,11.209-11.207C165.899,65.383,170.918,70.397,170.918,76.589z M36.405,65.383\r c-6.186,0-11.208,5.021-11.208,11.207v42.948c0,6.183,5.021,11.206,11.208,11.206c6.185,0,11.206-5.023,11.206-11.206V76.589\r C47.611,70.397,42.597,65.383,36.405,65.383z M184.909,80.961c-6.184,0-11.207,5.018-11.207,11.207v11.784\r c0,6.194,5.023,11.206,11.207,11.206c6.186,0,11.209-5.012,11.209-11.206V92.168C196.118,85.974,191.094,80.961,184.909,80.961z\r M11.206,80.961C5.02,80.961,0,85.979,0,92.168v11.784c0,6.194,5.02,11.206,11.206,11.206s11.206-5.012,11.206-11.206V92.168\r C22.412,85.974,17.393,80.961,11.206,80.961z M133.505,50.838c-6.184,0-11.207,5.018-11.207,11.207v24.811H73.817V62.037\r c0-6.186-5.022-11.207-11.207-11.207c-6.187,0-11.208,5.021-11.208,11.207v72.033c0,6.195,5.021,11.208,11.208,11.208\r c6.185,0,11.207-5.013,11.207-11.208v-24.799h48.481v24.811c0,6.193,5.023,11.207,11.207,11.207\r c6.183,0,11.206-5.014,11.206-11.207V62.045C144.711,55.851,139.7,50.838,133.505,50.838z' })
-                ),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null)
-            );
-        }
-    }]);
-
-    return OverviewSVG;
-}(_react2.default.Component);
-
-exports.default = (0, _radium2.default)(OverviewSVG);
-
-/***/ }),
-/* 167 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _radium = __webpack_require__(1);
-
-var _radium2 = _interopRequireDefault(_radium);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var OverviewSVG = function (_React$Component) {
-    _inherits(OverviewSVG, _React$Component);
-
-    function OverviewSVG() {
-        _classCallCheck(this, OverviewSVG);
-
-        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
-    }
-
-    _createClass(OverviewSVG, [{
-        key: 'render',
-        value: function render() {
-            var view = '0 0 258.75 258.75';
-            return _react2.default.createElement(
-                'svg',
-                {
-                    viewBox: view,
-                    style: _extends({}, this.props.style, {
-                        width: this.props.width,
-                        enableBackground: 'new ' + view }) },
-                _react2.default.createElement(
-                    'g',
-                    null,
-                    _react2.default.createElement('circle', {
-                        style: { fill: this.props.color },
-                        cx: '129.375',
-                        cy: '60',
-                        r: '60' }),
-                    _react2.default.createElement('path', {
-                        style: { fill: this.props.color },
-                        d: 'M129.375,150c-60.061,0-108.75,48.689-108.75,108.75h217.5C238.125,198.689,189.436,150,129.375,150z' })
-                ),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null)
-            );
-        }
-    }]);
-
-    return OverviewSVG;
-}(_react2.default.Component);
-
-exports.default = (0, _radium2.default)(OverviewSVG);
-
-/***/ }),
-/* 168 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _radium = __webpack_require__(1);
-
-var _radium2 = _interopRequireDefault(_radium);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var OverviewSVG = function (_React$Component) {
-    _inherits(OverviewSVG, _React$Component);
-
-    function OverviewSVG() {
-        _classCallCheck(this, OverviewSVG);
-
-        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
-    }
-
-    _createClass(OverviewSVG, [{
-        key: 'render',
-        value: function render() {
-            var view = '0 0 100.001 100.001';
-            return _react2.default.createElement(
-                'svg',
-                {
-                    viewBox: view,
-                    style: _extends({}, this.props.style, {
-                        width: this.props.width,
-                        enableBackground: 'new ' + view }) },
-                _react2.default.createElement(
-                    'g',
-                    null,
-                    _react2.default.createElement('path', {
-                        style: { fill: this.props.color },
-                        d: 'M3.449,56.655l6.816,1.689l5.132-8.056L5.645,47.87c-2.441-0.607-4.904,0.873-5.509,3.299\r C-0.47,53.596,1.013,56.051,3.449,56.655z M92.406,57.958L70.094,78.044L43.856,57.741c-0.5-0.387-1.076-0.665-1.691-0.817\r l-3.493-0.866l-5.132,8.057l5.497,1.362l28.488,22.044c0.824,0.637,1.808,0.952,2.788,0.952c1.096,0,2.188-0.393,3.05-1.168\r l25.14-22.632c1.862-1.676,2.007-4.538,0.324-6.393C97.144,56.427,94.27,56.28,92.406,57.958z M43.42,35.901l24.437,15.644\r c2.062,1.318,4.803,0.773,6.197-1.233l25.141-36.21c1.428-2.056,0.91-4.875-1.154-6.297c-2.067-1.423-4.896-0.907-6.324,1.149\r L69.075,41.562L44.489,25.824c-1.018-0.651-2.254-0.869-3.438-0.612c-1.182,0.26-2.21,0.978-2.858,1.995L0.71,86.048\r c-1.346,2.111-0.717,4.908,1.402,6.247C2.867,92.771,3.71,93,4.543,93c1.505,0,2.977-0.743,3.842-2.103L43.42,35.901z' })
-                ),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null),
-                _react2.default.createElement('g', null)
-            );
-        }
-    }]);
-
-    return OverviewSVG;
-}(_react2.default.Component);
-
-exports.default = (0, _radium2.default)(OverviewSVG);
-
-/***/ }),
-/* 169 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -28483,7 +28165,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 170 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28574,7 +28256,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 171 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28664,7 +28346,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 172 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28754,7 +28436,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 173 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28901,7 +28583,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 174 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28978,7 +28660,220 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 175 */
+/* 163 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+var _appFooterStyle = __webpack_require__(164);
+
+var _appFooterStyle2 = _interopRequireDefault(_appFooterStyle);
+
+var _AppFooterButton = __webpack_require__(165);
+
+var _AppFooterButton2 = _interopRequireDefault(_AppFooterButton);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AppFooter = function (_React$Component) {
+    _inherits(AppFooter, _React$Component);
+
+    function AppFooter(props) {
+        _classCallCheck(this, AppFooter);
+
+        return _possibleConstructorReturn(this, (AppFooter.__proto__ || Object.getPrototypeOf(AppFooter)).call(this, props));
+    }
+
+    _createClass(AppFooter, [{
+        key: 'onClick',
+        value: function onClick(number) {
+            this.props.switchPage(number);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                'div',
+                { style: _appFooterStyle2.default.container },
+                _react2.default.createElement(_AppFooterButton2.default, { width: this.props.width, icon: 'Workout', onClick: function onClick() {
+                        return _this2.onClick(1);
+                    } }),
+                _react2.default.createElement(_AppFooterButton2.default, { width: this.props.width, icon: 'Profile', onClick: function onClick() {
+                        return _this2.onClick(2);
+                    } }),
+                _react2.default.createElement(_AppFooterButton2.default, { width: this.props.width, icon: 'Overview', onClick: function onClick() {
+                        return _this2.onClick(3);
+                    } })
+            );
+        }
+    }]);
+
+    return AppFooter;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(AppFooter);
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    container: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        width: '100%',
+        minWidth: '300px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        backgroundColor: '#ddd',
+        maxHeight: '120px'
+    }
+};
+
+/***/ }),
+/* 165 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+var _appFooterButtonStyle = __webpack_require__(166);
+
+var _appFooterButtonStyle2 = _interopRequireDefault(_appFooterButtonStyle);
+
+var _WorkoutSVG = __webpack_require__(167);
+
+var _WorkoutSVG2 = _interopRequireDefault(_WorkoutSVG);
+
+var _ProfileSVG = __webpack_require__(168);
+
+var _ProfileSVG2 = _interopRequireDefault(_ProfileSVG);
+
+var _OverviewSVG = __webpack_require__(169);
+
+var _OverviewSVG2 = _interopRequireDefault(_OverviewSVG);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AppFooterButton = function (_React$Component) {
+    _inherits(AppFooterButton, _React$Component);
+
+    function AppFooterButton(props) {
+        _classCallCheck(this, AppFooterButton);
+
+        return _possibleConstructorReturn(this, (AppFooterButton.__proto__ || Object.getPrototypeOf(AppFooterButton)).call(this, props));
+    }
+
+    _createClass(AppFooterButton, [{
+        key: 'render',
+        value: function render() {
+            var color = '#030104';
+            var width = '60%';
+            // let color = 'red'
+            return _react2.default.createElement(
+                'div',
+                { style: _appFooterButtonStyle2.default.container, onClick: this.props.onClick },
+                this.props.icon === 'Workout' ? _react2.default.createElement(_WorkoutSVG2.default, { width: width, color: color }) : '',
+                this.props.icon === 'Profile' ? _react2.default.createElement(_ProfileSVG2.default, { width: width, color: color }) : '',
+                this.props.icon === 'Overview' ? _react2.default.createElement(_OverviewSVG2.default, { width: width, color: color }) : '',
+                this.props.width > 300 && this.props.width < 1000 ? _react2.default.createElement(
+                    'p',
+                    { style: { fontSize: 'calc(1.5em - 0.8vw)', color: color } },
+                    this.props.icon
+                ) : ''
+            );
+        }
+    }]);
+
+    return AppFooterButton;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(AppFooterButton);
+
+// <img style={s.image} src={"/images/" + this.props.icon.toLowerCase() + ".svg"} />
+
+/***/ }),
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    container: {
+        width: '33%',
+        maxWidth: '150px',
+        textAlign: 'center',
+        borderRadius: '10px',
+        padding: '8px 15px',
+        ':hover': {
+            backgroundColor: '#bbb'
+        }
+    },
+    image: {
+        width: '30%',
+        maxWidth: '60%',
+        maxHeight: '100%'
+    }
+};
+
+/***/ }),
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29020,7 +28915,7 @@ var OverviewSVG = function (_React$Component) {
     _createClass(OverviewSVG, [{
         key: 'render',
         value: function render() {
-            var view = '0 0 512 512';
+            var view = '0 0 196.118 196.117';
             return _react2.default.createElement(
                 'svg',
                 {
@@ -29031,25 +28926,178 @@ var OverviewSVG = function (_React$Component) {
                 _react2.default.createElement(
                     'g',
                     null,
-                    _react2.default.createElement(
-                        'g',
-                        null,
-                        _react2.default.createElement('circle', {
-                            cx: '256',
-                            cy: '256',
-                            r: '32' })
-                    )
+                    _react2.default.createElement('path', {
+                        style: { fill: this.props.color },
+                        d: 'M170.918,76.589v42.948c0,6.183-5.02,11.206-11.206,11.206c-6.191,0-11.209-5.023-11.209-11.206V76.589\r c0-6.186,5.018-11.207,11.209-11.207C165.899,65.383,170.918,70.397,170.918,76.589z M36.405,65.383\r c-6.186,0-11.208,5.021-11.208,11.207v42.948c0,6.183,5.021,11.206,11.208,11.206c6.185,0,11.206-5.023,11.206-11.206V76.589\r C47.611,70.397,42.597,65.383,36.405,65.383z M184.909,80.961c-6.184,0-11.207,5.018-11.207,11.207v11.784\r c0,6.194,5.023,11.206,11.207,11.206c6.186,0,11.209-5.012,11.209-11.206V92.168C196.118,85.974,191.094,80.961,184.909,80.961z\r M11.206,80.961C5.02,80.961,0,85.979,0,92.168v11.784c0,6.194,5.02,11.206,11.206,11.206s11.206-5.012,11.206-11.206V92.168\r C22.412,85.974,17.393,80.961,11.206,80.961z M133.505,50.838c-6.184,0-11.207,5.018-11.207,11.207v24.811H73.817V62.037\r c0-6.186-5.022-11.207-11.207-11.207c-6.187,0-11.208,5.021-11.208,11.207v72.033c0,6.195,5.021,11.208,11.208,11.208\r c6.185,0,11.207-5.013,11.207-11.208v-24.799h48.481v24.811c0,6.193,5.023,11.207,11.207,11.207\r c6.183,0,11.206-5.014,11.206-11.207V62.045C144.711,55.851,139.7,50.838,133.505,50.838z' })
                 ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 168 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 258.75 258.75';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
                 _react2.default.createElement(
                     'g',
                     null,
-                    _react2.default.createElement(
-                        'g',
-                        null,
-                        _react2.default.createElement('path', {
-                            d: 'M461.026,236C451.573,138.344,373.656,60.427,276,50.974V0h-40v50.974C138.344,60.427,60.427,138.344,50.974,236H0v40\r h50.974c9.453,97.656,87.37,175.573,185.026,185.026V512h40v-50.974c97.656-9.453,175.573-87.371,185.026-185.026H512v-40H461.026\r z M420.792,276C411.674,351.577,351.577,411.674,276,420.792V370h-40v50.792C160.423,411.674,100.326,351.577,91.208,276H142v-40\r H91.208C100.326,160.423,160.423,100.326,236,91.208V142h40V91.208c75.577,9.117,135.674,69.214,144.792,144.792H370v40H420.792z'
-                        })
-                    )
+                    _react2.default.createElement('circle', {
+                        style: { fill: this.props.color },
+                        cx: '129.375',
+                        cy: '60',
+                        r: '60' }),
+                    _react2.default.createElement('path', {
+                        style: { fill: this.props.color },
+                        d: 'M129.375,150c-60.061,0-108.75,48.689-108.75,108.75h217.5C238.125,198.689,189.436,150,129.375,150z' })
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 169 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 100.001 100.001';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement('path', {
+                        style: { fill: this.props.color },
+                        d: 'M3.449,56.655l6.816,1.689l5.132-8.056L5.645,47.87c-2.441-0.607-4.904,0.873-5.509,3.299\r C-0.47,53.596,1.013,56.051,3.449,56.655z M92.406,57.958L70.094,78.044L43.856,57.741c-0.5-0.387-1.076-0.665-1.691-0.817\r l-3.493-0.866l-5.132,8.057l5.497,1.362l28.488,22.044c0.824,0.637,1.808,0.952,2.788,0.952c1.096,0,2.188-0.393,3.05-1.168\r l25.14-22.632c1.862-1.676,2.007-4.538,0.324-6.393C97.144,56.427,94.27,56.28,92.406,57.958z M43.42,35.901l24.437,15.644\r c2.062,1.318,4.803,0.773,6.197-1.233l25.141-36.21c1.428-2.056,0.91-4.875-1.154-6.297c-2.067-1.423-4.896-0.907-6.324,1.149\r L69.075,41.562L44.489,25.824c-1.018-0.651-2.254-0.869-3.438-0.612c-1.182,0.26-2.21,0.978-2.858,1.995L0.71,86.048\r c-1.346,2.111-0.717,4.908,1.402,6.247C2.867,92.771,3.71,93,4.543,93c1.505,0,2.977-0.743,3.842-2.103L43.42,35.901z' })
                 ),
                 _react2.default.createElement('g', null),
                 _react2.default.createElement('g', null),
