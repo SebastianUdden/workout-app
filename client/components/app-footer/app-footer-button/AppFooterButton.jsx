@@ -13,7 +13,7 @@ class AppFooterButton extends React.Component {
 
     render() {
         let color = '#030104'
-        let width = '60%'
+        let width = '30%'
         // let color = 'red'
         return (
             <div style={s.container} onClick={this.props.onClick}>                

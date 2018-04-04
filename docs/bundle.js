@@ -28820,7 +28820,7 @@ var AppFooterButton = function (_React$Component) {
         key: 'render',
         value: function render() {
             var color = '#030104';
-            var width = '60%';
+            var width = '30%';
             // let color = 'red'
             return _react2.default.createElement(
                 'div',
