@@ -1,7 +1,7 @@
 export default {
     bar: {
         ':hover': {
-            fill: 'red'
+            fill: '#666'
         }
     },
     date: {

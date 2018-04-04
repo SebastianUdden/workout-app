@@ -1,6 +1,5 @@
 import React from 'react';
 import Radium from 'radium';
-import s from './workout-style';
 
 import Box from '../../box/Box.jsx';
 
@@ -46,8 +45,14 @@ class WorkoutComponent extends React.Component {
 
     render() {
         let icons = this.state.types.map((type, index) => {
-            return <span key={index + 1} onClick={() => this.setState({tab: index + 1})}><img key={index + 1} style={s.icon} src={'/images/' + type + '.svg'} alt={type} /></span>
-        });
+            let Svg = this.props.svgs[type];
+            return <span key={index + 1} 
+                         onClick={() => this.setState({tab: index + 1})}>
+                            <Svg 
+                                width={100 / (this.state.types.length * 1.4) + 'vw'}
+                                style={this.props.style.icon} />                            
+                    </span>
+        });  
         let box = this.state.types.map((type, index) => {
             if (this.state.tab === index + 1 && type !== 'running') {
                 return <Box 
@@ -67,11 +72,10 @@ class WorkoutComponent extends React.Component {
                             values={this.state[type]} />
             }
         });
-        let sp = this.props.style;
         return (
             <div>
-                <h1 style={sp.textMargin}>Workouts</h1>
-                <p style={sp.headerMargin}>{icons}</p>
+                <h1 style={this.props.style.textMargin}>Workouts</h1>
+                <p style={this.props.style.headerMargin}>{icons}</p>
                 {box}                
             </div>
         );

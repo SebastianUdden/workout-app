@@ -15,5 +15,21 @@ export default {
     listItem: {
         margin: '0 0 8px 0',
         listStyleType: 'none'
+    },
+    icon: {     
+        backgroundColor: '#ddd',
+        maxWidth: 70,
+        margin: '0 5px',
+        padding: '10px',
+        borderRadius: '10px',
+        ':focus': {
+            backgroundColor: '#aaa',
+        },
+        ':hover': {
+            backgroundColor: '#aaa',
+        },
+        ':active': {
+            backgroundColor: '#aaa',
+        }
     }
 }

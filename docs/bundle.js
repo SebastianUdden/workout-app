@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 51);
+/******/ 	return __webpack_require__(__webpack_require__.s = 45);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,9 +71,9 @@
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(53);
+  module.exports = __webpack_require__(47);
 } else {
-  module.exports = __webpack_require__(54);
+  module.exports = __webpack_require__(48);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
@@ -86,10 +86,10 @@ if (process.env.NODE_ENV === 'production') {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enhancer__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugins__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_style__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_style_root__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_style__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_style_root__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__get_state__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__keyframes__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__keyframes__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resolve_styles__ = __webpack_require__(26);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Plugins", function() { return __WEBPACK_IMPORTED_MODULE_1__plugins__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Style", function() { return __WEBPACK_IMPORTED_MODULE_2__components_style__["a"]; });
@@ -679,11 +679,11 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(67)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(61)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(68)();
+  module.exports = __webpack_require__(62)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
@@ -917,14 +917,14 @@ function cssRuleSetToString(selector, rules, userAgent) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, process) {/* harmony export (immutable) */ __webpack_exports__["a"] = getPrefixedKeyframes;
 /* harmony export (immutable) */ __webpack_exports__["b"] = getPrefixedStyle;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_static_createPrefixer__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_static_createPrefixer__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_static_createPrefixer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_static_createPrefixer__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_dynamic_createPrefixer__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_dynamic_createPrefixer__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_dynamic_createPrefixer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_dynamic_createPrefixer__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_exenv__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_exenv___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_exenv__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prefix_data_static__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__prefix_data_dynamic__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prefix_data_static__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__prefix_data_dynamic__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__camel_case_props_to_dash_case__ = __webpack_require__(29);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -1046,7 +1046,7 @@ function getPrefixedStyle(style, userAgent) {
   var flattenedStyle = flattenStyleValues(prefixedStyle);
   return flattenedStyle;
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(70), __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(64), __webpack_require__(2)))
 
 /***/ }),
 /* 17 */
@@ -1313,7 +1313,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(57);
+var isTextNode = __webpack_require__(51);
 
 /*eslint-disable no-bitwise */
 
@@ -1798,14 +1798,14 @@ function enhanceWithRadium(configOrComposedComponent) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__append_important_to_each_value__ = __webpack_require__(69);
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__append_important_to_each_value__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_rule_set_to_string__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__get_state__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__get_state_key__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__get_state_key__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__clean_state_key__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__get_radium_style_state__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__hash__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__merge_styles__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__merge_styles__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__plugins___ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_exenv__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_exenv___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_exenv__);
@@ -2418,7 +2418,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = hyphenateProperty;
 
-var _hyphenateStyleName = __webpack_require__(91);
+var _hyphenateStyleName = __webpack_require__(85);
 
 var _hyphenateStyleName2 = _interopRequireDefault(_hyphenateStyleName);
 
@@ -2501,14 +2501,14 @@ function hash(text) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__check_props_plugin__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__keyframes_plugin__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__merge_style_array_plugin__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prefix_plugin__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__remove_nested_styles_plugin__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resolve_interaction_styles_plugin__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resolve_media_queries_plugin__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__visited_plugin__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__check_props_plugin__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__keyframes_plugin__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__merge_style_array_plugin__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prefix_plugin__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__remove_nested_styles_plugin__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resolve_interaction_styles_plugin__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resolve_media_queries_plugin__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__visited_plugin__ = __webpack_require__(109);
 
 
 
@@ -2558,7 +2558,7 @@ var _boxStyle = __webpack_require__(41);
 
 var _boxStyle2 = _interopRequireDefault(_boxStyle);
 
-var _CurrentValue = __webpack_require__(133);
+var _CurrentValue = __webpack_require__(127);
 
 var _CurrentValue2 = _interopRequireDefault(_CurrentValue);
 
@@ -2566,11 +2566,11 @@ var _NewValue = __webpack_require__(42);
 
 var _NewValue2 = _interopRequireDefault(_NewValue);
 
-var _NewRunningValue = __webpack_require__(135);
+var _NewRunningValue = __webpack_require__(129);
 
 var _NewRunningValue2 = _interopRequireDefault(_NewRunningValue);
 
-var _ValueHistory = __webpack_require__(136);
+var _ValueHistory = __webpack_require__(130);
 
 var _ValueHistory2 = _interopRequireDefault(_ValueHistory);
 
@@ -2798,104 +2798,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    header: 'Running (est. 10km)',
-    type: 'min',
-    values: [{
-        value: 57,
-        date: '2018-03-29'
-    }, {
-        value: 64,
-        date: '2018-03-26'
-    }, {
-        value: 67,
-        date: '2018-03-12'
-    }, {
-        value: 64,
-        date: '2018-03-01'
-    }, {
-        value: 62,
-        date: '2018-02-26'
-    }, {
-        value: 67,
-        date: '2018-02-10'
-    }, {
-        value: 72,
-        date: '2018-01-25'
-    }, {
-        value: 80,
-        date: '2018-01-16'
-    }, {
-        value: 82,
-        date: '2018-01-02'
-    }]
-};
-
-/***/ }),
-/* 49 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    header: 'Weight',
-    type: 'kg',
-    placeholder: 'Current Weight',
-    values: [{
-        value: 103,
-        date: '2018-04-03'
-    }, {
-        value: 104,
-        date: '2018-03-25'
-    }, {
-        value: 106,
-        date: '2018-03-22'
-    }, {
-        value: 107,
-        date: '2018-03-18'
-    }, {
-        value: 108,
-        date: '2018-03-15'
-    }, {
-        value: 110,
-        date: '2018-03-12'
-    }, {
-        value: 109,
-        date: '2018-03-10'
-    }, {
-        value: 110,
-        date: '2018-03-08'
-    }, {
-        value: 112,
-        date: '2018-03-04'
-    }, {
-        value: 111,
-        date: '2018-03-03'
-    }, {
-        value: 112,
-        date: '2018-03-01'
-    }]
-};
-
-/***/ }),
-/* 50 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2920,14 +2823,14 @@ exports.default = {
 };
 
 /***/ }),
-/* 51 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(52);
+module.exports = __webpack_require__(46);
 
 
 /***/ }),
-/* 52 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2937,11 +2840,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(55);
+var _reactDom = __webpack_require__(49);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(64);
+var _App = __webpack_require__(58);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -2950,7 +2853,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ }),
-/* 53 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2978,7 +2881,7 @@ isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 
 /***/ }),
-/* 54 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4343,7 +4246,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 55 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4381,15 +4284,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(56);
+  module.exports = __webpack_require__(50);
 } else {
-  module.exports = __webpack_require__(59);
+  module.exports = __webpack_require__(53);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 56 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4625,7 +4528,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 
 
 /***/ }),
-/* 57 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4640,7 +4543,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
  * @typechecks
  */
 
-var isNode = __webpack_require__(58);
+var isNode = __webpack_require__(52);
 
 /**
  * @param {*} object The object to check.
@@ -4653,7 +4556,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 58 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4681,7 +4584,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 59 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4715,8 +4618,8 @@ var containsNode = __webpack_require__(22);
 var focusNode = __webpack_require__(23);
 var emptyObject = __webpack_require__(8);
 var checkPropTypes = __webpack_require__(11);
-var hyphenateStyleName = __webpack_require__(60);
-var camelizeStyleName = __webpack_require__(62);
+var hyphenateStyleName = __webpack_require__(54);
+var camelizeStyleName = __webpack_require__(56);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -20083,7 +19986,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 60 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20098,7 +20001,7 @@ module.exports = reactDom;
 
 
 
-var hyphenate = __webpack_require__(61);
+var hyphenate = __webpack_require__(55);
 
 var msPattern = /^ms-/;
 
@@ -20125,7 +20028,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 61 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20161,7 +20064,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 62 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20176,7 +20079,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(63);
+var camelize = __webpack_require__(57);
 
 var msPattern = /^-ms-/;
 
@@ -20204,7 +20107,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 63 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20239,7 +20142,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 64 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20255,15 +20158,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Page = __webpack_require__(65);
+var _Page = __webpack_require__(59);
 
 var _Page2 = _interopRequireDefault(_Page);
 
-var _BoxContainer = __webpack_require__(131);
+var _BoxContainer = __webpack_require__(125);
 
 var _BoxContainer2 = _interopRequireDefault(_BoxContainer);
 
-var _AppContent = __webpack_require__(143);
+var _AppContent = __webpack_require__(137);
 
 var _AppContent2 = _interopRequireDefault(_AppContent);
 
@@ -20320,7 +20223,7 @@ var App = function (_React$Component) {
 exports.default = App;
 
 /***/ }),
-/* 65 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20336,23 +20239,23 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Header = __webpack_require__(66);
+var _Header = __webpack_require__(60);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Content = __webpack_require__(121);
+var _Content = __webpack_require__(115);
 
 var _Content2 = _interopRequireDefault(_Content);
 
-var _Footer = __webpack_require__(126);
+var _Footer = __webpack_require__(120);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _pageStyles = __webpack_require__(129);
+var _pageStyles = __webpack_require__(123);
 
 var _pageStyles2 = _interopRequireDefault(_pageStyles);
 
-var _pageData = __webpack_require__(130);
+var _pageData = __webpack_require__(124);
 
 var _pageData2 = _interopRequireDefault(_pageData);
 
@@ -20393,7 +20296,7 @@ var Page = function (_React$Component) {
 exports.default = Page;
 
 /***/ }),
-/* 66 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20413,7 +20316,7 @@ var _NavButton = __webpack_require__(24);
 
 var _NavButton2 = _interopRequireDefault(_NavButton);
 
-var _NavBurger = __webpack_require__(120);
+var _NavBurger = __webpack_require__(114);
 
 var _NavBurger2 = _interopRequireDefault(_NavBurger);
 
@@ -20632,7 +20535,7 @@ var Header = function (_React$Component) {
 exports.default = Header;
 
 /***/ }),
-/* 67 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21182,7 +21085,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 68 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21247,7 +21150,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 69 */
+/* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21264,7 +21167,7 @@ function appendImportantToEachValue(style) {
 }
 
 /***/ }),
-/* 70 */
+/* 64 */
 /***/ (function(module, exports) {
 
 var g;
@@ -21291,7 +21194,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 71 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21302,7 +21205,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = createPrefixer;
 
-var _prefixProperty = __webpack_require__(72);
+var _prefixProperty = __webpack_require__(66);
 
 var _prefixProperty2 = _interopRequireDefault(_prefixProperty);
 
@@ -21366,7 +21269,7 @@ function createPrefixer(_ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 72 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21405,7 +21308,7 @@ function prefixProperty(prefixProperties, property, style) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 73 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21419,11 +21322,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.default = createPrefixer;
 
-var _getBrowserInformation = __webpack_require__(74);
+var _getBrowserInformation = __webpack_require__(68);
 
 var _getBrowserInformation2 = _interopRequireDefault(_getBrowserInformation);
 
-var _getPrefixedKeyframes = __webpack_require__(77);
+var _getPrefixedKeyframes = __webpack_require__(71);
 
 var _getPrefixedKeyframes2 = _interopRequireDefault(_getPrefixedKeyframes);
 
@@ -21586,7 +21489,7 @@ function createPrefixer(_ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 74 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21597,7 +21500,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = getBrowserInformation;
 
-var _bowser = __webpack_require__(75);
+var _bowser = __webpack_require__(69);
 
 var _bowser2 = _interopRequireDefault(_bowser);
 
@@ -21723,7 +21626,7 @@ function getBrowserInformation(userAgent) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 75 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -21734,7 +21637,7 @@ module.exports = exports["default"];
 
 !function (root, name, definition) {
   if (typeof module != 'undefined' && module.exports) module.exports = definition()
-  else if (true) __webpack_require__(76)(name, definition)
+  else if (true) __webpack_require__(70)(name, definition)
   else root[name] = definition()
 }(this, 'bowser', function () {
   /**
@@ -22349,7 +22252,7 @@ module.exports = exports["default"];
 
 
 /***/ }),
-/* 76 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = function() {
@@ -22358,7 +22261,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 77 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22379,33 +22282,33 @@ function getPrefixedKeyframes(browserName, browserVersion, cssPrefix) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 78 */
+/* 72 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_static_plugins_calc__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_static_plugins_calc__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_static_plugins_calc___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_static_plugins_calc__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_static_plugins_crossFade__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_static_plugins_crossFade__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_static_plugins_crossFade___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_static_plugins_crossFade__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inline_style_prefixer_static_plugins_cursor__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inline_style_prefixer_static_plugins_cursor__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inline_style_prefixer_static_plugins_cursor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_inline_style_prefixer_static_plugins_cursor__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_inline_style_prefixer_static_plugins_filter__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_inline_style_prefixer_static_plugins_filter__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_inline_style_prefixer_static_plugins_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_inline_style_prefixer_static_plugins_filter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_inline_style_prefixer_static_plugins_flex__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_inline_style_prefixer_static_plugins_flex__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_inline_style_prefixer_static_plugins_flex___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_inline_style_prefixer_static_plugins_flex__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_inline_style_prefixer_static_plugins_flexboxIE__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_inline_style_prefixer_static_plugins_flexboxIE__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_inline_style_prefixer_static_plugins_flexboxIE___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_inline_style_prefixer_static_plugins_flexboxIE__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_inline_style_prefixer_static_plugins_flexboxOld__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_inline_style_prefixer_static_plugins_flexboxOld__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_inline_style_prefixer_static_plugins_flexboxOld___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_inline_style_prefixer_static_plugins_flexboxOld__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_inline_style_prefixer_static_plugins_gradient__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_inline_style_prefixer_static_plugins_gradient__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_inline_style_prefixer_static_plugins_gradient___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_inline_style_prefixer_static_plugins_gradient__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_inline_style_prefixer_static_plugins_imageSet__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_inline_style_prefixer_static_plugins_imageSet__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_inline_style_prefixer_static_plugins_imageSet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_inline_style_prefixer_static_plugins_imageSet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_inline_style_prefixer_static_plugins_position__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_inline_style_prefixer_static_plugins_position__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_inline_style_prefixer_static_plugins_position___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_inline_style_prefixer_static_plugins_position__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_inline_style_prefixer_static_plugins_sizing__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_inline_style_prefixer_static_plugins_sizing__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_inline_style_prefixer_static_plugins_sizing___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_inline_style_prefixer_static_plugins_sizing__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_inline_style_prefixer_static_plugins_transition__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_inline_style_prefixer_static_plugins_transition__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_inline_style_prefixer_static_plugins_transition___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_inline_style_prefixer_static_plugins_transition__);
 
 
@@ -22558,7 +22461,7 @@ var wmms = ['Webkit', 'Moz', 'ms'];
 });
 
 /***/ }),
-/* 79 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22586,7 +22489,7 @@ function calc(property, value) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 80 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22615,7 +22518,7 @@ function crossFade(property, value) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 81 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22644,7 +22547,7 @@ function cursor(property, value) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 82 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22673,7 +22576,7 @@ function filter(property, value) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 83 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22696,7 +22599,7 @@ function flex(property, value) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 84 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22731,7 +22634,7 @@ function flexboxIE(property, value, style) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 85 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22776,7 +22679,7 @@ function flexboxOld(property, value, style) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 86 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22807,7 +22710,7 @@ function gradient(property, value) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 87 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22836,7 +22739,7 @@ function imageSet(property, value) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 88 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22854,7 +22757,7 @@ function position(property, value) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 89 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22893,7 +22796,7 @@ function sizing(property, value) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 90 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22992,7 +22895,7 @@ function transition(property, value, style, propertyPrefixMap) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 91 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23015,33 +22918,33 @@ module.exports = hyphenateStyleName;
 
 
 /***/ }),
-/* 92 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_dynamic_plugins_calc__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_dynamic_plugins_calc__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_dynamic_plugins_calc___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_inline_style_prefixer_dynamic_plugins_calc__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_dynamic_plugins_crossFade__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_dynamic_plugins_crossFade__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_dynamic_plugins_crossFade___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_inline_style_prefixer_dynamic_plugins_crossFade__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inline_style_prefixer_dynamic_plugins_cursor__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inline_style_prefixer_dynamic_plugins_cursor__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inline_style_prefixer_dynamic_plugins_cursor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_inline_style_prefixer_dynamic_plugins_cursor__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_inline_style_prefixer_dynamic_plugins_filter__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_inline_style_prefixer_dynamic_plugins_filter__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_inline_style_prefixer_dynamic_plugins_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_inline_style_prefixer_dynamic_plugins_filter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_inline_style_prefixer_dynamic_plugins_flex__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_inline_style_prefixer_dynamic_plugins_flex__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_inline_style_prefixer_dynamic_plugins_flex___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_inline_style_prefixer_dynamic_plugins_flex__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_inline_style_prefixer_dynamic_plugins_flexboxIE__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_inline_style_prefixer_dynamic_plugins_flexboxIE__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_inline_style_prefixer_dynamic_plugins_flexboxIE___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_inline_style_prefixer_dynamic_plugins_flexboxIE__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_inline_style_prefixer_dynamic_plugins_flexboxOld__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_inline_style_prefixer_dynamic_plugins_flexboxOld__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_inline_style_prefixer_dynamic_plugins_flexboxOld___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_inline_style_prefixer_dynamic_plugins_flexboxOld__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_inline_style_prefixer_dynamic_plugins_gradient__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_inline_style_prefixer_dynamic_plugins_gradient__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_inline_style_prefixer_dynamic_plugins_gradient___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_inline_style_prefixer_dynamic_plugins_gradient__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_inline_style_prefixer_dynamic_plugins_imageSet__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_inline_style_prefixer_dynamic_plugins_imageSet__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_inline_style_prefixer_dynamic_plugins_imageSet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_inline_style_prefixer_dynamic_plugins_imageSet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_inline_style_prefixer_dynamic_plugins_position__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_inline_style_prefixer_dynamic_plugins_position__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_inline_style_prefixer_dynamic_plugins_position___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_inline_style_prefixer_dynamic_plugins_position__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_inline_style_prefixer_dynamic_plugins_sizing__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_inline_style_prefixer_dynamic_plugins_sizing__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_inline_style_prefixer_dynamic_plugins_sizing___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_inline_style_prefixer_dynamic_plugins_sizing__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_inline_style_prefixer_dynamic_plugins_transition__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_inline_style_prefixer_dynamic_plugins_transition__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_inline_style_prefixer_dynamic_plugins_transition___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_inline_style_prefixer_dynamic_plugins_transition__);
 
 
@@ -23688,7 +23591,7 @@ module.exports = hyphenateStyleName;
 });
 
 /***/ }),
-/* 93 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23718,7 +23621,7 @@ function calc(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 94 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23748,7 +23651,7 @@ function crossFade(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 95 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23796,7 +23699,7 @@ function cursor(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 96 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23826,7 +23729,7 @@ function filter(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 97 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23860,7 +23763,7 @@ function flex(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 98 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23921,7 +23824,7 @@ function flexboxIE(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 99 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23995,7 +23898,7 @@ function flexboxOld(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 100 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24026,7 +23929,7 @@ function gradient(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 101 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24055,7 +23958,7 @@ function imageSet(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 102 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24084,7 +23987,7 @@ function position(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 103 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24133,7 +24036,7 @@ function sizing(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 104 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24192,7 +24095,7 @@ function transition(property, value, style, _ref) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 105 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24203,7 +24106,7 @@ var getStateKey = function getStateKey(renderedElement) {
 /* harmony default export */ __webpack_exports__["a"] = (getStateKey);
 
 /***/ }),
-/* 106 */
+/* 100 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24262,7 +24165,7 @@ function mergeStyles(styles) {
 }
 
 /***/ }),
-/* 107 */
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24321,7 +24224,7 @@ if (process.env.NODE_ENV !== 'production') {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
-/* 108 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24352,7 +24255,7 @@ function keyframesPlugin(_ref // eslint-disable-line no-shadow
 }
 
 /***/ }),
-/* 109 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24372,7 +24275,7 @@ var mergeStyleArrayPlugin = function mergeStyleArrayPlugin(_ref) {
 /* harmony default export */ __webpack_exports__["a"] = (mergeStyleArrayPlugin);
 
 /***/ }),
-/* 110 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24392,7 +24295,7 @@ function prefixPlugin(_ref // eslint-disable-line no-shadow
 }
 
 /***/ }),
-/* 111 */
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24418,11 +24321,11 @@ function removeNestedStyles(_ref) {
 }
 
 /***/ }),
-/* 112 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mouse_up_listener__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mouse_up_listener__ = __webpack_require__(107);
 
 
 
@@ -24538,7 +24441,7 @@ var resolveInteractionStyles = function resolveInteractionStyles(config) {
 /* harmony default export */ __webpack_exports__["a"] = (resolveInteractionStyles);
 
 /***/ }),
-/* 113 */
+/* 107 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24580,7 +24483,7 @@ var subscribe = function subscribe(callback) {
 });
 
 /***/ }),
-/* 114 */
+/* 108 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24754,7 +24657,7 @@ function resolveMediaQueries(_ref3) {
 }
 
 /***/ }),
-/* 115 */
+/* 109 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24797,7 +24700,7 @@ function visited(_ref) {
 }
 
 /***/ }),
-/* 116 */
+/* 110 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24907,7 +24810,7 @@ var Style = (_temp = _class = function (_PureComponent) {
 /* harmony default export */ __webpack_exports__["a"] = (Style);
 
 /***/ }),
-/* 117 */
+/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24917,7 +24820,7 @@ var Style = (_temp = _class = function (_PureComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__enhancer__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style_keeper__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__style_sheet__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__style_sheet__ = __webpack_require__(112);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -24999,7 +24902,7 @@ StyleRoot = Object(__WEBPACK_IMPORTED_MODULE_2__enhancer__["a" /* default */])(S
 /* harmony default export */ __webpack_exports__["a"] = (StyleRoot);
 
 /***/ }),
-/* 118 */
+/* 112 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25077,7 +24980,7 @@ var StyleSheet = (_temp = _class = function (_PureComponent) {
 
 
 /***/ }),
-/* 119 */
+/* 113 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25105,7 +25008,7 @@ function keyframes(keyframeRules, name) {
 }
 
 /***/ }),
-/* 120 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25184,7 +25087,7 @@ var NavBurger = function (_React$Component) {
 exports.default = (0, _radium2.default)(NavBurger);
 
 /***/ }),
-/* 121 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25200,11 +25103,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Articles = __webpack_require__(122);
+var _Articles = __webpack_require__(116);
 
 var _Articles2 = _interopRequireDefault(_Articles);
 
-var _contentStyles = __webpack_require__(125);
+var _contentStyles = __webpack_require__(119);
 
 var _contentStyles2 = _interopRequireDefault(_contentStyles);
 
@@ -25246,7 +25149,7 @@ var Content = function (_React$Component) {
 exports.default = Content;
 
 /***/ }),
-/* 122 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25262,7 +25165,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Article = __webpack_require__(123);
+var _Article = __webpack_require__(117);
 
 var _Article2 = _interopRequireDefault(_Article);
 
@@ -25303,7 +25206,7 @@ var Articles = function (_React$Component) {
 exports.default = Articles;
 
 /***/ }),
-/* 123 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25321,7 +25224,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _articleStyles = __webpack_require__(124);
+var _articleStyles = __webpack_require__(118);
 
 var _articleStyles2 = _interopRequireDefault(_articleStyles);
 
@@ -25404,7 +25307,7 @@ var Article = function (_React$Component) {
 exports.default = Article;
 
 /***/ }),
-/* 124 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25438,7 +25341,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 125 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25467,7 +25370,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 126 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25487,11 +25390,11 @@ var _NavButton = __webpack_require__(24);
 
 var _NavButton2 = _interopRequireDefault(_NavButton);
 
-var _NavExternal = __webpack_require__(127);
+var _NavExternal = __webpack_require__(121);
 
 var _NavExternal2 = _interopRequireDefault(_NavExternal);
 
-var _footerStyles = __webpack_require__(128);
+var _footerStyles = __webpack_require__(122);
 
 var _footerStyles2 = _interopRequireDefault(_footerStyles);
 
@@ -25559,7 +25462,7 @@ var Footer = function (_React$Component) {
 exports.default = Footer;
 
 /***/ }),
-/* 127 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25626,7 +25529,7 @@ var NavExternal = function (_React$Component) {
 exports.default = (0, _radium2.default)(NavExternal);
 
 /***/ }),
-/* 128 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25652,7 +25555,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 129 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25672,7 +25575,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 130 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25723,7 +25626,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 131 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25743,7 +25646,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _boxContainerStyle = __webpack_require__(132);
+var _boxContainerStyle = __webpack_require__(126);
 
 var _boxContainerStyle2 = _interopRequireDefault(_boxContainerStyle);
 
@@ -25751,7 +25654,7 @@ var _Box = __webpack_require__(40);
 
 var _Box2 = _interopRequireDefault(_Box);
 
-var _CreateBox = __webpack_require__(140);
+var _CreateBox = __webpack_require__(134);
 
 var _CreateBox2 = _interopRequireDefault(_CreateBox);
 
@@ -25796,7 +25699,7 @@ var BoxContainer = function (_React$Component) {
 exports.default = (0, _radium2.default)(BoxContainer);
 
 /***/ }),
-/* 132 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25819,7 +25722,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 133 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25839,7 +25742,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _currentValueStyle = __webpack_require__(134);
+var _currentValueStyle = __webpack_require__(128);
 
 var _currentValueStyle2 = _interopRequireDefault(_currentValueStyle);
 
@@ -25908,7 +25811,7 @@ exports.default = (0, _radium2.default)(CurrentValue);
 // <h1>{this.props.value} {this.props.type}</h1>
 
 /***/ }),
-/* 134 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25932,7 +25835,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 135 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26005,7 +25908,7 @@ var NewRunningValue = function (_React$Component) {
 exports.default = (0, _radium2.default)(NewRunningValue);
 
 /***/ }),
-/* 136 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26025,11 +25928,11 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _valueHistoryStyle = __webpack_require__(137);
+var _valueHistoryStyle = __webpack_require__(131);
 
 var _valueHistoryStyle2 = _interopRequireDefault(_valueHistoryStyle);
 
-var _ValuePoint = __webpack_require__(138);
+var _ValuePoint = __webpack_require__(132);
 
 var _ValuePoint2 = _interopRequireDefault(_ValuePoint);
 
@@ -26094,7 +25997,7 @@ var ValueHistory = function (_React$Component) {
 exports.default = (0, _radium2.default)(ValueHistory);
 
 /***/ }),
-/* 137 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26121,7 +26024,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 138 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26141,7 +26044,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _valuePointStyle = __webpack_require__(139);
+var _valuePointStyle = __webpack_require__(133);
 
 var _valuePointStyle2 = _interopRequireDefault(_valuePointStyle);
 
@@ -26197,7 +26100,7 @@ var ValueHistory = function (_React$Component) {
 exports.default = (0, _radium2.default)(ValueHistory);
 
 /***/ }),
-/* 139 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26209,7 +26112,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
     bar: {
         ':hover': {
-            fill: 'red'
+            fill: '#666'
         }
     },
     date: {
@@ -26218,7 +26121,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 140 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26246,7 +26149,7 @@ var _NewValue = __webpack_require__(42);
 
 var _NewValue2 = _interopRequireDefault(_NewValue);
 
-var _WorkoutOptions = __webpack_require__(141);
+var _WorkoutOptions = __webpack_require__(135);
 
 var _WorkoutOptions2 = _interopRequireDefault(_WorkoutOptions);
 
@@ -26296,7 +26199,7 @@ var BoxContainer = function (_React$Component) {
 exports.default = (0, _radium2.default)(BoxContainer);
 
 /***/ }),
-/* 141 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26316,7 +26219,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _workoutOptionsStyle = __webpack_require__(142);
+var _workoutOptionsStyle = __webpack_require__(136);
 
 var _workoutOptionsStyle2 = _interopRequireDefault(_workoutOptionsStyle);
 
@@ -26360,7 +26263,7 @@ var WorkoutOptions = function (_React$Component) {
 exports.default = (0, _radium2.default)(WorkoutOptions);
 
 /***/ }),
-/* 142 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26374,7 +26277,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 143 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26394,49 +26297,73 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _appContentStyle = __webpack_require__(144);
+var _appContentStyle = __webpack_require__(138);
 
 var _appContentStyle2 = _interopRequireDefault(_appContentStyle);
 
-var _Workout = __webpack_require__(145);
+var _Workout = __webpack_require__(139);
 
 var _Workout2 = _interopRequireDefault(_Workout);
 
-var _Profile = __webpack_require__(147);
+var _Profile = __webpack_require__(141);
 
 var _Profile2 = _interopRequireDefault(_Profile);
 
-var _Overview = __webpack_require__(151);
+var _Overview = __webpack_require__(145);
 
 var _Overview2 = _interopRequireDefault(_Overview);
 
-var _Stamp = __webpack_require__(155);
+var _Stamp = __webpack_require__(149);
 
 var _Stamp2 = _interopRequireDefault(_Stamp);
 
-var _pullup = __webpack_require__(161);
+var _pullup = __webpack_require__(151);
 
 var _pullup2 = _interopRequireDefault(_pullup);
 
-var _pushup = __webpack_require__(162);
+var _pushup = __webpack_require__(152);
 
 var _pushup2 = _interopRequireDefault(_pushup);
 
-var _situp = __webpack_require__(163);
+var _situp = __webpack_require__(153);
 
 var _situp2 = _interopRequireDefault(_situp);
 
-var _squat = __webpack_require__(164);
+var _squat = __webpack_require__(154);
 
 var _squat2 = _interopRequireDefault(_squat);
 
-var _running = __webpack_require__(48);
+var _running = __webpack_require__(155);
 
 var _running2 = _interopRequireDefault(_running);
 
-var _weight = __webpack_require__(49);
+var _weight = __webpack_require__(156);
 
 var _weight2 = _interopRequireDefault(_weight);
+
+var _PullupSVG = __webpack_require__(169);
+
+var _PullupSVG2 = _interopRequireDefault(_PullupSVG);
+
+var _PushupSVG = __webpack_require__(170);
+
+var _PushupSVG2 = _interopRequireDefault(_PushupSVG);
+
+var _SitupSVG = __webpack_require__(171);
+
+var _SitupSVG2 = _interopRequireDefault(_SitupSVG);
+
+var _SquatSVG = __webpack_require__(172);
+
+var _SquatSVG2 = _interopRequireDefault(_SquatSVG);
+
+var _RunningSVG = __webpack_require__(173);
+
+var _RunningSVG2 = _interopRequireDefault(_RunningSVG);
+
+var _WeightSVG = __webpack_require__(174);
+
+var _WeightSVG2 = _interopRequireDefault(_WeightSVG);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26462,6 +26389,14 @@ var AppContent = function (_React$Component) {
                 'squat': _squat2.default,
                 'running': _running2.default,
                 'weight': _weight2.default
+            },
+            svgs: {
+                'pullup': _PullupSVG2.default,
+                'pushup': _PushupSVG2.default,
+                'situp': _SitupSVG2.default,
+                'squat': _SquatSVG2.default,
+                'running': _RunningSVG2.default,
+                'weight': _WeightSVG2.default
             }
         };
         return _this;
@@ -26482,7 +26417,7 @@ var AppContent = function (_React$Component) {
                 this.props.page === 1 ? _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Workout2.default, { style: _appContentStyle2.default, data: this.state.mockData }),
+                    _react2.default.createElement(_Workout2.default, { svgs: this.state.svgs, style: _appContentStyle2.default, data: this.state.mockData }),
                     _react2.default.createElement(_Stamp2.default, {
                         onTop: false,
                         text: this.props.source,
@@ -26508,7 +26443,7 @@ var AppContent = function (_React$Component) {
                 this.props.page === 3 ? _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Overview2.default, { style: _appContentStyle2.default, data: this.state.mockData }),
+                    _react2.default.createElement(_Overview2.default, { svgs: this.state.svgs, style: _appContentStyle2.default, data: this.state.mockData }),
                     _react2.default.createElement(_Stamp2.default, {
                         onTop: false,
                         text: this.props.source,
@@ -26528,7 +26463,7 @@ var AppContent = function (_React$Component) {
 exports.default = (0, _radium2.default)(AppContent);
 
 /***/ }),
-/* 144 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26554,11 +26489,27 @@ exports.default = {
     listItem: {
         margin: '0 0 8px 0',
         listStyleType: 'none'
+    },
+    icon: {
+        backgroundColor: '#ddd',
+        maxWidth: 70,
+        margin: '0 5px',
+        padding: '10px',
+        borderRadius: '10px',
+        ':focus': {
+            backgroundColor: '#aaa'
+        },
+        ':hover': {
+            backgroundColor: '#aaa'
+        },
+        ':active': {
+            backgroundColor: '#aaa'
+        }
     }
 };
 
 /***/ }),
-/* 145 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26577,10 +26528,6 @@ var _react2 = _interopRequireDefault(_react);
 var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
-
-var _workoutStyle = __webpack_require__(146);
-
-var _workoutStyle2 = _interopRequireDefault(_workoutStyle);
 
 var _Box = __webpack_require__(40);
 
@@ -26649,12 +26596,16 @@ var WorkoutComponent = function (_React$Component) {
             var _this2 = this;
 
             var icons = this.state.types.map(function (type, index) {
+                var Svg = _this2.props.svgs[type];
                 return _react2.default.createElement(
                     'span',
-                    { key: index + 1, onClick: function onClick() {
+                    { key: index + 1,
+                        onClick: function onClick() {
                             return _this2.setState({ tab: index + 1 });
                         } },
-                    _react2.default.createElement('img', { key: index + 1, style: _workoutStyle2.default.icon, src: '/images/' + type + '.svg', alt: type })
+                    _react2.default.createElement(Svg, {
+                        width: 100 / (_this2.state.types.length * 1.4) + 'vw',
+                        style: _this2.props.style.icon })
                 );
             });
             var box = this.state.types.map(function (type, index) {
@@ -26680,18 +26631,17 @@ var WorkoutComponent = function (_React$Component) {
                         values: _this2.state[type] });
                 }
             });
-            var sp = this.props.style;
             return _react2.default.createElement(
                 'div',
                 null,
                 _react2.default.createElement(
                     'h1',
-                    { style: sp.textMargin },
+                    { style: this.props.style.textMargin },
                     'Workouts'
                 ),
                 _react2.default.createElement(
                     'p',
-                    { style: sp.headerMargin },
+                    { style: this.props.style.headerMargin },
                     icons
                 ),
                 box
@@ -26705,37 +26655,8 @@ var WorkoutComponent = function (_React$Component) {
 exports.default = (0, _radium2.default)(WorkoutComponent);
 
 /***/ }),
-/* 146 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    icon: {
-        width: '100%',
-        maxWidth: '50px',
-        backgroundColor: '#ddd',
-        margin: '0 5px',
-        padding: '10px',
-        borderRadius: '10px',
-        ':focus': {
-            backgroundColor: '#aaa'
-        },
-        ':hover': {
-            backgroundColor: '#aaa'
-        },
-        ':active': {
-            backgroundColor: '#aaa'
-        }
-    }
-};
-
-/***/ }),
-/* 147 */
+/* 140 */,
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26755,15 +26676,15 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _profileStyle = __webpack_require__(148);
+var _profileStyle = __webpack_require__(142);
 
 var _profileStyle2 = _interopRequireDefault(_profileStyle);
 
-var _ProfileSelect = __webpack_require__(149);
+var _ProfileSelect = __webpack_require__(143);
 
 var _ProfileSelect2 = _interopRequireDefault(_ProfileSelect);
 
-var _defaultProfile = __webpack_require__(50);
+var _defaultProfile = __webpack_require__(44);
 
 var _defaultProfile2 = _interopRequireDefault(_defaultProfile);
 
@@ -26893,7 +26814,7 @@ var profile = function (_React$Component) {
 exports.default = (0, _radium2.default)(profile);
 
 /***/ }),
-/* 148 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26905,7 +26826,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {};
 
 /***/ }),
-/* 149 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26925,7 +26846,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _profileSelectStyle = __webpack_require__(150);
+var _profileSelectStyle = __webpack_require__(144);
 
 var _profileSelectStyle2 = _interopRequireDefault(_profileSelectStyle);
 
@@ -26972,7 +26893,7 @@ var ProfileSelect = function (_React$Component) {
 exports.default = (0, _radium2.default)(ProfileSelect);
 
 /***/ }),
-/* 150 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26989,7 +26910,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 151 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26998,8 +26919,6 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -27011,15 +26930,15 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _overviewStyle = __webpack_require__(152);
+var _overviewStyle = __webpack_require__(146);
 
 var _overviewStyle2 = _interopRequireDefault(_overviewStyle);
 
-var _Graph = __webpack_require__(153);
+var _Graph = __webpack_require__(161);
 
 var _Graph2 = _interopRequireDefault(_Graph);
 
-var _defaultProfile = __webpack_require__(50);
+var _defaultProfile = __webpack_require__(44);
 
 var _defaultProfile2 = _interopRequireDefault(_defaultProfile);
 
@@ -27044,7 +26963,7 @@ var Overview = function (_React$Component) {
             types.push(type);
         }
         _this.state = {
-            tab: 6,
+            tab: 1,
             types: types
         };
         return _this;
@@ -27056,17 +26975,16 @@ var Overview = function (_React$Component) {
             var _this2 = this;
 
             var icons = this.state.types.map(function (type, index) {
+                var Svg = _this2.props.svgs[type];
                 return _react2.default.createElement(
                     'span',
                     { key: index + 1,
                         onClick: function onClick() {
                             return _this2.setState({ tab: index + 1 });
                         } },
-                    _react2.default.createElement('img', {
-                        key: index + 1,
-                        style: _extends({}, _overviewStyle2.default.icon, { width: 100 / (_this2.state.types.length * 1.4) + 'vw' }),
-                        src: '/images/' + type + '.svg',
-                        alt: type })
+                    _react2.default.createElement(Svg, {
+                        width: 100 / (_this2.state.types.length * 1.4) + 'vw',
+                        style: _this2.props.style.icon })
                 );
             });
             var graph = this.state.types.map(function (type, index) {
@@ -27081,18 +26999,17 @@ var Overview = function (_React$Component) {
                     });
                 }
             });
-            var sp = this.props.style;
             return _react2.default.createElement(
                 'div',
                 null,
                 _react2.default.createElement(
                     'h1',
-                    { style: sp.textMargin },
+                    { style: this.props.style.textMargin },
                     'Overview'
                 ),
                 _react2.default.createElement(
                     'p',
-                    { style: sp.headerMargin },
+                    { style: this.props.style.headerMargin },
                     icons
                 ),
                 graph
@@ -27105,8 +27022,14 @@ var Overview = function (_React$Component) {
 
 exports.default = (0, _radium2.default)(Overview);
 
+// <img 
+//                                 key={index + 1} 
+//                                 style={{...this.props.style.icon, width: 100 / (this.state.types.length * 1.4) + 'vw'}} 
+//                                 src={'/images/' + type + '.svg'} 
+//                                 alt={type} />
+
 /***/ }),
-/* 152 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27115,27 +27038,12 @@ exports.default = (0, _radium2.default)(Overview);
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = {
-    icon: {
-        backgroundColor: '#ddd',
-        maxWidth: 70,
-        margin: '0 5px',
-        padding: '10px',
-        borderRadius: '10px',
-        ':focus': {
-            backgroundColor: '#aaa'
-        },
-        ':hover': {
-            backgroundColor: '#aaa'
-        },
-        ':active': {
-            backgroundColor: '#aaa'
-        }
-    }
-};
+exports.default = {};
 
 /***/ }),
-/* 153 */
+/* 147 */,
+/* 148 */,
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27157,359 +27065,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _graphStyle = __webpack_require__(154);
-
-var _graphStyle2 = _interopRequireDefault(_graphStyle);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Graph = function (_React$Component) {
-    _inherits(Graph, _React$Component);
-
-    function Graph(props) {
-        _classCallCheck(this, Graph);
-
-        var _this = _possibleConstructorReturn(this, (Graph.__proto__ || Object.getPrototypeOf(Graph)).call(this, props));
-
-        var currentDate = new Date();
-        var currentDateISO = currentDate.toISOString().substring(0, 10);
-        var firstDate = _this.props.values[_this.props.values.length - 1].date;
-        var startTime = new Date(firstDate).getTime(firstDate);
-        var currentTime = currentDate.getTime();
-        var timeDiff = currentTime - startTime;
-        var timeDiffIncrement = timeDiff / 3;
-        var secondDate = new Date(startTime + timeDiffIncrement).toISOString().substring(0, 10);
-        var thirdDate = new Date(startTime + timeDiffIncrement * 2).toISOString().substring(0, 10);
-        var wp = _this.props.width / 100;
-        var hp = _this.props.height / 100;
-
-        _this.state = {
-            wp: wp,
-            hp: hp,
-            verticalLineTextXpos: wp * 12,
-            activeChartLeft: wp * 15,
-            activeChartRight: wp * 100,
-            activeChartWidth: wp * 85,
-            activeChartTop: hp * 20,
-            activeChartBottom: hp * 99,
-            activeChartHeight: hp * 79,
-            horizontalLineTextYpos: hp * 95,
-            currentDate: currentDateISO.split('-')[1] + '-' + currentDateISO.split('-')[2],
-            startDate: firstDate.split('-')[1] + '-' + firstDate.split('-')[2],
-            secondDate: secondDate.split('-')[1] + '-' + secondDate.split('-')[2],
-            thirdDate: thirdDate.split('-')[1] + '-' + thirdDate.split('-')[2],
-            startTime: startTime,
-            currentTime: currentTime,
-            timeDiff: timeDiff,
-            xLabelWidth: 50,
-            maxValueLogged: Math.max.apply(Math, _this.props.values.map(function (v) {
-                return v.value;
-            }))
-        };
-        return _this;
-    }
-
-    _createClass(Graph, [{
-        key: 'getDataPoints',
-        value: function getDataPoints(maxValue) {
-            var _this2 = this;
-
-            var startX = this.state.activeChartLeft + 20;
-            var endX = this.state.activeChartRight - 20;
-
-            return this.props.values.map(function (point) {
-                return {
-                    key: point.date + point.value,
-                    x: startX + (endX - startX) * (1 - (_this2.state.currentTime - new Date(point.date).getTime()) / _this2.state.timeDiff),
-                    y: _this2.state.activeChartTop + _this2.state.activeChartHeight / (maxValue / (maxValue - point.value)),
-                    dataValue: point.value,
-                    radius: 4
-                };
-            });
-        }
-    }, {
-        key: 'getTargetLineHeight',
-        value: function getTargetLineHeight(maxValue) {
-            var multiplier = this.props.target / maxValue;
-            return multiplier !== 1 ? (1 - multiplier) * this.state.activeChartHeight + this.state.activeChartTop : this.state.activeChartTop;
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var maxValue = this.state.maxValueLogged > this.props.target ? this.state.maxValueLogged : this.props.target;
-            var targetLineHeight = this.getTargetLineHeight(maxValue);
-
-            var dataPoints = this.getDataPoints(maxValue);
-            var linePoints = [];
-            var linePointsCounter = 0;
-            for (var i = 1; i < dataPoints.length; i++) {
-                linePoints.push({
-                    key: dataPoints[i].key,
-                    x1: dataPoints[i - 1].x,
-                    y1: dataPoints[i - 1].y,
-                    x2: dataPoints[i].x,
-                    y2: dataPoints[i].y
-                });
-            }
-            var lines = linePoints.map(function (line) {
-                return _react2.default.createElement('line', {
-                    style: _graphStyle2.default.dataLine,
-                    key: line.key,
-                    x1: line.x1,
-                    y1: line.y1,
-                    x2: line.x2,
-                    y2: line.y2 });
-            });
-            var circles = dataPoints.map(function (point) {
-                return _react2.default.createElement('circle', {
-                    style: _graphStyle2.default.dataCircle,
-                    key: point.key,
-                    cx: point.x,
-                    cy: point.y,
-                    'data-value': point.dataValue,
-                    r: point.radius });
-            });
-
-            return _react2.default.createElement(
-                'div',
-                { style: _graphStyle2.default.container },
-                _react2.default.createElement(
-                    'h2',
-                    null,
-                    this.props.header
-                ),
-                _react2.default.createElement(
-                    'svg',
-                    { style: _graphStyle2.default.chart, width: this.props.width, height: this.props.height },
-                    _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.gridLine },
-                        _react2.default.createElement('line', {
-                            x1: this.state.activeChartLeft,
-                            y1: this.state.activeChartTop - 25,
-                            x2: this.state.activeChartLeft,
-                            y2: this.state.activeChartBottom })
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.gridLine },
-                        _react2.default.createElement('line', {
-                            x1: this.state.activeChartLeft,
-                            y1: this.state.activeChartBottom,
-                            x2: this.state.activeChartRight,
-                            y2: this.state.activeChartBottom })
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { style: _graphStyle2.default.targetLine },
-                        _react2.default.createElement('line', {
-                            x1: this.state.activeChartLeft,
-                            y1: targetLineHeight,
-                            x2: this.state.activeChartRight,
-                            y2: targetLineHeight })
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { className: 'labels y-labels' },
-                        _react2.default.createElement(
-                            'text',
-                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartTop, textAnchor: 'end' },
-                            maxValue
-                        ),
-                        _react2.default.createElement(
-                            'text',
-                            { x: this.state.verticalLineTextXpos, y: (this.state.activeChartBottom - this.state.activeChartTop) * 0.25 + this.state.activeChartTop, textAnchor: 'end' },
-                            Math.round(maxValue * 0.75)
-                        ),
-                        _react2.default.createElement(
-                            'text',
-                            { x: this.state.verticalLineTextXpos, y: (this.state.activeChartBottom - this.state.activeChartTop) * 0.5 + this.state.activeChartTop, textAnchor: 'end' },
-                            Math.round(maxValue * 0.5)
-                        ),
-                        _react2.default.createElement(
-                            'text',
-                            { x: this.state.verticalLineTextXpos, y: (this.state.activeChartBottom - this.state.activeChartTop) * 0.75 + this.state.activeChartTop, textAnchor: 'end' },
-                            Math.round(maxValue * 0.25)
-                        ),
-                        _react2.default.createElement(
-                            'text',
-                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartBottom, textAnchor: 'end' },
-                            '0'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { className: 'data', 'data-setname': 'Lines' },
-                        lines
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { className: 'data', 'data-setname': 'Circles' },
-                        circles
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { style: _extends({}, _graphStyle2.default.xLabels, { marginLeft: this.state.activeChartLeft, width: this.state.activeChartRight - this.state.activeChartLeft }) },
-                    _react2.default.createElement(
-                        'svg',
-                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
-                        _react2.default.createElement(
-                            'g',
-                            null,
-                            _react2.default.createElement(
-                                'text',
-                                { x: '-20', y: '35', transform: 'rotate(-45)' },
-                                this.state.startDate
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'svg',
-                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
-                        _react2.default.createElement(
-                            'g',
-                            null,
-                            _react2.default.createElement(
-                                'text',
-                                { x: '-20', y: '35', transform: 'rotate(-45)' },
-                                this.state.secondDate
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'svg',
-                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
-                        _react2.default.createElement(
-                            'g',
-                            null,
-                            _react2.default.createElement(
-                                'text',
-                                { x: '-20', y: '35', transform: 'rotate(-45)' },
-                                this.state.thirdDate
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'svg',
-                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
-                        _react2.default.createElement(
-                            'g',
-                            null,
-                            _react2.default.createElement(
-                                'text',
-                                { x: '-20', y: '35', transform: 'rotate(-45)' },
-                                this.state.currentDate
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Graph;
-}(_react2.default.Component);
-
-exports.default = (0, _radium2.default)(Graph);
-
-/***/ }),
-/* 154 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    container: {
-        // border: '1px solid red'        
-    },
-    chart: {
-        // border: '1px solid blue',
-        display: 'block'
-    },
-    xLabels: {
-        // border: '2px solid black',        
-        marginTop: '3px',
-        display: 'flex',
-        justifyContent: 'space-between'
-    },
-    xLabel: {
-        // border: '1px solid green'        
-    },
-    gridLine: {
-        stroke: '#ccc',
-        strokeDasharray: 0,
-        strokeWidth: 3
-    },
-    targetLine: {
-        stroke: '#da8353',
-        strokeDasharray: 2,
-        strokeWidth: 2
-    },
-    dataLine: {
-        stroke: '#444',
-        strokeDasharray: 0,
-        strokeWidth: 2
-    },
-    dataCircle: {
-        fill: '#da8353'
-    },
-    xGrid: {
-        point1: {
-            x: 50,
-            y: 30
-        },
-        point2: {
-            x: 50,
-            y: 221
-        }
-    },
-    yGrid: {
-        point1: {
-            x: 50,
-            y: 220
-        },
-        point2: {
-            x: 295,
-            y: 220
-        }
-    }
-};
-
-/***/ }),
-/* 155 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _radium = __webpack_require__(1);
-
-var _radium2 = _interopRequireDefault(_radium);
-
-var _stampStyle = __webpack_require__(156);
+var _stampStyle = __webpack_require__(150);
 
 var _stampStyle2 = _interopRequireDefault(_stampStyle);
 
@@ -27561,7 +27117,7 @@ var Stamp = function (_React$Component) {
 exports.default = (0, _radium2.default)(Stamp);
 
 /***/ }),
-/* 156 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27580,6 +27136,293 @@ exports.default = {
         backgroundColor: 'white',
         fontWeight: 900
     }
+};
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    header: 'Pull-Ups',
+    type: 'rep',
+    placeholder: 'Pull-ups completed',
+    values: [{
+        value: 8,
+        date: '2018-03-28'
+    }, {
+        value: 6,
+        date: '2018-03-25'
+    }, {
+        value: 4,
+        date: '2018-03-18'
+    }, {
+        value: 6,
+        date: '2018-03-15'
+    }, {
+        value: 4,
+        date: '2018-03-12'
+    }, {
+        value: 3,
+        date: '2018-03-10'
+    }, {
+        value: 3,
+        date: '2018-03-08'
+    }, {
+        value: 2,
+        date: '2018-03-04'
+    }, {
+        value: 4,
+        date: '2018-03-03'
+    }, {
+        value: 2,
+        date: '2018-03-01'
+    }]
+};
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    header: 'Push-Ups',
+    type: 'rep',
+    placeholder: 'Push-ups completed',
+    values: [{
+        value: 20,
+        date: '2018-04-02'
+    }, {
+        value: 15,
+        date: '2018-04-01'
+    }, {
+        value: 10,
+        date: '2018-03-28'
+    }, {
+        value: 6,
+        date: '2018-03-18'
+    }, {
+        value: 5,
+        date: '2018-03-15'
+    }, {
+        value: 7,
+        date: '2018-03-12'
+    }, {
+        value: 4,
+        date: '2018-03-10'
+    }, {
+        value: 4,
+        date: '2018-03-08'
+    }, {
+        value: 3,
+        date: '2018-03-04'
+    }, {
+        value: 2,
+        date: '2018-03-03'
+    }, {
+        value: 1,
+        date: '2018-03-01'
+    }]
+};
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    header: 'Sit-Ups',
+    type: 'rep',
+    placeholder: 'Sit-ups completed',
+    values: [{
+        value: 80,
+        date: '2018-03-31'
+    }, {
+        value: 75,
+        date: '2018-03-27'
+    }, {
+        value: 76,
+        date: '2018-03-18'
+    }, {
+        value: 67,
+        date: '2018-03-15'
+    }, {
+        value: 65,
+        date: '2018-03-12'
+    }, {
+        value: 54,
+        date: '2018-03-10'
+    }, {
+        value: 62,
+        date: '2018-03-08'
+    }, {
+        value: 53,
+        date: '2018-03-04'
+    }, {
+        value: 52,
+        date: '2018-03-03'
+    }, {
+        value: 41,
+        date: '2018-03-01'
+    }]
+};
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    header: 'Squats',
+    type: 'rep',
+    placeholder: 'Squats completed',
+    values: [{
+        value: 90,
+        date: '2018-03-29'
+    }, {
+        value: 85,
+        date: '2018-03-25'
+    }, {
+        value: 60,
+        date: '2018-03-22'
+    }, {
+        value: 66,
+        date: '2018-03-18'
+    }, {
+        value: 57,
+        date: '2018-03-15'
+    }, {
+        value: 55,
+        date: '2018-03-12'
+    }, {
+        value: 44,
+        date: '2018-03-10'
+    }, {
+        value: 52,
+        date: '2018-03-08'
+    }, {
+        value: 43,
+        date: '2018-03-04'
+    }, {
+        value: 32,
+        date: '2018-03-03'
+    }, {
+        value: 31,
+        date: '2018-03-01'
+    }]
+};
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    header: 'Running (est. 10km)',
+    type: 'min',
+    values: [{
+        value: 57,
+        date: '2018-03-29'
+    }, {
+        value: 64,
+        date: '2018-03-26'
+    }, {
+        value: 67,
+        date: '2018-03-12'
+    }, {
+        value: 64,
+        date: '2018-03-01'
+    }, {
+        value: 62,
+        date: '2018-02-26'
+    }, {
+        value: 67,
+        date: '2018-02-10'
+    }, {
+        value: 72,
+        date: '2018-01-25'
+    }, {
+        value: 80,
+        date: '2018-01-16'
+    }, {
+        value: 82,
+        date: '2018-01-02'
+    }]
+};
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    header: 'Weight',
+    type: 'kg',
+    placeholder: 'Current Weight',
+    values: [{
+        value: 103,
+        date: '2018-04-03'
+    }, {
+        value: 104,
+        date: '2018-03-25'
+    }, {
+        value: 106,
+        date: '2018-03-22'
+    }, {
+        value: 107,
+        date: '2018-03-18'
+    }, {
+        value: 108,
+        date: '2018-03-15'
+    }, {
+        value: 110,
+        date: '2018-03-12'
+    }, {
+        value: 109,
+        date: '2018-03-10'
+    }, {
+        value: 110,
+        date: '2018-03-08'
+    }, {
+        value: 112,
+        date: '2018-03-04'
+    }, {
+        value: 111,
+        date: '2018-03-03'
+    }, {
+        value: 112,
+        date: '2018-03-01'
+    }]
 };
 
 /***/ }),
@@ -27641,7 +27484,7 @@ var AppFooter = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { style: _appFooterStyle2.default.container },
-                _react2.default.createElement(_AppFooterButton2.default, { icon: 'Workouts', onClick: function onClick() {
+                _react2.default.createElement(_AppFooterButton2.default, { icon: 'Workout', onClick: function onClick() {
                         return _this2.onClick(1);
                     } }),
                 _react2.default.createElement(_AppFooterButton2.default, { icon: 'Profile', onClick: function onClick() {
@@ -27707,6 +27550,18 @@ var _appFooterButtonStyle = __webpack_require__(160);
 
 var _appFooterButtonStyle2 = _interopRequireDefault(_appFooterButtonStyle);
 
+var _WorkoutSVG = __webpack_require__(166);
+
+var _WorkoutSVG2 = _interopRequireDefault(_WorkoutSVG);
+
+var _ProfileSVG = __webpack_require__(167);
+
+var _ProfileSVG2 = _interopRequireDefault(_ProfileSVG);
+
+var _OverviewSVG = __webpack_require__(168);
+
+var _OverviewSVG2 = _interopRequireDefault(_OverviewSVG);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27715,7 +27570,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import Overview from './overview/Overview.jsx';
 var AppFooterButton = function (_React$Component) {
     _inherits(AppFooterButton, _React$Component);
 
@@ -27728,13 +27582,18 @@ var AppFooterButton = function (_React$Component) {
     _createClass(AppFooterButton, [{
         key: 'render',
         value: function render() {
+            var color = '#030104';
+            var width = '60%';
+            // let color = 'red'
             return _react2.default.createElement(
                 'div',
                 { style: _appFooterButtonStyle2.default.container, onClick: this.props.onClick },
-                _react2.default.createElement('img', { style: _appFooterButtonStyle2.default.image, src: "/images/" + this.props.icon + ".svg" }),
+                this.props.icon === 'Workout' ? _react2.default.createElement(_WorkoutSVG2.default, { width: width, color: color }) : '',
+                this.props.icon === 'Profile' ? _react2.default.createElement(_ProfileSVG2.default, { width: width, color: color }) : '',
+                this.props.icon === 'Overview' ? _react2.default.createElement(_OverviewSVG2.default, { width: width, color: color }) : '',
                 _react2.default.createElement(
                     'p',
-                    { style: _appFooterButtonStyle2.default.text },
+                    { style: { fontSize: 'calc(1.5em - 0.8vw)', color: color } },
                     this.props.icon
                 )
             );
@@ -27745,6 +27604,8 @@ var AppFooterButton = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _radium2.default)(AppFooterButton);
+
+// <img style={s.image} src={"/images/" + this.props.icon.toLowerCase() + ".svg"} />
 
 /***/ }),
 /* 160 */
@@ -27770,9 +27631,6 @@ exports.default = {
     image: {
         maxWidth: '60%',
         maxHeight: '100%'
-    },
-    text: {
-        fontSize: '4vw'
     }
 };
 
@@ -27786,42 +27644,406 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = {
-    header: 'Pull-Ups',
-    type: 'rep',
-    placeholder: 'Pull-ups completed',
-    values: [{
-        value: 8,
-        date: '2018-03-28'
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+var _graphStyle = __webpack_require__(162);
+
+var _graphStyle2 = _interopRequireDefault(_graphStyle);
+
+var _TargetSVG = __webpack_require__(175);
+
+var _TargetSVG2 = _interopRequireDefault(_TargetSVG);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Graph = function (_React$Component) {
+    _inherits(Graph, _React$Component);
+
+    function Graph(props) {
+        _classCallCheck(this, Graph);
+
+        var _this = _possibleConstructorReturn(this, (Graph.__proto__ || Object.getPrototypeOf(Graph)).call(this, props));
+
+        var firstDate = _this.props.values[_this.props.values.length - 1].date;
+        var startTime = new Date(firstDate).getTime(firstDate);
+
+        var currentDate = new Date();
+        var currentTime = currentDate.getTime();
+        var firstValue = _this.props.values[_this.props.values.length - 1].value;
+        var lastValue = _this.props.values[0].value;
+        var percentageChange = (lastValue - firstValue) / firstValue * 100;
+        var daysDiff = Math.round((currentTime - startTime) / (1000 * 60 * 60 * 24));
+        var percentagePerDay = percentageChange / daysDiff;
+        var percentageRequired = (_this.props.target - lastValue) / lastValue * 100;
+        var daysToTarget = Math.round(percentageRequired / percentagePerDay);
+
+        var targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + daysToTarget);
+
+        var timeDiffCurrent = currentTime - startTime;
+        var timeDiffCurrentIncrement = timeDiffCurrent / 3;
+        var secondDateCurrent = new Date(startTime + timeDiffCurrentIncrement).toISOString().substring(0, 10);
+        var thirdDateCurrent = new Date(startTime + timeDiffCurrentIncrement * 2).toISOString().substring(0, 10);
+        var secondDateCurrentArray = secondDateCurrent.split('-');
+        var thirdDateCurrentArray = thirdDateCurrent.split('-');
+
+        var targetTime = targetDate.getTime();
+        var timeDiffTarget = targetTime - startTime;
+        var timeDiffTargetIncrement = timeDiffTarget / 3;
+        var secondDateTarget = new Date(startTime + timeDiffTargetIncrement).toISOString().substring(0, 10);
+        var thirdDateTarget = new Date(startTime + timeDiffTargetIncrement * 2).toISOString().substring(0, 10);
+        var secondDateTargetArray = secondDateTarget.split('-');
+        var thirdDateTargetArray = thirdDateTarget.split('-');
+
+        var firstDateArray = firstDate.split('-');
+        var currentDateArray = currentDate.toISOString().substring(0, 10).split('-');
+        var targetDateArray = targetDate.toISOString().substring(0, 10).split('-');
+
+        var widthPercentage = _this.props.width / 100;
+        var heightPercentage = _this.props.height / 100;
+        var maxValueLogged = Math.max.apply(Math, _this.props.values.map(function (v) {
+            return v.value;
+        }));
+        var minValueLogged = Math.min.apply(Math, _this.props.values.map(function (v) {
+            return v.value;
+        }));
+
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
+        _this.state = {
+            highTarget: maxValueLogged < _this.props.target,
+            maxValueLogged: maxValueLogged,
+            minValueLogged: minValueLogged,
+            showTarget: true,
+            verticalLineTextXpos: widthPercentage * 12,
+            activeChartLeft: widthPercentage * 15,
+            activeChartRight: widthPercentage * 100,
+            activeChartWidth: widthPercentage * 85,
+            activeChartTop: heightPercentage * 20,
+            activeChartBottom: heightPercentage * 99,
+            activeChartHeight: heightPercentage * 79,
+            currentDate: months[parseInt(currentDateArray[1]) - 1] + ' ' + currentDateArray[2],
+            targetDate: months[parseInt(targetDateArray[1]) - 1] + ' ' + targetDateArray[2],
+            startDate: months[parseInt(firstDateArray[1]) - 1] + ' ' + firstDateArray[2],
+            secondDateCurrent: months[parseInt(secondDateCurrentArray[1]) - 1] + ' ' + secondDateCurrentArray[2],
+            thirdDateCurrent: months[parseInt(thirdDateCurrentArray[1]) - 1] + ' ' + thirdDateCurrentArray[2],
+            secondDateTarget: months[parseInt(secondDateTargetArray[1]) - 1] + ' ' + secondDateTargetArray[2],
+            thirdDateTarget: months[parseInt(thirdDateTargetArray[1]) - 1] + ' ' + thirdDateTargetArray[2],
+            currentTime: currentTime,
+            targetTime: targetTime,
+            timeDiffCurrent: timeDiffCurrent,
+            timeDiffTarget: timeDiffTarget,
+            xLabelWidth: 50
+        };
+        return _this;
+    }
+
+    _createClass(Graph, [{
+        key: 'getDataPoints',
+        value: function getDataPoints(spreadValue, maxValue) {
+            var _this2 = this;
+
+            var startX = this.state.activeChartLeft + 20;
+            var endX = this.state.activeChartRight - 20;
+
+            return this.props.values.map(function (point) {
+                return {
+                    key: point.date + point.value,
+                    x: startX + (endX - startX) * (_this2.state.showTarget ? 1 - (_this2.state.targetTime - new Date(point.date).getTime()) / _this2.state.timeDiffTarget : 1 - (_this2.state.currentTime - new Date(point.date).getTime()) / _this2.state.timeDiffCurrent),
+                    y: _this2.state.activeChartTop + _this2.state.activeChartHeight / (spreadValue / (maxValue - point.value)),
+                    dataValue: point.value,
+                    radius: 3
+                };
+            });
+        }
     }, {
-        value: 6,
-        date: '2018-03-25'
+        key: 'getLinePoints',
+        value: function getLinePoints(dataPoints) {
+            var linePoints = [];
+            var linePointsCounter = 0;
+            for (var i = 1; i < dataPoints.length; i++) {
+                linePoints.push({
+                    key: dataPoints[i].key,
+                    x1: dataPoints[i - 1].x,
+                    y1: dataPoints[i - 1].y,
+                    x2: dataPoints[i].x,
+                    y2: dataPoints[i].y
+                });
+            }
+            return linePoints;
+        }
     }, {
-        value: 4,
-        date: '2018-03-18'
+        key: 'getTargetLineHeight',
+        value: function getTargetLineHeight(maxValue) {
+            if (!this.state.highTarget && this.state.showTarget) {
+                return this.state.activeChartBottom;
+            } else {
+                var multiplier = this.props.target / maxValue;
+                return multiplier !== 1 ? (1 - multiplier) * this.state.activeChartHeight + this.state.activeChartTop : this.state.activeChartTop;
+            }
+        }
     }, {
-        value: 6,
-        date: '2018-03-15'
+        key: 'toggleTarget',
+        value: function toggleTarget() {
+            this.setState({ showTarget: !this.state.showTarget });
+        }
     }, {
-        value: 4,
-        date: '2018-03-12'
-    }, {
-        value: 3,
-        date: '2018-03-10'
-    }, {
-        value: 3,
-        date: '2018-03-08'
-    }, {
-        value: 2,
-        date: '2018-03-04'
-    }, {
-        value: 4,
-        date: '2018-03-03'
-    }, {
-        value: 2,
-        date: '2018-03-01'
-    }]
-};
+        key: 'render',
+        value: function render() {
+            var _this3 = this;
+
+            var maxValue = 0;
+            if (this.state.highTarget && this.state.showTarget) {
+                maxValue = this.props.target;
+            } else {
+                maxValue = this.state.maxValueLogged;
+            }
+            var minValue = 0;
+            if (!this.state.highTarget && this.state.showTarget) {
+                minValue = this.props.target;
+            } else {
+                minValue = this.state.minValueLogged;
+            }
+            var valueSpread = maxValue - minValue;
+
+            var targetLineHeight = this.getTargetLineHeight(maxValue);
+
+            var dataPoints = this.getDataPoints(valueSpread, maxValue);
+            var linePoints = this.getLinePoints(dataPoints);
+
+            var lines = linePoints.map(function (line) {
+                return _react2.default.createElement('line', {
+                    style: _graphStyle2.default.dataLine,
+                    key: line.key,
+                    x1: line.x1,
+                    y1: line.y1,
+                    x2: line.x2,
+                    y2: line.y2 });
+            });
+            var circles = dataPoints.map(function (point) {
+                return _react2.default.createElement('circle', {
+                    style: _graphStyle2.default.dataCircle,
+                    key: point.key,
+                    cx: point.x,
+                    cy: point.y,
+                    'data-value': point.dataValue,
+                    r: point.radius });
+            });
+
+            return _react2.default.createElement(
+                'div',
+                { style: _graphStyle2.default.container },
+                _react2.default.createElement(
+                    'h2',
+                    { onClick: function onClick() {
+                            return _this3.toggleTarget();
+                        }, style: { fontSize: '29px' } },
+                    this.props.header,
+                    _react2.default.createElement(
+                        'div',
+                        { style: _graphStyle2.default.icon },
+                        this.state.showTarget ? _react2.default.createElement(_TargetSVG2.default, { style: _graphStyle2.default.target }) : _react2.default.createElement(
+                            'span',
+                            { style: _extends({}, _graphStyle2.default.hideTarget) },
+                            '-'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'svg',
+                    { style: _graphStyle2.default.chart, width: this.props.width, height: this.props.height },
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.supportLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartTop,
+                            x2: this.state.activeChartRight,
+                            y2: this.state.activeChartTop })
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.supportLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartHeight * 0.25 + this.state.activeChartTop,
+                            x2: this.state.activeChartRight,
+                            y2: this.state.activeChartHeight * 0.25 + this.state.activeChartTop })
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.supportLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartHeight * 0.5 + this.state.activeChartTop,
+                            x2: this.state.activeChartRight,
+                            y2: this.state.activeChartHeight * 0.5 + this.state.activeChartTop })
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.supportLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartHeight * 0.75 + this.state.activeChartTop,
+                            x2: this.state.activeChartRight,
+                            y2: this.state.activeChartHeight * 0.75 + this.state.activeChartTop })
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.gridLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartTop - 25,
+                            x2: this.state.activeChartLeft,
+                            y2: this.state.activeChartBottom })
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.gridLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: this.state.activeChartBottom,
+                            x2: this.state.activeChartRight,
+                            y2: this.state.activeChartBottom })
+                    ),
+                    this.state.showTarget ? _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.targetLine },
+                        _react2.default.createElement('line', {
+                            x1: this.state.activeChartLeft,
+                            y1: targetLineHeight,
+                            x2: this.state.activeChartRight,
+                            y2: targetLineHeight })
+                    ) : '',
+                    this.state.showTarget ? _react2.default.createElement(
+                        'g',
+                        { style: _graphStyle2.default.targetProgressLine },
+                        _react2.default.createElement('line', {
+                            x1: dataPoints[dataPoints.length - 1].x,
+                            y1: dataPoints[dataPoints.length - 1].y,
+                            x2: this.state.activeChartRight - 20,
+                            y2: targetLineHeight })
+                    ) : '',
+                    _react2.default.createElement(
+                        'g',
+                        { className: 'labels y-labels' },
+                        _react2.default.createElement(
+                            'text',
+                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartTop * 1.06, textAnchor: 'end' },
+                            Math.round(maxValue * 10) / 10
+                        ),
+                        _react2.default.createElement(
+                            'text',
+                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartHeight * 0.265 + this.state.activeChartTop, textAnchor: 'end' },
+                            Math.round((minValue + valueSpread * 0.75) * 10) / 10
+                        ),
+                        _react2.default.createElement(
+                            'text',
+                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartHeight * 0.515 + this.state.activeChartTop, textAnchor: 'end' },
+                            Math.round((minValue + valueSpread * 0.5) * 10) / 10
+                        ),
+                        _react2.default.createElement(
+                            'text',
+                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartHeight * 0.765 + this.state.activeChartTop, textAnchor: 'end' },
+                            Math.round((minValue + valueSpread * 0.25) * 10) / 10
+                        ),
+                        _react2.default.createElement(
+                            'text',
+                            { x: this.state.verticalLineTextXpos, y: this.state.activeChartBottom, textAnchor: 'end' },
+                            Math.round(minValue * 10) / 10
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { className: 'data', 'data-setname': 'Lines' },
+                        lines
+                    ),
+                    _react2.default.createElement(
+                        'g',
+                        { className: 'data', 'data-setname': 'Circles' },
+                        circles
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { style: _extends({}, _graphStyle2.default.xLabels, { marginLeft: this.state.activeChartLeft, width: this.state.activeChartRight - this.state.activeChartLeft }) },
+                    _react2.default.createElement(
+                        'svg',
+                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
+                        _react2.default.createElement(
+                            'g',
+                            null,
+                            _react2.default.createElement(
+                                'text',
+                                { x: '-25', y: '35', transform: 'rotate(-45)' },
+                                this.state.startDate
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'svg',
+                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
+                        _react2.default.createElement(
+                            'g',
+                            null,
+                            _react2.default.createElement(
+                                'text',
+                                { x: '-25', y: '35', transform: 'rotate(-45)' },
+                                this.state.showTarget ? this.state.secondDateTarget : this.state.secondDateCurrent
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'svg',
+                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
+                        _react2.default.createElement(
+                            'g',
+                            null,
+                            _react2.default.createElement(
+                                'text',
+                                { x: '-25', y: '35', transform: 'rotate(-45)' },
+                                this.state.showTarget ? this.state.thirdDateTarget : this.state.thirdDateCurrent
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'svg',
+                        { style: _extends({}, _graphStyle2.default.xLabel), width: this.state.xLabelWidth, height: this.state.xLabelWidth },
+                        _react2.default.createElement(
+                            'g',
+                            null,
+                            _react2.default.createElement(
+                                'text',
+                                { x: '-25', y: '35', transform: 'rotate(-45)' },
+                                this.state.showTarget ? this.state.targetDate : this.state.currentDate
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Graph;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(Graph);
 
 /***/ }),
 /* 162 */
@@ -27834,47 +28056,98 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    header: 'Push-Ups',
-    type: 'rep',
-    placeholder: 'Push-ups completed',
-    values: [{
-        value: 20,
-        date: '2018-04-02'
-    }, {
-        value: 15,
-        date: '2018-04-01'
-    }, {
-        value: 10,
-        date: '2018-03-28'
-    }, {
-        value: 6,
-        date: '2018-03-18'
-    }, {
-        value: 5,
-        date: '2018-03-15'
-    }, {
-        value: 7,
-        date: '2018-03-12'
-    }, {
-        value: 4,
-        date: '2018-03-10'
-    }, {
-        value: 4,
-        date: '2018-03-08'
-    }, {
-        value: 3,
-        date: '2018-03-04'
-    }, {
-        value: 2,
-        date: '2018-03-03'
-    }, {
-        value: 1,
-        date: '2018-03-01'
-    }]
+    container: {
+        // border: '1px solid red'        
+    },
+    icon: {
+        display: 'inline-block',
+        width: '35px',
+        border: '2px solid #ea9363',
+        margin: '0 5px',
+        padding: '2px 3px',
+        borderRadius: '10px'
+    },
+    target: {
+        width: '24px',
+        position: 'relative',
+        top: '2px'
+    },
+    hideTarget: {
+        fontSize: '28.5px',
+        position: 'relative',
+        top: '-2px',
+        left: '8px'
+    },
+    chart: {
+        // border: '1px solid blue',
+        display: 'block'
+    },
+    xLabels: {
+        // border: '2px solid black',        
+        marginTop: '3px',
+        display: 'flex',
+        justifyContent: 'space-between'
+    },
+    xLabel: {
+        // border: '1px solid green'        
+    },
+    gridLine: {
+        stroke: '#ccc',
+        strokeDasharray: 0,
+        strokeWidth: 3
+    },
+    supportLine: {
+        stroke: '#eeeeee',
+        strokeDasharray: 0,
+        strokeWidth: 1
+    },
+    targetLine: {
+        stroke: '#da8353',
+        strokeDasharray: 0,
+        strokeWidth: 2
+    },
+    targetProgressLine: {
+        stroke: '#da8353',
+        strokeDasharray: 2,
+        strokeWidth: 1
+    },
+    dataLine: {
+        stroke: '#444',
+        strokeDasharray: 0,
+        strokeWidth: 2
+    },
+    dataCircle: {
+        fill: '#da8353',
+        stroke: '#fff',
+        strokeWidth: 1
+    },
+    xGrid: {
+        point1: {
+            x: 50,
+            y: 30
+        },
+        point2: {
+            x: 50,
+            y: 221
+        }
+    },
+    yGrid: {
+        point1: {
+            x: 50,
+            y: 220
+        },
+        point2: {
+            x: 295,
+            y: 220
+        }
+    }
 };
 
 /***/ }),
-/* 163 */
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27883,45 +28156,80 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = {
-    header: 'Sit-Ups',
-    type: 'rep',
-    placeholder: 'Sit-ups completed',
-    values: [{
-        value: 80,
-        date: '2018-03-31'
-    }, {
-        value: 75,
-        date: '2018-03-27'
-    }, {
-        value: 76,
-        date: '2018-03-18'
-    }, {
-        value: 67,
-        date: '2018-03-15'
-    }, {
-        value: 65,
-        date: '2018-03-12'
-    }, {
-        value: 54,
-        date: '2018-03-10'
-    }, {
-        value: 62,
-        date: '2018-03-08'
-    }, {
-        value: 53,
-        date: '2018-03-04'
-    }, {
-        value: 52,
-        date: '2018-03-03'
-    }, {
-        value: 41,
-        date: '2018-03-01'
-    }]
-};
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 196.118 196.117';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement('path', {
+                        style: { fill: this.props.color },
+                        d: 'M170.918,76.589v42.948c0,6.183-5.02,11.206-11.206,11.206c-6.191,0-11.209-5.023-11.209-11.206V76.589\r c0-6.186,5.018-11.207,11.209-11.207C165.899,65.383,170.918,70.397,170.918,76.589z M36.405,65.383\r c-6.186,0-11.208,5.021-11.208,11.207v42.948c0,6.183,5.021,11.206,11.208,11.206c6.185,0,11.206-5.023,11.206-11.206V76.589\r C47.611,70.397,42.597,65.383,36.405,65.383z M184.909,80.961c-6.184,0-11.207,5.018-11.207,11.207v11.784\r c0,6.194,5.023,11.206,11.207,11.206c6.186,0,11.209-5.012,11.209-11.206V92.168C196.118,85.974,191.094,80.961,184.909,80.961z\r M11.206,80.961C5.02,80.961,0,85.979,0,92.168v11.784c0,6.194,5.02,11.206,11.206,11.206s11.206-5.012,11.206-11.206V92.168\r C22.412,85.974,17.393,80.961,11.206,80.961z M133.505,50.838c-6.184,0-11.207,5.018-11.207,11.207v24.811H73.817V62.037\r c0-6.186-5.022-11.207-11.207-11.207c-6.187,0-11.208,5.021-11.208,11.207v72.033c0,6.195,5.021,11.208,11.208,11.208\r c6.185,0,11.207-5.013,11.207-11.208v-24.799h48.481v24.811c0,6.193,5.023,11.207,11.207,11.207\r c6.183,0,11.206-5.014,11.206-11.207V62.045C144.711,55.851,139.7,50.838,133.505,50.838z' })
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 164 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27930,45 +28238,842 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = {
-    header: 'Squats',
-    type: 'rep',
-    placeholder: 'Squats completed',
-    values: [{
-        value: 90,
-        date: '2018-03-29'
-    }, {
-        value: 85,
-        date: '2018-03-25'
-    }, {
-        value: 60,
-        date: '2018-03-22'
-    }, {
-        value: 66,
-        date: '2018-03-18'
-    }, {
-        value: 57,
-        date: '2018-03-15'
-    }, {
-        value: 55,
-        date: '2018-03-12'
-    }, {
-        value: 44,
-        date: '2018-03-10'
-    }, {
-        value: 52,
-        date: '2018-03-08'
-    }, {
-        value: 43,
-        date: '2018-03-04'
-    }, {
-        value: 32,
-        date: '2018-03-03'
-    }, {
-        value: 31,
-        date: '2018-03-01'
-    }]
-};
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 258.75 258.75';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement('circle', {
+                        style: { fill: this.props.color },
+                        cx: '129.375',
+                        cy: '60',
+                        r: '60' }),
+                    _react2.default.createElement('path', {
+                        style: { fill: this.props.color },
+                        d: 'M129.375,150c-60.061,0-108.75,48.689-108.75,108.75h217.5C238.125,198.689,189.436,150,129.375,150z' })
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 168 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 100.001 100.001';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement('path', {
+                        style: { fill: this.props.color },
+                        d: 'M3.449,56.655l6.816,1.689l5.132-8.056L5.645,47.87c-2.441-0.607-4.904,0.873-5.509,3.299\r C-0.47,53.596,1.013,56.051,3.449,56.655z M92.406,57.958L70.094,78.044L43.856,57.741c-0.5-0.387-1.076-0.665-1.691-0.817\r l-3.493-0.866l-5.132,8.057l5.497,1.362l28.488,22.044c0.824,0.637,1.808,0.952,2.788,0.952c1.096,0,2.188-0.393,3.05-1.168\r l25.14-22.632c1.862-1.676,2.007-4.538,0.324-6.393C97.144,56.427,94.27,56.28,92.406,57.958z M43.42,35.901l24.437,15.644\r c2.062,1.318,4.803,0.773,6.197-1.233l25.141-36.21c1.428-2.056,0.91-4.875-1.154-6.297c-2.067-1.423-4.896-0.907-6.324,1.149\r L69.075,41.562L44.489,25.824c-1.018-0.651-2.254-0.869-3.438-0.612c-1.182,0.26-2.21,0.978-2.858,1.995L0.71,86.048\r c-1.346,2.111-0.717,4.908,1.402,6.247C2.867,92.771,3.71,93,4.543,93c1.505,0,2.977-0.743,3.842-2.103L43.42,35.901z' })
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 169 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 197.039 197.039';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('ellipse', { cx: '100.063', cy: '35.062', rx: '14.965', ry: '14.767' }),
+                        _react2.default.createElement('path', { d: 'M132.391,5.637c-0.16-1-0.273-1.491-0.314-1.646c-0.736-2.854-3.654-4.398-6.502-3.662c-2.396,0.619-3.99,2.308-4,5.308\r H78.651c-0.012-3-1.605-4.856-4.001-5.477c-2.849-0.735-5.765,1.146-6.5,4.002c-0.041,0.155-0.154,0.475-0.315,1.475H38.874\r c-7.928,0-14.354,6.426-14.354,14.354v171.92c0,2.832,2.173,5.122,5.004,5.122l0,0c2.833,0,4.996-2.29,4.996-5.122V18.692\r c0-2.791,2.263-5.055,5.055-5.055h26.762c-2.025,14-2.933,40.004,15.048,50.263c0.292,0.166,0.92,0.351,0.92,0.351l-0.138,124.754\r c0,4.42,3.755,7.974,8.175,7.974c4.422,0,8.178-3.612,8.178-8.031v-60.311h3v60.31c0,4.419,3.83,8.003,8.25,8.003\r s8.137-3.584,8.137-8.003l-0.041-124.813c0,0,0.656-0.066,0.947-0.233c17.979-10.26,17.102-36.263,15.077-50.263h21.575\r c2.791,0,5.055,2.264,5.055,5.055v172.706c0,3.115,2.883,5.642,6,5.642c3.115,0,6-2.525,6-5.642V19.991\r c0-7.928-6.426-14.354-14.354-14.354H132.391z M116.756,51.637H83.47c-8.87-8-8.252-27-6.374-38h46.033\r C125.008,24.637,125.627,43.637,116.756,51.637z' })
+                    )
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 61.421 61.421';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('path', {
+                            style: { fill: this.props.color },
+                            d: 'M46.897,21.406c-0.328,0-0.66,0.035-0.996,0.105l-22.565,4.732\r c-1.507,0.316-2.576,1.237-3.019,2.505l-18.82,6.063c-1.135,0.367-1.758,1.582-1.393,2.715c0.365,1.134,1.581,1.757,2.713,1.392\r l0.315-0.103c-0.689,0.617-0.933,1.63-0.521,2.511c0.504,1.08,1.788,1.545,2.865,1.041l17.086-7.986\r c0.571,0.303,1.229,0.484,1.969,0.484c0.325,0,0.66-0.035,0.994-0.104l11.322-2.374c-0.163,0.585-0.127,1.224,0.151,1.799\r l3.134,6.504c0.44,0.915,1.354,1.449,2.308,1.449c0.373,0,0.752-0.082,1.11-0.255c1.272-0.613,1.808-2.146,1.194-3.417\r l-2.283-4.737c1.539-1.284,3.445-2.748,4.839-3.534l0.791-0.167c2.187-0.458,3.449-2.188,3.22-4.404\r C51.102,23.578,49.481,21.406,46.897,21.406z' }),
+                        _react2.default.createElement('circle', {
+                            style: { fill: this.props.color },
+                            cx: '56.881',
+                            cy: '23.392',
+                            r: '4.54' })
+                    )
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 197.595 197.594';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('ellipse', {
+                            cx: '18.333',
+                            cy: '58.693',
+                            rx: '18.333',
+                            ry: '18.091' }),
+                        _react2.default.createElement('path', {
+                            d: 'M194.396,136.415l-38.216-34.863c-3.259-2.972-8.101-3.403-11.832-1.053l-38.368,24.153\r c-1.735,1.093-3.966,0.996-5.601-0.241L44.103,81.829c-6.721-5.078-16.286-3.748-21.365,2.971\r c-2.077,2.749-3.049,5.973-3.051,9.17c-0.001,0.01,0.03,0.018,0.03,0.027v55.496c0,4.143,3.358,7.5,7.5,7.5H69.6\r c3.611,0,6.537-2.968,6.537-6.578c0-3.609-2.926-6.578-6.537-6.578H35.174c-1.271,0-2.3-1.029-2.3-2.301v-30.068l51.074,38.658\r c2.038,1.539,9.962,4.881,18.016,0.229c10.335-5.974,37.817-23.668,44.854-28.211c0.981-0.634,2.262-0.524,3.125,0.262\r l31.236,28.498c4.001,3.651,10.202,3.362,13.854-0.638C198.684,146.268,198.398,140.066,194.396,136.415z' })
+                    )
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 197.783 197.783';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('ellipse', {
+                            cx: '98.957',
+                            cy: '16.533',
+                            rx: '16.753',
+                            ry: '16.533' }),
+                        _react2.default.createElement('path', {
+                            d: 'M185.24,35.462l-172.698-0.03c-3.299,0-5.974,2.685-5.974,5.984c0,3.299,2.675,5.984,5.974,5.984h66.35v60.763\r l-24.613,22.188c-3.349,3.019-5.261,7.317-5.261,11.826v46.646c0,4.949,4.004,8.961,8.952,8.961c4.949,0,8.954-4.012,8.954-8.961\r v-42.521c0-2.059,0.873-4.02,2.402-5.398l21.976-19.805h15.312l21.992,19.805c1.53,1.379,2.404,3.34,2.404,5.399v42.521\r c0,4.949,4.003,8.961,8.953,8.961c4.947,0,8.953-4.012,8.953-8.961v-46.646c0-4.509-1.912-8.808-5.262-11.826l-24.615-22.188V47.4\r h36.285l29.916,0.004c3.299,0,5.974-2.672,5.974-5.971C191.212,38.134,188.539,35.462,185.24,35.462z' })
+                    )
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 173 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 512 512';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('path', {
+                            d: 'M121,68.5H45c-8.291,0-15,6.709-15,15s6.709,15,15,15h76c8.291,0,15-6.709,15-15S129.291,68.5,121,68.5z' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('path', {
+                            d: 'M121,188.5H45c-8.291,0-15,6.709-15,15s6.709,15,15,15h76c8.291,0,15-6.709,15-15S129.291,188.5,121,188.5z' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('path', {
+                            d: 'M91,128.5H15c-8.291,0-15,6.709-15,15s6.709,15,15,15h76c8.291,0,15-6.709,15-15S99.291,128.5,91,128.5z' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('path', {
+                            d: 'M482,203.5h-91v-60c0-26.346-32.229-40.218-51.22-21.202L219.789,242.289c-11.719,11.719-11.719,30.703,0,42.422\r l68.789,68.789l-83.789,83.789c-11.719,11.719-11.719,30.703,0,42.422c11.718,11.718,30.703,11.719,42.422,0l105-105\r c11.719-11.719,11.719-30.703,0-42.422L283.422,263.5L331,215.922V233.5c0,16.567,13.433,30,30,30h121c16.567,0,30-13.433,30-30\r S498.567,203.5,482,203.5z' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('path', {
+                            d: 'M280.14,51.04c-11.924-7.925-27.744-6.357-37.852,3.75l-82.5,82.5c-11.719,11.719-11.719,30.703,0,42.422\r s30.704,11.718,42.423-0.001l65.112-65.112l21.934,15.8l29.306-29.306c4.902-4.902,10.684-8.707,17.007-11.678L280.14,51.04z' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('path', {
+                            d: 'M198.578,305.922c-7.601-7.601-12.675-16.956-15.35-27.072L24.789,437.289c-11.719,11.719-11.719,30.703,0,42.422\r c11.718,11.718,30.703,11.719,42.422,0l152.578-152.578L198.578,305.922z' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('circle', {
+                            cx: '406',
+                            cy: '68.5',
+                            r: '45' })
+                    )
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 299.799 299.799';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement('path', {
+                    d: 'M287.2,282.152l-31.829-177.579c-1.281-7.149-7.501-12.353-14.765-12.353h-52.935c9.925-9.776,16.093-23.357,16.093-38.356\r C203.764,24.163,179.601,0,149.9,0S96.035,24.163,96.035,53.864c0,14.999,6.168,28.58,16.093,38.356H59.193\r c-7.264,0-13.483,5.204-14.765,12.353L12.599,282.152c-0.783,4.372,0.41,8.866,3.261,12.272c2.85,3.406,7.063,5.374,11.504,5.374\r h245.071c4.441,0,8.654-1.968,11.504-5.374C286.789,291.018,287.983,286.524,287.2,282.152z M149.9,30\r c13.159,0,23.864,10.705,23.864,23.864c0,13.159-10.705,23.865-23.864,23.865c-13.159,0-23.865-10.706-23.865-23.865\r C126.035,40.705,136.741,30,149.9,30z M145.98,232.126c-0.781,1.44-2.289,2.337-3.927,2.337h-7.076c-1.586,0-3.054-0.841-3.856-2.21\r l-17.512-29.895L102.41,213.79v13.767c0,3.814-3.092,6.906-6.906,6.906c-3.814,0-6.906-3.092-6.906-6.906V172.96\r c0-3.814,3.092-6.906,6.906-6.906c3.814,0,6.906,3.092,6.906,6.906v23.471l26.579-28.932c0.846-0.921,2.04-1.445,3.29-1.445h6.073\r c1.794,0,3.413,1.072,4.114,2.723c0.7,1.651,0.345,3.561-0.901,4.85l-18.436,19.07l22.67,34.861\r C146.692,228.933,146.762,230.685,145.98,232.126z M214.023,223.016c0,1.358-0.62,2.648-1.681,3.495\r c-2.756,2.199-6.387,4.173-10.893,5.921c-5.492,2.131-11.053,3.196-16.683,3.196c-7.156,0-13.391-1.5-18.713-4.503\r c-5.318-3.001-9.317-7.294-11.992-12.879c-2.676-5.584-4.013-11.657-4.013-18.222c0-7.123,1.493-13.455,4.48-18.991\r c2.986-5.538,7.357-9.783,13.113-12.74c4.384-2.27,9.845-3.407,16.378-3.407c8.493,0,15.126,1.782,19.902,5.344\r c2.069,1.543,3.818,3.342,5.247,5.396c1.366,1.963,1.643,4.484,0.737,6.696c-0.906,2.213-2.871,3.818-5.222,4.258l-0.016,0.003\r c-2.754,0.515-5.546-0.705-7.037-3.077c-0.954-1.518-2.171-2.817-3.648-3.898c-2.661-1.944-5.982-2.916-9.963-2.916\r c-6.036,0-10.835,1.914-14.395,5.739c-3.562,3.828-5.343,9.505-5.343,17.033c0,8.12,1.803,14.209,5.413,18.269\r c3.608,4.059,8.336,6.089,14.186,6.089c2.892,0,5.793-0.567,8.702-1.703c2.907-1.136,5.404-2.513,7.489-4.129v-8.681h-10.055\r c-3.183,0-5.762-2.58-5.762-5.762c0-3.183,2.58-5.762,5.762-5.762h19.539c2.468,0,4.468,2.001,4.468,4.468V223.016z' }),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 175 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OverviewSVG = function (_React$Component) {
+    _inherits(OverviewSVG, _React$Component);
+
+    function OverviewSVG() {
+        _classCallCheck(this, OverviewSVG);
+
+        return _possibleConstructorReturn(this, (OverviewSVG.__proto__ || Object.getPrototypeOf(OverviewSVG)).apply(this, arguments));
+    }
+
+    _createClass(OverviewSVG, [{
+        key: 'render',
+        value: function render() {
+            var view = '0 0 512 512';
+            return _react2.default.createElement(
+                'svg',
+                {
+                    viewBox: view,
+                    style: _extends({}, this.props.style, {
+                        width: this.props.width,
+                        enableBackground: 'new ' + view }) },
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('circle', {
+                            cx: '256',
+                            cy: '256',
+                            r: '32' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'g',
+                    null,
+                    _react2.default.createElement(
+                        'g',
+                        null,
+                        _react2.default.createElement('path', {
+                            d: 'M461.026,236C451.573,138.344,373.656,60.427,276,50.974V0h-40v50.974C138.344,60.427,60.427,138.344,50.974,236H0v40\r h50.974c9.453,97.656,87.37,175.573,185.026,185.026V512h40v-50.974c97.656-9.453,175.573-87.371,185.026-185.026H512v-40H461.026\r z M420.792,276C411.674,351.577,351.577,411.674,276,420.792V370h-40v50.792C160.423,411.674,100.326,351.577,91.208,276H142v-40\r H91.208C100.326,160.423,160.423,100.326,236,91.208V142h40V91.208c75.577,9.117,135.674,69.214,144.792,144.792H370v40H420.792z'
+                        })
+                    )
+                ),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null),
+                _react2.default.createElement('g', null)
+            );
+        }
+    }]);
+
+    return OverviewSVG;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ })
 /******/ ]);

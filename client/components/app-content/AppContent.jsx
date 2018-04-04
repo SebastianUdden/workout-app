@@ -15,6 +15,13 @@ import squat from '../../mock-data/squat';
 import running from '../../mock-data/running';
 import weight from '../../mock-data/weight';
 
+import PullupSVG from '../svgs/PullupSVG.jsx';
+import PushupSVG from '../svgs/PushupSVG.jsx';
+import SitupSVG from '../svgs/SitupSVG.jsx';
+import SquatSVG from '../svgs/SquatSVG.jsx';
+import RunningSVG from '../svgs/RunningSVG.jsx';
+import WeightSVG from '../svgs/WeightSVG.jsx';
+
 class AppContent extends React.Component {
     constructor(props) {
         super(props);
@@ -27,6 +34,14 @@ class AppContent extends React.Component {
                 'squat': squat,
                 'running': running,
                 'weight': weight
+            },
+            svgs: {
+                'pullup': PullupSVG,
+                'pushup': PushupSVG,
+                'situp': SitupSVG,
+                'squat': SquatSVG,
+                'running': RunningSVG,
+                'weight': WeightSVG
             }
         }
     }
@@ -42,7 +57,7 @@ class AppContent extends React.Component {
             <div style={s.container}>                
                 {this.props.page === 1 ? 
                     <div>
-                        <Workout style={s} data={this.state.mockData} />
+                        <Workout svgs={this.state.svgs} style={s} data={this.state.mockData} />
                         <Stamp 
                             onTop={false}
                             text={this.props.source} 
@@ -68,7 +83,7 @@ class AppContent extends React.Component {
                 : ''}
                 {this.props.page === 3 ? 
                     <div>
-                        <Overview style={s} data={this.state.mockData} />
+                        <Overview svgs={this.state.svgs} style={s} data={this.state.mockData} />
                         <Stamp 
                             onTop={false}
                             text={this.props.source} 

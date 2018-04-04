@@ -12,8 +12,5 @@ export default {
     image: {
         maxWidth: '60%',
         maxHeight: '100%',        
-    },
-    text: {
-        fontSize: '4vw'
-    }
+    }    
 }

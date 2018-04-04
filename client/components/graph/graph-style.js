@@ -2,6 +2,25 @@ export default {
     container: {
         // border: '1px solid red'        
     },
+    icon: {        
+        display: 'inline-block',
+        width: '35px',
+        border: '2px solid #ea9363',
+        margin: '0 5px',
+        padding: '2px 3px',
+        borderRadius: '10px'
+    },
+    target: {
+        width: '24px', 
+        position: 'relative',
+        top: '2px',
+    },
+    hideTarget: {        
+        fontSize: '28.5px',
+        position: 'relative',
+        top: '-2px',
+        left: '8px'
+    },
     chart: {
         // border: '1px solid blue',
         display: 'block'
@@ -20,10 +39,20 @@ export default {
         strokeDasharray: 0,
         strokeWidth: 3
     },
+    supportLine: {
+        stroke: '#eeeeee',
+        strokeDasharray: 0,
+        strokeWidth: 1
+    },
     targetLine: {
         stroke: '#da8353',
-        strokeDasharray: 2,
+        strokeDasharray: 0,
         strokeWidth: 2
+    },
+    targetProgressLine: {
+        stroke: '#da8353',
+        strokeDasharray: 2,
+        strokeWidth: 1
     },
     dataLine: {
         stroke: '#444',
@@ -31,7 +60,9 @@ export default {
         strokeWidth: 2
     },
     dataCircle: {
-        fill: '#da8353'
+        fill: '#da8353',
+        stroke: '#fff',
+        strokeWidth: 1
     },
     xGrid: {
         point1: {
