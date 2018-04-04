@@ -35,7 +35,7 @@ export default {
             date: '2018-01-16'
         },
         {
-            value: 82,
+            value: 73,
             date: '2018-01-02'
         }
     ]
