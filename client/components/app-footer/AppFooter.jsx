@@ -16,9 +16,9 @@ class AppFooter extends React.Component {
     render() {
         return (
             <div style={s.container}>
-                <AppFooterButton icon="Workout" onClick={() => this.onClick(1)} />
-                <AppFooterButton icon="Profile" onClick={() => this.onClick(2)} />
-                <AppFooterButton icon="Overview" onClick={() => this.onClick(3)} />
+                <AppFooterButton width={this.props.width} icon="Workout" onClick={() => this.onClick(1)} />
+                <AppFooterButton width={this.props.width} icon="Profile" onClick={() => this.onClick(2)} />
+                <AppFooterButton width={this.props.width} icon="Overview" onClick={() => this.onClick(3)} />
             </div>
         );
     }

@@ -11,7 +11,6 @@ class profile extends React.Component {
     }
 
     updateValue(type) {
-        console.log(type);
         switch(type) {
             case 'Height':
                 break;

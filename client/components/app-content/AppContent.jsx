@@ -57,7 +57,11 @@ class AppContent extends React.Component {
             <div style={s.container}>                
                 {this.props.page === 1 ? 
                     <div>
-                        <Workout svgs={this.state.svgs} style={s} data={this.state.mockData} />
+                        <Workout 
+                            svgs={this.state.svgs} 
+                            style={s} 
+                            data={this.state.mockData} 
+                            width={this.props.width} />
                         <Stamp 
                             onTop={false}
                             text={this.props.source} 
@@ -70,7 +74,9 @@ class AppContent extends React.Component {
                 : ''}
                 {this.props.page === 2 ? 
                     <div>
-                        <Profile style={s} />
+                        <Profile 
+                            style={s} 
+                            width={this.props.width} />
                         <Stamp 
                             onTop={false}
                             text={this.props.source} 
@@ -83,7 +89,11 @@ class AppContent extends React.Component {
                 : ''}
                 {this.props.page === 3 ? 
                     <div>
-                        <Overview svgs={this.state.svgs} style={s} data={this.state.mockData} />
+                        <Overview 
+                            svgs={this.state.svgs} 
+                            style={s} 
+                            data={this.state.mockData} 
+                            width={this.props.width} />
                         <Stamp 
                             onTop={false}
                             text={this.props.source} 

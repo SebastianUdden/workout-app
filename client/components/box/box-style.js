@@ -5,7 +5,7 @@ export default {
         padding: '1vh',
         margin: '5px',
         borderRadius: '10px',
-        height: '60vh'
+        height: '58vh'
     },
     header: {
         color: '#000',

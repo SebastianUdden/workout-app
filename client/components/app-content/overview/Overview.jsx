@@ -25,7 +25,7 @@ class Overview extends React.Component {
             return <span key={index + 1} 
                          onClick={() => this.setState({tab: index + 1})}>
                             <Svg 
-                                width={100 / (this.state.types.length * 1.4) + 'vw'}
+                                width={100 / (this.state.types.length * 1.4) + '%'}
                                 style={this.props.style.icon} />                            
                     </span>
         });    

@@ -26,5 +26,3 @@ class CurrentValue extends React.Component {
 }
 
 export default Radium(CurrentValue);
-
-// <h1>{this.props.value} {this.props.type}</h1>

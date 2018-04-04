@@ -4,12 +4,13 @@ export default {
         maxWidth: '150px',
         textAlign: 'center',
         borderRadius: '10px',
-        padding: '15px',
+        padding: '8px 15px',
         ':hover': {
             backgroundColor: '#bbb'
         }        
     },
     image: {
+        width: '30%',
         maxWidth: '60%',
         maxHeight: '100%',        
     }    
