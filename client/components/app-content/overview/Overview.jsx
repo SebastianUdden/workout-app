@@ -54,9 +54,3 @@ class Overview extends React.Component {
 }
 
 export default Radium(Overview);
-
-// <img 
-//                                 key={index + 1} 
-//                                 style={{...this.props.style.icon, width: 100 / (this.state.types.length * 1.4) + 'vw'}} 
-//                                 src={'/images/' + type + '.svg'} 
-//                                 alt={type} />

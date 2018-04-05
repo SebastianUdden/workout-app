@@ -27051,12 +27051,6 @@ var Overview = function (_React$Component) {
 
 exports.default = (0, _radium2.default)(Overview);
 
-// <img 
-//                                 key={index + 1} 
-//                                 style={{...this.props.style.icon, width: 100 / (this.state.types.length * 1.4) + 'vw'}} 
-//                                 src={'/images/' + type + '.svg'} 
-//                                 alt={type} />
-
 /***/ }),
 /* 145 */
 /***/ (function(module, exports, __webpack_require__) {
