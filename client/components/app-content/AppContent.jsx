@@ -19,9 +19,8 @@ class AppContent extends React.Component {
     constructor(props) {
         super(props);
 
-
         this.state = {
-            usersUrl: 'https://arcane-journey-35345.herokuapp.com/api/users', // 'http://localhost:3005/api/users/',
+            usersUrl: 'https://arcane-journey-35345.herokuapp.com/api/users/', // 'http://localhost:3005/api/users/',
             userId: '5ac60344808d1f0d0011a59d',
             svgs: {
                 'pullup': PullupSVG,
