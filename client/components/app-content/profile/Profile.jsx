@@ -9,17 +9,6 @@ class profile extends React.Component {
         super(props);
     }
 
-    updateValue(type) {
-        switch(type) {
-            case 'Height':
-                break;
-            case 'Weight':
-                break;
-            case 'Body Fat':
-                break;
-        }
-    }
-    
     render() {
         let sp = this.props.style;        
 
@@ -39,7 +28,6 @@ class profile extends React.Component {
                             default={this.props.profile.height} /> : ''}
                     cm
                 </p>
-
                 <h3 style={sp.textMargin}>Weight</h3>
                 <p style={sp.textMargin}>
                     {this.props.profile.weight ? 
@@ -52,7 +40,6 @@ class profile extends React.Component {
                             default={this.props.profile.weight} /> : ''}
                     kg
                 </p>
-                
                 <h3 style={sp.textMargin}>Body Fat</h3>
                 <p style={sp.textMargin}>
                     {this.props.profile.bodyFat ? 
@@ -65,14 +52,13 @@ class profile extends React.Component {
                             default={this.props.profile.bodyFat} /> : ''}        
                     %
                 </p>
-
                 <h3 style={sp.subHeaderMargin}>Target Values</h3>
                 <p style={sp.textMargin}>
                     {this.props.profile.targets.pullup ? 
                         <ProfileSelect 
                             url={this.props.url}
                             min='0'
-                            max='1000' 
+                            max='100'
                             type='pullup'
                             targets={this.props.profile.targets} 
                             default={this.props.profile.targets.pullup} /> : ''}
@@ -83,7 +69,7 @@ class profile extends React.Component {
                         <ProfileSelect 
                             url={this.props.url}
                             min='0'
-                            max='1000' 
+                            max='200' 
                             type='pushup'
                             targets={this.props.profile.targets} 
                             default={this.props.profile.targets.pushup} /> : ''}
@@ -94,7 +80,7 @@ class profile extends React.Component {
                         <ProfileSelect 
                             url={this.props.url}
                             min='0'
-                            max='1000' 
+                            max='100' 
                             type='running'
                             targets={this.props.profile.targets} 
                             default={this.props.profile.targets.running} /> : ''}
@@ -105,7 +91,7 @@ class profile extends React.Component {
                         <ProfileSelect 
                             url={this.props.url}
                             min='0'
-                            max='1000' 
+                            max='200' 
                             type='situp'
                             targets={this.props.profile.targets} 
                             default={this.props.profile.targets.situp} /> : ''}
@@ -116,18 +102,18 @@ class profile extends React.Component {
                         <ProfileSelect 
                             url={this.props.url}
                             min='0'
-                            max='1000' 
+                            max='300' 
                             type='squat'
                             targets={this.props.profile.targets} 
                             default={this.props.profile.targets.squat} /> : ''}
                     squats
                 </p>
                 <p style={sp.textMargin}>
-                    {this.props.profile.targets.squat ? 
+                    {this.props.profile.targets.targetWeight ? 
                         <ProfileSelect 
                             url={this.props.url}
                             min='0'
-                            max='1000' 
+                            max='150'
                             type='targetWeight'
                             targets={this.props.profile.targets} 
                             default={this.props.profile.targets.targetWeight} /> : ''}

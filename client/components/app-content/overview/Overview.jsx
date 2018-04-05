@@ -32,8 +32,9 @@ class Overview extends React.Component {
                             header={workout.header} 
                             height={document.documentElement.clientHeight * 0.5}
                             width={document.documentElement.clientWidth * 0.8}
+                            highTarget={workout.highTarget}
                             values={workout.values}
-                            target={this.props.profile.targets[workoutname]}
+                            target={parseInt(this.props.profile.targets[workoutname])}
                             />
             }
         }) : '';

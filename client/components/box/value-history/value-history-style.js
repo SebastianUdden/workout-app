@@ -9,6 +9,7 @@ export default {
         listStyleType: 'none'        
     },
     chart: {
+        marginTop: '1vh',
         fill: '#000',
         // fill: '#00CED1',
         width: '100%',

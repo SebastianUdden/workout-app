@@ -2388,10 +2388,6 @@ var _boxStyle = __webpack_require__(39);
 
 var _boxStyle2 = _interopRequireDefault(_boxStyle);
 
-var _CurrentValue = __webpack_require__(111);
-
-var _CurrentValue2 = _interopRequireDefault(_CurrentValue);
-
 var _NewValue = __webpack_require__(40);
 
 var _NewValue2 = _interopRequireDefault(_NewValue);
@@ -2458,16 +2454,13 @@ var Box = function (_React$Component) {
                         placeholder: this.props.placeholder,
                         boxStyle: _boxStyle2.default.instance,
                         onClick: function onClick(input) {
-                            return _this2.props.onClick(input);
+                            return _this2.props.addWorkout(input);
                         } })
                 ),
-                _react2.default.createElement(_CurrentValue2.default, {
-                    value: currentValue.value,
-                    max: maxValue,
-                    date: monthNames[parseInt(currentValue.date.split('-')[1] - 1)] + ' ' + parseInt(currentValue.date.split('-')[2]),
-                    type: this.props.type,
-                    boxStyle: _boxStyle2.default.instance }),
                 _react2.default.createElement(_ValueHistory2.default, {
+                    deleteWorkout: function deleteWorkout(e, i) {
+                        return _this2.props.deleteWorkout(e, i);
+                    },
                     type: this.props.type,
                     valueHistory: this.props.values,
                     max: maxValue,
@@ -2612,6 +2605,12 @@ exports.default = {
         position: 'relative',
         top: '-5px',
         width: '38%',
+        padding: '8px',
+        borderRadius: '7px'
+    },
+    date: {
+        display: 'block',
+        width: '100%',
         padding: '8px',
         borderRadius: '7px'
     },
@@ -19992,7 +19991,7 @@ var App = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
         _this.state = {
-            page: 1
+            page: 3
         };
         return _this;
     }
@@ -24615,117 +24614,8 @@ exports.default = {
 };
 
 /***/ }),
-/* 111 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _radium = __webpack_require__(1);
-
-var _radium2 = _interopRequireDefault(_radium);
-
-var _currentValueStyle = __webpack_require__(112);
-
-var _currentValueStyle2 = _interopRequireDefault(_currentValueStyle);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var CurrentValue = function (_React$Component) {
-    _inherits(CurrentValue, _React$Component);
-
-    function CurrentValue(props) {
-        _classCallCheck(this, CurrentValue);
-
-        return _possibleConstructorReturn(this, (CurrentValue.__proto__ || Object.getPrototypeOf(CurrentValue)).call(this, props));
-    }
-
-    _createClass(CurrentValue, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { style: this.props.boxStyle },
-                _react2.default.createElement(
-                    'svg',
-                    { style: _currentValueStyle2.default.chart, 'aria-labelledby': 'title desc', role: 'img' },
-                    _react2.default.createElement(
-                        'title',
-                        { id: 'title' },
-                        'A bar displaying current value'
-                    ),
-                    _react2.default.createElement(
-                        'g',
-                        { style: _currentValueStyle2.default.bar },
-                        _react2.default.createElement('rect', { width: this.props.value / this.props.max * 120, height: '32', y: '12' }),
-                        _react2.default.createElement(
-                            'text',
-                            {
-                                x: parseInt(this.props.value / this.props.max * 120) + 10,
-                                y: '27',
-                                dy: '.35em' },
-                            this.props.value,
-                            ' ',
-                            this.props.type,
-                            ' - ',
-                            _react2.default.createElement(
-                                'tspan',
-                                { style: _currentValueStyle2.default.date },
-                                this.props.date
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return CurrentValue;
-}(_react2.default.Component);
-
-exports.default = (0, _radium2.default)(CurrentValue);
-
-/***/ }),
-/* 112 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    bar: {
-        fontSize: '1.3em',
-        fill: '#da8353'
-    },
-    chart: {
-        margin: '0',
-        height: '50px'
-    },
-    date: {
-        fill: '#cab3a3'
-    }
-};
-
-/***/ }),
+/* 111 */,
+/* 112 */,
 /* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -24867,15 +24757,17 @@ var ValueHistory = function (_React$Component) {
                         'A chart showing information'
                     ),
                     this.props.valueHistory.map(function (point, index) {
-                        if (index !== 0 && index < 11) {
-                            return _react2.default.createElement(_ValuePoint2.default, {
-                                key: index,
-                                value: point.value,
-                                width: point.value / _this2.props.max * 120,
-                                date: monthNames[parseInt(point.date.split('-')[1] - 1)] + ' ' + parseInt(point.date.split('-')[2]),
-                                type: _this2.props.type,
-                                y: 20 * index });
-                        }
+                        return _react2.default.createElement(_ValuePoint2.default, {
+                            key: index,
+                            lastAdded: index === 0,
+                            deleteWorkout: function deleteWorkout(e, i) {
+                                return _this2.props.deleteWorkout(event, index);
+                            },
+                            value: point.value,
+                            width: point.value / _this2.props.max * 120,
+                            date: monthNames[parseInt(point.date.split('-')[1] - 1)] + ' ' + parseInt(point.date.split('-')[2]),
+                            type: _this2.props.type,
+                            y: 20 * index });
                     })
                 )
             );
@@ -24908,6 +24800,7 @@ exports.default = {
         listStyleType: 'none'
     },
     chart: {
+        marginTop: '1vh',
         fill: '#000',
         // fill: '#00CED1',
         width: '100%'
@@ -24924,6 +24817,8 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -24953,24 +24848,63 @@ var ValueHistory = function (_React$Component) {
     function ValueHistory(props) {
         _classCallCheck(this, ValueHistory);
 
-        return _possibleConstructorReturn(this, (ValueHistory.__proto__ || Object.getPrototypeOf(ValueHistory)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (ValueHistory.__proto__ || Object.getPrototypeOf(ValueHistory)).call(this, props));
+
+        _this.state = {
+            showDeleteButton: 'none',
+            deleteWidth: 0
+        };
+        return _this;
     }
 
     _createClass(ValueHistory, [{
+        key: 'showDeleteButton',
+        value: function showDeleteButton() {
+            if (this.state.showDeleteButton === 'none') {
+                this.setState({ showDeleteButton: 'inline', deleteWidth: 13 });
+            } else {
+                this.setState({ showDeleteButton: 'none', deleteWidth: 0 });
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return _react2.default.createElement(
                 'g',
-                { style: _valuePointStyle2.default.bar },
-                _react2.default.createElement('rect', {
-                    width: this.props.width,
-                    height: '19', y: this.props.y }),
+                { style: this.props.lastAdded ? _valuePointStyle2.default.currentBar : {} },
                 _react2.default.createElement(
                     'text',
                     {
+                        onClick: function onClick(e, index) {
+                            return _this2.props.deleteWorkout(e, index);
+                        },
+                        style: _extends({}, _valuePointStyle2.default.text, { display: this.state.showDeleteButton }),
+                        width: this.state.deleteWidth - 10,
+                        y: this.props.lastAdded ? this.props.y + 20 : this.props.y + 44,
+                        x: 0 },
+                    'x'
+                ),
+                _react2.default.createElement('rect', {
+                    onClick: function onClick() {
+                        return _this2.showDeleteButton();
+                    },
+                    width: this.props.width,
+                    height: this.props.lastAdded ? 30 : 19,
+                    y: this.props.lastAdded ? this.props.y : this.props.y + 30,
+                    x: this.state.deleteWidth }),
+                _react2.default.createElement(
+                    'text',
+                    {
+                        onClick: function onClick() {
+                            return _this2.showDeleteButton();
+                        },
                         key: this.props.value + this.props.date,
                         style: _valuePointStyle2.default.text,
-                        x: parseInt(this.props.width) + 10, y: parseInt(this.props.y) + 8, dy: '.35em' },
+                        x: this.state.deleteWidth + parseInt(this.props.width) + 10,
+                        y: this.props.lastAdded ? this.props.y + 14 : this.props.y + 39,
+                        dy: '.35em' },
                     this.props.value,
                     ' ',
                     this.props.type,
@@ -25001,13 +24935,21 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    bar: {
-        ':hover': {
-            fill: '#666'
-        }
+    currentBar: {
+        fontSize: '1.3em',
+        fill: '#da8353'
+    },
+    chart: {
+        margin: '0',
+        height: '50px'
     },
     date: {
         fill: '#cab3a3'
+    },
+    delete: {
+        ':hover': {
+            fill: 'red'
+        }
     }
 };
 
@@ -25249,7 +25191,8 @@ var AppContent = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (AppContent.__proto__ || Object.getPrototypeOf(AppContent)).call(this, props));
 
         _this.state = {
-            usersUrl: 'https://arcane-journey-35345.herokuapp.com/api/users/', // 'http://localhost:3005/api/users/',
+            usersUrl: 'http://localhost:3005/api/users/',
+            // usersUrl: 'https://arcane-journey-35345.herokuapp.com/api/users/',
             userId: '5ac60344808d1f0d0011a59d',
             svgs: {
                 'pullup': _PullupSVG2.default,
@@ -25273,7 +25216,6 @@ var AppContent = function (_React$Component) {
                 return data.json();
             }).then(function (data) {
                 var db = data[0];
-                console.log(data[0]);
                 _this2.setState({
                     profile: db
                 });
@@ -25443,7 +25385,8 @@ var WorkoutComponent = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (WorkoutComponent.__proto__ || Object.getPrototypeOf(WorkoutComponent)).call(this, props));
 
         _this.state = {
-            tab: 1
+            tab: 1,
+            workouts: undefined
         };
         return _this;
     }
@@ -25470,7 +25413,8 @@ var WorkoutComponent = function (_React$Component) {
                         });
                     }
                 });
-                this.putData(this.props.url, {
+                this.setState({ workouts: workouts });
+                this.api('PUT', this.props.url, {
                     "workouts": workouts
                 }).then(function (data) {
                     return console.log(data);
@@ -25490,14 +25434,31 @@ var WorkoutComponent = function (_React$Component) {
             }
         }
     }, {
-        key: 'putData',
-        value: function putData(url, data) {
+        key: 'deleteWorkout',
+        value: function deleteWorkout(event, index, workoutIndex) {
+            event.preventDefault();
+            if (this.props.profile.workouts) {
+                var workouts = this.props.profile.workouts;
+                workouts[workoutIndex].values.splice(index, 1);
+                this.setState({ workouts: workouts });
+                this.api('PUT', this.props.url, {
+                    "workouts": workouts
+                }).then(function (data) {
+                    return console.log(data);
+                }).catch(function (error) {
+                    return console.error(error);
+                });
+            }
+        }
+    }, {
+        key: 'api',
+        value: function api(type, url, data) {
             return fetch(url, {
                 body: JSON.stringify(data),
                 cache: 'no-cache',
                 credentials: 'same-origin',
                 headers: { 'content-type': 'application/json' },
-                method: 'PUT',
+                method: type,
                 mode: 'cors',
                 redirect: 'follow',
                 referrer: 'no-referrer'
@@ -25511,7 +25472,13 @@ var WorkoutComponent = function (_React$Component) {
             var _this2 = this;
 
             var icons = [];
-            var box = this.props.profile ? this.props.profile.workouts.map(function (workout, index) {
+            var workouts = void 0;
+            if (this.state.workouts) {
+                workouts = this.state.workouts;
+            } else if (this.props.profile) {
+                workouts = this.props.profile.workouts;
+            }
+            var box = workouts ? this.props.profile.workouts.map(function (workout, index) {
                 var Svg = _this2.props.svgs[workout.name];
                 icons.push(_react2.default.createElement(
                     'span',
@@ -25528,8 +25495,11 @@ var WorkoutComponent = function (_React$Component) {
                     var workoutname = workout.name !== 'weight' ? workout.name : 'targetWeight';
                     return _react2.default.createElement(_Box2.default, {
                         key: index + 1,
-                        onClick: function onClick(input, workoutType) {
+                        addWorkout: function addWorkout(input, workoutType) {
                             return _this2.newWorkout(input, workout.name, workout.values);
+                        },
+                        deleteWorkout: function deleteWorkout(e, i, wi) {
+                            return _this2.deleteWorkout(e, i, index);
                         },
                         header: workout.header,
                         type: workout.type,
@@ -25540,6 +25510,9 @@ var WorkoutComponent = function (_React$Component) {
                         key: index + 1,
                         addRunningValue: function addRunningValue(km, min, workoutType) {
                             return _this2.getRunningValue(km, min, workout.values);
+                        },
+                        deleteWorkout: function deleteWorkout(e, i, wi) {
+                            return _this2.deleteWorkout(e, i, index);
                         },
                         header: workout.header,
                         type: workout.type,
@@ -25617,18 +25590,6 @@ var profile = function (_React$Component) {
     }
 
     _createClass(profile, [{
-        key: 'updateValue',
-        value: function updateValue(type) {
-            switch (type) {
-                case 'Height':
-                    break;
-                case 'Weight':
-                    break;
-                case 'Body Fat':
-                    break;
-            }
-        }
-    }, {
         key: 'render',
         value: function render() {
             var sp = this.props.style;
@@ -25707,7 +25668,7 @@ var profile = function (_React$Component) {
                     this.props.profile.targets.pullup ? _react2.default.createElement(_ProfileSelect2.default, {
                         url: this.props.url,
                         min: '0',
-                        max: '1000',
+                        max: '100',
                         type: 'pullup',
                         targets: this.props.profile.targets,
                         'default': this.props.profile.targets.pullup }) : '',
@@ -25719,7 +25680,7 @@ var profile = function (_React$Component) {
                     this.props.profile.targets.pushup ? _react2.default.createElement(_ProfileSelect2.default, {
                         url: this.props.url,
                         min: '0',
-                        max: '1000',
+                        max: '200',
                         type: 'pushup',
                         targets: this.props.profile.targets,
                         'default': this.props.profile.targets.pushup }) : '',
@@ -25731,7 +25692,7 @@ var profile = function (_React$Component) {
                     this.props.profile.targets.running ? _react2.default.createElement(_ProfileSelect2.default, {
                         url: this.props.url,
                         min: '0',
-                        max: '1000',
+                        max: '100',
                         type: 'running',
                         targets: this.props.profile.targets,
                         'default': this.props.profile.targets.running }) : '',
@@ -25743,7 +25704,7 @@ var profile = function (_React$Component) {
                     this.props.profile.targets.situp ? _react2.default.createElement(_ProfileSelect2.default, {
                         url: this.props.url,
                         min: '0',
-                        max: '1000',
+                        max: '200',
                         type: 'situp',
                         targets: this.props.profile.targets,
                         'default': this.props.profile.targets.situp }) : '',
@@ -25755,7 +25716,7 @@ var profile = function (_React$Component) {
                     this.props.profile.targets.squat ? _react2.default.createElement(_ProfileSelect2.default, {
                         url: this.props.url,
                         min: '0',
-                        max: '1000',
+                        max: '300',
                         type: 'squat',
                         targets: this.props.profile.targets,
                         'default': this.props.profile.targets.squat }) : '',
@@ -25764,10 +25725,10 @@ var profile = function (_React$Component) {
                 _react2.default.createElement(
                     'p',
                     { style: sp.textMargin },
-                    this.props.profile.targets.squat ? _react2.default.createElement(_ProfileSelect2.default, {
+                    this.props.profile.targets.targetWeight ? _react2.default.createElement(_ProfileSelect2.default, {
                         url: this.props.url,
                         min: '0',
-                        max: '1000',
+                        max: '150',
                         type: 'targetWeight',
                         targets: this.props.profile.targets,
                         'default': this.props.profile.targets.targetWeight }) : '',
@@ -26026,8 +25987,9 @@ var Overview = function (_React$Component) {
                         header: workout.header,
                         height: document.documentElement.clientHeight * 0.5,
                         width: document.documentElement.clientWidth * 0.8,
+                        highTarget: workout.highTarget,
                         values: workout.values,
-                        target: _this2.props.profile.targets[workoutname]
+                        target: parseInt(_this2.props.profile.targets[workoutname])
                     });
                 }
             }) : '';
@@ -26113,76 +26075,93 @@ var Graph = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Graph.__proto__ || Object.getPrototypeOf(Graph)).call(this, props));
 
-        var firstDate = _this.props.values[_this.props.values.length - 1].date;
-        var startTime = new Date(firstDate).getTime(firstDate);
+        if (_this.props.values.length > 1) {
+            var firstDate = _this.props.values[_this.props.values.length - 1].date;
+            var startTime = new Date(firstDate).getTime(firstDate);
 
-        var currentDate = new Date();
-        var currentTime = currentDate.getTime();
-        var firstValue = _this.props.values[_this.props.values.length - 1].value;
-        var lastValue = _this.props.values[0].value;
-        var percentageChange = (lastValue - firstValue) / firstValue * 100;
-        var daysDiff = Math.round((currentTime - startTime) / (1000 * 60 * 60 * 24));
-        var percentagePerDay = percentageChange / daysDiff;
-        var percentageRequired = (_this.props.target - lastValue) / lastValue * 100;
-        var daysToTarget = Math.round(percentageRequired / percentagePerDay);
+            var currentDate = new Date();
+            var currentTime = currentDate.getTime();
+            var firstValue = _this.props.values[_this.props.values.length - 1].value;
+            var lastValue = _this.props.values[0].value;
+            var percentageChange = (lastValue - firstValue) / firstValue * 100;
+            percentageChange = percentageChange === 0 ? 1 : percentageChange;
 
-        var targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + daysToTarget);
+            var daysDiff = Math.round((currentTime - startTime) / (1000 * 60 * 60 * 24));
+            var percentagePerDay = percentageChange / daysDiff;
+            var percentageRequired = (_this.props.target - lastValue) / lastValue * 100;
+            var daysToTarget = Math.round(percentageRequired / percentagePerDay);
 
-        var timeDiffCurrent = currentTime - startTime;
-        var timeDiffCurrentIncrement = timeDiffCurrent / 3;
-        var secondDateCurrent = new Date(startTime + timeDiffCurrentIncrement).toISOString().substring(0, 10);
-        var thirdDateCurrent = new Date(startTime + timeDiffCurrentIncrement * 2).toISOString().substring(0, 10);
-        var secondDateCurrentArray = secondDateCurrent.split('-');
-        var thirdDateCurrentArray = thirdDateCurrent.split('-');
+            var targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + daysToTarget);
 
-        var targetTime = targetDate.getTime();
-        var timeDiffTarget = targetTime - startTime;
-        var timeDiffTargetIncrement = timeDiffTarget / 3;
-        var secondDateTarget = new Date(startTime + timeDiffTargetIncrement).toISOString().substring(0, 10);
-        var thirdDateTarget = new Date(startTime + timeDiffTargetIncrement * 2).toISOString().substring(0, 10);
-        var secondDateTargetArray = secondDateTarget.split('-');
-        var thirdDateTargetArray = thirdDateTarget.split('-');
+            var timeDiffCurrent = currentTime - startTime;
+            var timeDiffCurrentIncrement = timeDiffCurrent / 3;
 
-        var firstDateArray = firstDate.split('-');
-        var currentDateArray = currentDate.toISOString().substring(0, 10).split('-');
-        var targetDateArray = targetDate.toISOString().substring(0, 10).split('-');
+            var secondDateCurrent = new Date(startTime + timeDiffCurrentIncrement).toISOString().substring(0, 10);
+            var thirdDateCurrent = new Date(startTime + timeDiffCurrentIncrement * 2).toISOString().substring(0, 10);
+            var secondDateCurrentArray = secondDateCurrent.split('-');
+            var thirdDateCurrentArray = thirdDateCurrent.split('-');
 
-        var widthPercentage = _this.props.width < 1000 ? _this.props.width / 100 : 10;
-        var heightPercentage = _this.props.height / 100;
-        var maxValueLogged = Math.max.apply(Math, _this.props.values.map(function (v) {
-            return v.value;
-        }));
-        var minValueLogged = Math.min.apply(Math, _this.props.values.map(function (v) {
-            return v.value;
-        }));
+            var targetTime = targetDate.getTime();
+            var timeDiffTarget = targetTime - startTime;
+            var timeDiffTargetIncrement = timeDiffTarget / 3;
+            var secondDateTarget = new Date(startTime + timeDiffTargetIncrement).toISOString().substring(0, 10);
+            var thirdDateTarget = new Date(startTime + timeDiffTargetIncrement * 2).toISOString().substring(0, 10);
+            var secondDateTargetArray = secondDateTarget.split('-');
+            var thirdDateTargetArray = thirdDateTarget.split('-');
 
-        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
-        _this.state = {
-            highTarget: maxValueLogged < _this.props.target,
-            maxValueLogged: maxValueLogged,
-            minValueLogged: minValueLogged,
-            showTarget: true,
-            verticalLineTextXpos: widthPercentage * 12,
-            activeChartLeft: widthPercentage * 15,
-            activeChartRight: widthPercentage * 100,
-            activeChartWidth: widthPercentage * 85,
-            activeChartTop: heightPercentage * 20,
-            activeChartBottom: heightPercentage * 99,
-            activeChartHeight: heightPercentage * 79,
-            currentDate: months[parseInt(currentDateArray[1]) - 1] + ' ' + currentDateArray[2],
-            targetDate: months[parseInt(targetDateArray[1]) - 1] + ' ' + targetDateArray[2],
-            startDate: months[parseInt(firstDateArray[1]) - 1] + ' ' + firstDateArray[2],
-            secondDateCurrent: months[parseInt(secondDateCurrentArray[1]) - 1] + ' ' + secondDateCurrentArray[2],
-            thirdDateCurrent: months[parseInt(thirdDateCurrentArray[1]) - 1] + ' ' + thirdDateCurrentArray[2],
-            secondDateTarget: months[parseInt(secondDateTargetArray[1]) - 1] + ' ' + secondDateTargetArray[2],
-            thirdDateTarget: months[parseInt(thirdDateTargetArray[1]) - 1] + ' ' + thirdDateTargetArray[2],
-            currentTime: currentTime,
-            targetTime: targetTime,
-            timeDiffCurrent: timeDiffCurrent,
-            timeDiffTarget: timeDiffTarget,
-            xLabelWidth: 50
-        };
+            var firstDateArray = firstDate.split('-');
+            var currentDateArray = currentDate.toISOString().substring(0, 10).split('-');
+            var targetDateArray = targetDate.toISOString().substring(0, 10).split('-');
+
+            var widthPercentage = _this.props.width < 1000 ? _this.props.width / 100 : 10;
+            var heightPercentage = _this.props.height / 100;
+            var maxValueLogged = Math.max.apply(Math, _this.props.values.map(function (v) {
+                return v.value;
+            }));
+            var minValueLogged = Math.min.apply(Math, _this.props.values.map(function (v) {
+                return v.value;
+            }));
+
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
+            _this.state = {
+                maxValueLogged: maxValueLogged,
+                minValueLogged: minValueLogged,
+                showGraph: false,
+                showTarget: true,
+                verticalLineTextXpos: widthPercentage * 12,
+                activeChartLeft: widthPercentage * 15,
+                activeChartRight: widthPercentage * 100,
+                activeChartWidth: widthPercentage * 85,
+                activeChartTop: heightPercentage * 20,
+                activeChartBottom: heightPercentage * 99,
+                activeChartHeight: heightPercentage * 79,
+                currentDate: months[parseInt(currentDateArray[1]) - 1] + ' ' + currentDateArray[2],
+                targetDate: months[parseInt(targetDateArray[1]) - 1] + ' ' + targetDateArray[2],
+                startDate: months[parseInt(firstDateArray[1]) - 1] + ' ' + firstDateArray[2],
+                secondDateCurrent: months[parseInt(secondDateCurrentArray[1]) - 1] + ' ' + secondDateCurrentArray[2],
+                thirdDateCurrent: months[parseInt(thirdDateCurrentArray[1]) - 1] + ' ' + thirdDateCurrentArray[2],
+                secondDateTarget: months[parseInt(secondDateTargetArray[1]) - 1] + ' ' + secondDateTargetArray[2],
+                thirdDateTarget: months[parseInt(thirdDateTargetArray[1]) - 1] + ' ' + thirdDateTargetArray[2],
+                currentTime: currentTime,
+                targetTime: targetTime,
+                timeDiffCurrent: timeDiffCurrent,
+                timeDiffTarget: timeDiffTarget,
+                xLabelWidth: 50
+            };
+        } else {
+            var _widthPercentage = _this.props.width < 1000 ? _this.props.width / 100 : 10;
+            var _heightPercentage = _this.props.height / 100;
+
+            _this.state = {
+                activeChartLeft: _widthPercentage * 15,
+                activeChartRight: _widthPercentage * 100,
+                activeChartWidth: _widthPercentage * 85,
+                activeChartTop: _heightPercentage * 20,
+                activeChartBottom: _heightPercentage * 99,
+                activeChartHeight: _heightPercentage * 79
+            };
+        }
         return _this;
     }
 
@@ -26223,7 +26202,7 @@ var Graph = function (_React$Component) {
     }, {
         key: 'getTargetLineHeight',
         value: function getTargetLineHeight(maxValue) {
-            if (!this.state.highTarget && this.state.showTarget) {
+            if (!this.props.highTarget && this.state.showTarget && this.props.target < this.state.minValueLogged) {
                 return this.state.activeChartBottom;
             } else {
                 var multiplier = this.props.target / maxValue;
@@ -26240,45 +26219,49 @@ var Graph = function (_React$Component) {
         value: function render() {
             var _this3 = this;
 
-            if (!this.props.values) {
-                return _react2.default.createElement('div', null);
-            }
             var maxValue = 0;
-            if (this.state.highTarget && this.state.showTarget) {
+            if (this.props.highTarget && this.state.showTarget && this.props.target > this.state.maxValueLogged) {
                 maxValue = this.props.target;
             } else {
                 maxValue = this.state.maxValueLogged;
             }
             var minValue = 0;
-            if (!this.state.highTarget && this.state.showTarget) {
+            if (!this.props.highTarget && this.state.showTarget && this.props.target < this.state.minValueLogged) {
                 minValue = this.props.target;
             } else {
                 minValue = this.state.minValueLogged;
             }
             var valueSpread = maxValue - minValue;
-
             var targetLineHeight = this.getTargetLineHeight(maxValue);
 
             var dataPoints = this.getDataPoints(valueSpread, maxValue);
             var linePoints = this.getLinePoints(dataPoints);
 
             var lines = linePoints.map(function (line) {
-                return _react2.default.createElement('line', {
-                    style: _graphStyle2.default.dataLine,
-                    key: line.key,
-                    x1: line.x1,
-                    y1: line.y1,
-                    x2: line.x2,
-                    y2: line.y2 });
+                if (_this3.props.values.length > 1) {
+                    return _react2.default.createElement('line', {
+                        style: _graphStyle2.default.dataLine,
+                        key: line.key,
+                        x1: line.x1,
+                        y1: line.y1,
+                        x2: line.x2,
+                        y2: line.y2 });
+                } else {
+                    return _react2.default.createElement('div', { key: '1' });
+                }
             });
             var circles = dataPoints.map(function (point) {
-                return _react2.default.createElement('circle', {
-                    style: _graphStyle2.default.dataCircle,
-                    key: point.key,
-                    cx: point.x,
-                    cy: point.y,
-                    'data-value': point.dataValue,
-                    r: point.radius });
+                if (_this3.props.values.length > 1) {
+                    return _react2.default.createElement('circle', {
+                        style: _graphStyle2.default.dataCircle,
+                        key: point.key,
+                        cx: point.x,
+                        cy: point.y,
+                        'data-value': point.dataValue,
+                        r: point.radius });
+                } else {
+                    return _react2.default.createElement('div', { key: '2' });
+                }
             });
 
             return _react2.default.createElement(
@@ -26288,9 +26271,9 @@ var Graph = function (_React$Component) {
                     'h2',
                     {
                         key: 'h2-' + this.props.header,
-                        onClick: function onClick() {
+                        onClick: this.props.values.length > 1 ? function () {
                             return _this3.toggleTarget();
-                        },
+                        } : console.log('No values to reference target...'),
                         style: _graphStyle2.default.h2 },
                     this.props.header,
                     _react2.default.createElement(
@@ -26378,7 +26361,7 @@ var Graph = function (_React$Component) {
                             x2: this.state.activeChartRight - 20,
                             y2: targetLineHeight })
                     ) : '',
-                    _react2.default.createElement(
+                    this.props.values.length > 1 ? _react2.default.createElement(
                         'g',
                         { className: 'labels y-labels' },
                         _react2.default.createElement(
@@ -26406,7 +26389,7 @@ var Graph = function (_React$Component) {
                             { x: this.state.verticalLineTextXpos, y: this.state.activeChartBottom, textAnchor: 'end' },
                             Math.round(minValue * 10) / 10
                         )
-                    ),
+                    ) : '',
                     _react2.default.createElement(
                         'g',
                         { className: 'data', 'data-setname': 'Lines' },
@@ -26418,7 +26401,7 @@ var Graph = function (_React$Component) {
                         circles
                     )
                 ),
-                _react2.default.createElement(
+                this.props.values.length > 1 ? _react2.default.createElement(
                     'div',
                     { style: _extends({}, _graphStyle2.default.xLabels, { marginLeft: this.state.activeChartLeft, width: this.state.activeChartRight - this.state.activeChartLeft }) },
                     _react2.default.createElement(
@@ -26473,7 +26456,7 @@ var Graph = function (_React$Component) {
                             )
                         )
                     )
-                )
+                ) : ''
             );
         }
     }]);

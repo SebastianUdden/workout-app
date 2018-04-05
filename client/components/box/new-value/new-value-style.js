@@ -18,6 +18,12 @@ export default {
         padding: '8px',
         borderRadius: '7px'
     },
+    date: {
+        display: 'block',
+        width: '100%',
+        padding: '8px',
+        borderRadius: '7px'
+    },
     add: {
         position: 'relative',
         padding: '5px',

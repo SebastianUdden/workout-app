@@ -8,7 +8,8 @@ class WorkoutComponent extends React.Component {
         super(props);
 
         this.state = {
-            tab: 1
+            tab: 1,
+            workouts: undefined
         }
     }
     
@@ -31,7 +32,8 @@ class WorkoutComponent extends React.Component {
                     });
                 }                         
             });
-            this.putData(this.props.url, {
+            this.setState({ workouts: workouts });
+            this.api('PUT', this.props.url, {
                 "workouts": workouts
             })
             .then(data => console.log(data))
@@ -48,13 +50,27 @@ class WorkoutComponent extends React.Component {
         }
     }
 
-    putData(url, data) {
+    deleteWorkout(event, index, workoutIndex) {
+        event.preventDefault();
+        if (this.props.profile.workouts) {
+            let workouts = this.props.profile.workouts;
+            workouts[workoutIndex].values.splice(index, 1);
+            this.setState({ workouts: workouts });            
+            this.api('PUT', this.props.url, {
+                "workouts": workouts
+            })
+            .then(data => console.log(data))
+            .catch(error => console.error(error))
+        }
+    }
+
+    api(type, url, data) {
         return fetch(url, {
             body: JSON.stringify(data),
             cache: 'no-cache',
             credentials: 'same-origin',
             headers: { 'content-type': 'application/json' },
-            method: 'PUT',
+            method: type,
             mode: 'cors',
             redirect: 'follow',
             referrer: 'no-referrer'
@@ -64,7 +80,13 @@ class WorkoutComponent extends React.Component {
 
     render() {
         let icons = [];
-        let box = this.props.profile ? this.props.profile.workouts.map((workout, index) => {            
+        let workouts; 
+        if (this.state.workouts) {
+            workouts = this.state.workouts;
+        } else if (this.props.profile) {
+            workouts = this.props.profile.workouts;
+        }
+        let box = workouts ? this.props.profile.workouts.map((workout, index) => {            
             let Svg = this.props.svgs[workout.name];
             icons.push(
                 <span 
@@ -78,7 +100,8 @@ class WorkoutComponent extends React.Component {
                 let workoutname = workout.name !== 'weight' ? workout.name : 'targetWeight';
                 return <Box 
                             key={index + 1}
-                            onClick={(input, workoutType) => this.newWorkout(input, workout.name, workout.values)}
+                            addWorkout={(input, workoutType) => this.newWorkout(input, workout.name, workout.values)}
+                            deleteWorkout={(e, i, wi) => this.deleteWorkout(e, i, index)}
                             header={workout.header} 
                             type={workout.type} 
                             placeholder={workout.placeholder}
@@ -87,6 +110,7 @@ class WorkoutComponent extends React.Component {
                 return <Box 
                             key={index + 1}
                             addRunningValue={(km, min, workoutType) => this.getRunningValue(km, min, workout.values)}
+                            deleteWorkout={(e, i, wi) => this.deleteWorkout(e, i, index)}
                             header={workout.header} 
                             type={workout.type} 
                             placeholder={workout.placeholder}
