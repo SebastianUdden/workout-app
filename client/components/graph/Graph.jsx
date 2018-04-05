@@ -6,8 +6,8 @@ import TargetSVG from '../svgs/TargetSVG.jsx';
 
 class Graph extends React.Component {
     constructor(props) {
-        super(props);                                  
-
+        super(props);                        
+        
         let firstDate = this.props.values[this.props.values.length - 1].date;
         let startTime = new Date(firstDate).getTime(firstDate);
 
@@ -149,6 +149,8 @@ class Graph extends React.Component {
     }
 
     render() {   
+        if (!this.props.values) 
+        { return (<div></div>); }
         let maxValue = 0;
         if (this.state.highTarget && this.state.showTarget) {
             maxValue = this.props.target;
@@ -289,12 +291,12 @@ class Graph extends React.Component {
                             </text></g>
                     </svg>
                     <svg style={{...s.xLabel}} width={this.state.xLabelWidth} height={this.state.xLabelWidth}>
-                        <g><text x="-25" y="35" transform="rotate(-45)">
+                        <g><text x="-25" y="35" transform="rotate(-45)" style={{display: this.props.values.length > 3 ? 'block' : 'none'}}>
                             {this.state.showTarget ? this.state.secondDateTarget : this.state.secondDateCurrent}
                         </text></g>
                     </svg>
                     <svg style={{...s.xLabel}} width={this.state.xLabelWidth} height={this.state.xLabelWidth}>
-                        <g><text x="-25" y="35" transform="rotate(-45)">
+                        <g><text x="-25" y="35" transform="rotate(-45)" style={{display: this.props.values.length > 3 ? 'block' : 'none'}}>
                             {this.state.showTarget ? this.state.thirdDateTarget : this.state.thirdDateCurrent}
                         </text></g>
                     </svg>

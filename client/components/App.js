@@ -1,5 +1,4 @@
 import React from 'react';
-import Page from './page/Page.jsx';
 import BoxContainer from './box-container/BoxContainer.jsx';
 
 import AppContent from './app-content/AppContent.jsx';
@@ -10,7 +9,7 @@ export default class App extends React.Component {
         super(props);
 
         this.state = {
-            page: 3
+            page: 1
         };
     }
 

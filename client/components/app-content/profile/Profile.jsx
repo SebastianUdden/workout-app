@@ -3,7 +3,6 @@ import Radium from 'radium';
 import s from './profile-style';
 
 import ProfileSelect from './profile-select/ProfileSelect.jsx';
-import defaultProfile from '../../../mock-data/defaultProfile.js';
 
 class profile extends React.Component {
     constructor(props) {
@@ -27,46 +26,112 @@ class profile extends React.Component {
         return (
             <div>
                 <h1 style={sp.textMargin}>Profile</h1>
-                <p style={sp.headerMargin}>{defaultProfile.name}</p>
+                <p style={sp.headerMargin}>{this.props.profile.name}</p>
                 
                 <h3 style={sp.textMargin}>Height</h3>
                 <p style={sp.textMargin}>
-                    <ProfileSelect min="0" max="240" default={defaultProfile.height} />
+                    {this.props.profile.height ? 
+                        <ProfileSelect 
+                            url={this.props.url}
+                            min='0'
+                            max='240' 
+                            type='height'
+                            default={this.props.profile.height} /> : ''}
                     cm
                 </p>
 
                 <h3 style={sp.textMargin}>Weight</h3>
                 <p style={sp.textMargin}>
-                    <ProfileSelect min="0" max="200" default={defaultProfile.weight} />
+                    {this.props.profile.weight ? 
+                        <ProfileSelect 
+                            url={this.props.url}
+                            min='0'
+                            max='200' 
+                            type='weight'
+                            targets={this.props.profile.targets} 
+                            default={this.props.profile.weight} /> : ''}
                     kg
                 </p>
                 
                 <h3 style={sp.textMargin}>Body Fat</h3>
                 <p style={sp.textMargin}>
-                    <ProfileSelect min="0" max="50" default={defaultProfile.bodyFat} />                    
+                    {this.props.profile.bodyFat ? 
+                        <ProfileSelect 
+                            url={this.props.url}
+                            min='0'
+                            max='50' 
+                            type='bodyFat'
+                            targets={this.props.profile.targets} 
+                            default={this.props.profile.bodyFat} /> : ''}        
                     %
                 </p>
 
                 <h3 style={sp.subHeaderMargin}>Target Values</h3>
                 <p style={sp.textMargin}>
-                    <ProfileSelect min="0" max="1000" default={defaultProfile.targets.pullups} />
+                    {this.props.profile.targets.pullup ? 
+                        <ProfileSelect 
+                            url={this.props.url}
+                            min='0'
+                            max='1000' 
+                            type='pullup'
+                            targets={this.props.profile.targets} 
+                            default={this.props.profile.targets.pullup} /> : ''}
                     pull-ups
                 </p>
                 <p style={sp.textMargin}>
-                    <ProfileSelect min="0" max="1000" default={defaultProfile.targets.pushups} />
+                    {this.props.profile.targets.pushup ? 
+                        <ProfileSelect 
+                            url={this.props.url}
+                            min='0'
+                            max='1000' 
+                            type='pushup'
+                            targets={this.props.profile.targets} 
+                            default={this.props.profile.targets.pushup} /> : ''}
                     push-ups
                 </p>
                 <p style={sp.textMargin}>
-                    <ProfileSelect min="0" max="1000" default={defaultProfile.targets.running} />
+                    {this.props.profile.targets.running ? 
+                        <ProfileSelect 
+                            url={this.props.url}
+                            min='0'
+                            max='1000' 
+                            type='running'
+                            targets={this.props.profile.targets} 
+                            default={this.props.profile.targets.running} /> : ''}
                     min (10 km)
                 </p>
                 <p style={sp.textMargin}>
-                    <ProfileSelect min="0" max="1000" default={defaultProfile.targets.situps} />
+                    {this.props.profile.targets.situp ? 
+                        <ProfileSelect 
+                            url={this.props.url}
+                            min='0'
+                            max='1000' 
+                            type='situp'
+                            targets={this.props.profile.targets} 
+                            default={this.props.profile.targets.situp} /> : ''}
                     sit-ups
                 </p>
                 <p style={sp.textMargin}>
-                    <ProfileSelect min="0" max="1000" default={defaultProfile.targets.squats} />
+                    {this.props.profile.targets.squat ? 
+                        <ProfileSelect 
+                            url={this.props.url}
+                            min='0'
+                            max='1000' 
+                            type='squat'
+                            targets={this.props.profile.targets} 
+                            default={this.props.profile.targets.squat} /> : ''}
                     squats
+                </p>
+                <p style={sp.textMargin}>
+                    {this.props.profile.targets.squat ? 
+                        <ProfileSelect 
+                            url={this.props.url}
+                            min='0'
+                            max='1000' 
+                            type='targetWeight'
+                            targets={this.props.profile.targets} 
+                            default={this.props.profile.targets.targetWeight} /> : ''}
+                    kg
                 </p>
             </div>
         );

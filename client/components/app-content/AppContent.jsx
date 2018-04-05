@@ -8,13 +8,6 @@ import Overview from './overview/Overview.jsx';
 
 import Stamp from '../tools/stamp/Stamp.jsx';
 
-import pullup from '../../mock-data/pullup';
-import pushup from '../../mock-data/pushup';
-import situp from '../../mock-data/situp';
-import squat from '../../mock-data/squat';
-import running from '../../mock-data/running';
-import weight from '../../mock-data/weight';
-
 import PullupSVG from '../svgs/PullupSVG.jsx';
 import PushupSVG from '../svgs/PushupSVG.jsx';
 import SitupSVG from '../svgs/SitupSVG.jsx';
@@ -26,15 +19,10 @@ class AppContent extends React.Component {
     constructor(props) {
         super(props);
 
+
         this.state = {
-            mockData: {
-                'pullup': pullup,
-                'pushup': pushup,
-                'situp': situp,
-                'squat': squat,
-                'running': running,
-                'weight': weight
-            },
+            usersUrl: 'https://arcane-journey-35345.herokuapp.com/api/users', // 'http://localhost:3005/api/users/',
+            userId: '5ac60344808d1f0d0011a59d',
             svgs: {
                 'pullup': PullupSVG,
                 'pushup': PushupSVG,
@@ -42,8 +30,24 @@ class AppContent extends React.Component {
                 'squat': SquatSVG,
                 'running': RunningSVG,
                 'weight': WeightSVG
-            }
+            },
+            profile: undefined
         }
+    }
+
+    componentDidMount() {
+        fetch(this.state.usersUrl)
+            .then((data) => data.json())
+            .then((data) => {
+                let db = data[0];
+                console.log(data[0]);
+                this.setState({
+                    profile: db
+                })
+            })        
+            .catch((error) => {
+                console.log('Something went wrong...');
+            });            
     }
 
     render() {
@@ -58,9 +62,10 @@ class AppContent extends React.Component {
                 {this.props.page === 1 ? 
                     <div>
                         <Workout 
+                            url={this.state.usersUrl + this.state.userId}
+                            profile={this.state.profile}
                             svgs={this.state.svgs} 
                             style={s} 
-                            data={this.state.mockData} 
                             width={this.props.width} />
                         <Stamp 
                             onTop={false}
@@ -75,6 +80,8 @@ class AppContent extends React.Component {
                 {this.props.page === 2 ? 
                     <div>
                         <Profile 
+                            url={this.state.usersUrl + this.state.userId}
+                            profile={this.state.profile}
                             style={s} 
                             width={this.props.width} />
                         <Stamp 
@@ -90,9 +97,9 @@ class AppContent extends React.Component {
                 {this.props.page === 3 ? 
                     <div>
                         <Overview 
+                            profile={this.state.profile}
                             svgs={this.state.svgs} 
                             style={s} 
-                            data={this.state.mockData} 
                             width={this.props.width} />
                         <Stamp 
                             onTop={false}

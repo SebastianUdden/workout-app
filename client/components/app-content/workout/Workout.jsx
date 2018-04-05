@@ -7,71 +7,92 @@ class WorkoutComponent extends React.Component {
     constructor(props) {
         super(props);
 
-        let types = [];
-        for(let type in this.props.data) {
-            types.push(type);
-        }
         this.state = {
-            tab: 1,
-            pullup: this.props.data.pullup.values,
-            pushup: this.props.data.pushup.values,
-            situp: this.props.data.situp.values,
-            squat: this.props.data.squat.values,
-            running: this.props.data.running.values,
-            weight: this.props.data.weight.values,
-            types: types
+            tab: 1
         }
     }
     
-    newWorkout(input, type) {
-        if (input !== '') {
-            let workout = this.state[type];
-            let newWorkout = [{
-                value: input,
-                date: new Date().toISOString().substring(0, 10)
-            }].concat(workout);
-            this.setState({[type]: newWorkout});
+    newWorkout(input, name, values) {
+        if (input !== '' && this.props.profile.workouts) {  
+            let today = new Date().toISOString().substring(0, 10);          
+            let workouts = this.props.profile.workouts;
+            workouts.map((workout) => {
+                if (workout.name === name && 
+                    workout.values.filter(value => (value.date === today)).length > 0) {
+                        workout.values.map((v) => {
+                            if (v.date === today) {
+                                v.value = parseInt(input);
+                            }
+                        });
+                } else if (workout.name === name) {
+                    workout.values.unshift({
+                        value: parseInt(input),
+                        date: today
+                    });
+                }                         
+            });
+            this.putData(this.props.url, {
+                "workouts": workouts
+            })
+            .then(data => console.log(data))
+            .catch(error => console.error(error))
         }
     }
 
-    getRunningValue(distance, time, type) {
+    getRunningValue(distance, time, values) {
         if (distance !== '' && time !== '') {
             let targetDistance = 10;
             let modifier = 1.15;
             let input = Math.round(time * Math.pow((targetDistance / distance), modifier));
-            this.newWorkout(input, type);
+            this.newWorkout(input, 'running', values);
         }
     }
 
+    putData(url, data) {
+        return fetch(url, {
+            body: JSON.stringify(data),
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: { 'content-type': 'application/json' },
+            method: 'PUT',
+            mode: 'cors',
+            redirect: 'follow',
+            referrer: 'no-referrer'
+        })
+        .then(response => response.json());
+    }
+
     render() {
-        let icons = this.state.types.map((type, index) => {
-            let Svg = this.props.svgs[type];
-            return <span key={index + 1} 
-                         onClick={() => this.setState({tab: index + 1})}>
-                            <Svg 
-                                width={100 / (this.state.types.length * 1.4) + 'vw'}
-                                style={this.props.style.icon} />                            
-                    </span>
-        });  
-        let box = this.state.types.map((type, index) => {
-            if (this.state.tab === index + 1 && type !== 'running') {
+        let icons = [];
+        let box = this.props.profile ? this.props.profile.workouts.map((workout, index) => {            
+            let Svg = this.props.svgs[workout.name];
+            icons.push(
+                <span 
+                    key={index + 1} 
+                    onClick={() => this.setState({tab: index + 1})}>
+                    <Svg 
+                        width={100 / (this.props.profile.workouts.length * 1.4) + '%'}
+                        style={this.props.style.icon} />                            
+                </span>);
+            if (this.state.tab === index + 1 && workout.name !== 'running') {
+                let workoutname = workout.name !== 'weight' ? workout.name : 'targetWeight';
                 return <Box 
                             key={index + 1}
-                            onClick={(input, workoutType) => this.newWorkout(input, type)}
-                            header={this.props.data[type].header} 
-                            type={this.props.data[type].type} 
-                            placeholder={this.props.data[type].placeholder}
-                            values={this.state[type]} />
-            } else if (this.state.tab === index + 1 && type === 'running') {
+                            onClick={(input, workoutType) => this.newWorkout(input, workout.name, workout.values)}
+                            header={workout.header} 
+                            type={workout.type} 
+                            placeholder={workout.placeholder}
+                            values={workout.values} />
+            } else if (this.state.tab === index + 1 && workout.name === 'running') {
                 return <Box 
                             key={index + 1}
-                            addRunningValue={(km, min, workoutType) => this.getRunningValue(km, min, type)}
-                            header={this.props.data[type].header} 
-                            type={this.props.data[type].type} 
-                            placeholder={this.props.data[type].placeholder}
-                            values={this.state[type]} />
+                            addRunningValue={(km, min, workoutType) => this.getRunningValue(km, min, workout.values)}
+                            header={workout.header} 
+                            type={workout.type} 
+                            placeholder={workout.placeholder}
+                            values={workout.values} />
             }
-        });
+        }) : '';
         return (
             <div>
                 <h1 style={this.props.style.textMargin}>Workouts</h1>
