@@ -37,13 +37,7 @@ class AppContent extends React.Component {
         this.props.logout();
     }
 
-    render() {
-        let color = {
-            r: 139,
-            g: 0,
-            b: 0,
-            a: 0.2
-        };
+    render() {       
         return (
             <div style={s.container}>                           
                 {this.props.page === 1 && this.props.loggedIn ? 
@@ -53,15 +47,7 @@ class AppContent extends React.Component {
                             profile={this.state.profile}
                             svgs={this.state.svgs} 
                             style={s} 
-                            width={this.props.width} />
-                        <Stamp 
-                            onTop={false}
-                            text={this.props.source} 
-                            color={color}
-                            size="5"
-                            xPercentage="60"
-                            yPercentage="-78.1"
-                            rotation="25" />
+                            width={this.props.width} />                       
                     </div>
                 : ''}
                 {this.props.page === 2 && this.props.loggedIn ? 
@@ -72,14 +58,6 @@ class AppContent extends React.Component {
                             profile={this.state.profile}
                             style={s} 
                             width={this.props.width} />
-                        <Stamp 
-                            onTop={false}
-                            text={this.props.source} 
-                            color={color}
-                            size="5"
-                            xPercentage="60"
-                            yPercentage="-69.3"
-                            rotation="25" />
                     </div>
                 : ''}
                 {this.props.page === 3 && this.props.loggedIn ? 
@@ -89,14 +67,6 @@ class AppContent extends React.Component {
                             svgs={this.state.svgs} 
                             style={s} 
                             width={this.props.width} />
-                        <Stamp 
-                            onTop={false}
-                            text={this.props.source} 
-                            color={color}
-                            size="5"
-                            xPercentage="60"
-                            yPercentage="-69"
-                            rotation="25" />
                     </div>
                 : ''}                
             </div>                

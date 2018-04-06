@@ -2,6 +2,8 @@ import React from 'react';
 import Radium from 'radium';
 import s from './login-style';
 
+import Stamp from '../tools/stamp/Stamp.jsx';
+
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -14,9 +16,25 @@ class Login extends React.Component {
             document.getElementById('password').value);
     }
 
-    render() {
+    render() {        
         return (
             <div style={s.loginBox}> 
+                <Stamp 
+                    onTop={false}
+                    text="Demo-email: john.doe@gmail.com"
+                    color={s.stampColor}
+                    size="4"
+                    xPercentage="30"
+                    yPercentage="-17.1"
+                    rotation="20" />
+                <Stamp 
+                    onTop={false}
+                    text="Demo-password: password"
+                    color={s.stampColor}
+                    size="4"
+                    xPercentage="30"
+                    yPercentage="-7.1"
+                    rotation="20" />
                 <form
                     onSubmit={(e) => this.handleSubmit(e)}>
                     <h1>Login</h1>
@@ -35,6 +53,9 @@ class Login extends React.Component {
                         style={s.loginButton}
                         value="Submit" />
                 </form>
+                <a
+                    style={s.register} 
+                    onClick={(tab) => this.props.switchPage(tab)}>Create account</a>
             </div>
         );
     }

@@ -1,11 +1,5 @@
 export default {
-    stampColor: {
-        r: 139,
-        g: 0,
-        b: 0,
-        a: 0.2
-    },
-    register: {
+    cancel: {
         userSelect: 'none',
         color: '#50bd50',
         cursor: 'pointer',
@@ -14,9 +8,21 @@ export default {
             textDecoration: 'underline'
         }
     },
+    password: {
+        color: '#dd0000'
+    },
     loginBox: {
-        margin: '20vh auto',
+        margin: '5vh auto',
         textAlign: 'center'
+    },
+    loginInputSmall: {
+        display: 'inline',
+        width: '43%',
+        maxWidth: '175px',
+        margin: '10px auto',
+        padding: '10px',
+        borderRadius: '10px',
+        fontSize: '1.1em'
     },
     loginInput: {
         display: 'block',
@@ -35,7 +41,6 @@ export default {
         borderRadius: '10px',
         fontSize: '1.1em',
         backgroundColor: '#50bd50',
-        color: '#ffffff',
-        cursor: 'pointer',
+        color: '#ffffff'
     }
 }

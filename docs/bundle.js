@@ -19970,6 +19970,10 @@ var _Login = __webpack_require__(148);
 
 var _Login2 = _interopRequireDefault(_Login);
 
+var _Register = __webpack_require__(150);
+
+var _Register2 = _interopRequireDefault(_Register);
+
 var _AppContent = __webpack_require__(119);
 
 var _AppContent2 = _interopRequireDefault(_AppContent);
@@ -20096,9 +20100,24 @@ var App = function (_React$Component) {
             }, 100);
         }
     }, {
+        key: 'register',
+        value: function register(email, password, firstname, lastname) {
+            console.log('email: ', email);
+            console.log('password: ', password);
+            console.log('firstname: ', firstname);
+            console.log('lastname: ', lastname);
+
+            this.setState({
+                page: 0,
+                loggedIn: false,
+                wrongLogin: 0,
+                profile: undefined
+            });
+        }
+    }, {
         key: 'switchPage',
         value: function switchPage(number) {
-            this.setState({ page: this.state.loggedIn ? number : 0 });
+            this.setState({ page: number });
         }
     }, {
         key: 'render',
@@ -20144,6 +20163,17 @@ var App = function (_React$Component) {
                     this.state.page === 0 && !this.state.loggedIn ? _react2.default.createElement(_Login2.default, {
                         login: function login(email, password) {
                             return _this3.login(email, password);
+                        },
+                        switchPage: function switchPage(tab) {
+                            return _this3.switchPage(4);
+                        }
+                    }) : '',
+                    this.state.page === 4 ? _react2.default.createElement(_Register2.default, {
+                        register: function register(email, password, firstname, lastname) {
+                            return _this3.register(email, password, firstname, lastname);
+                        },
+                        switchPage: function switchPage(tab) {
+                            return _this3.switchPage(0);
                         }
                     }) : '',
                     _react2.default.createElement(
@@ -25338,12 +25368,6 @@ var AppContent = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
-            var color = {
-                r: 139,
-                g: 0,
-                b: 0,
-                a: 0.2
-            };
             return _react2.default.createElement(
                 'div',
                 { style: _appContentStyle2.default.container },
@@ -25355,15 +25379,7 @@ var AppContent = function (_React$Component) {
                         profile: this.state.profile,
                         svgs: this.state.svgs,
                         style: _appContentStyle2.default,
-                        width: this.props.width }),
-                    _react2.default.createElement(_Stamp2.default, {
-                        onTop: false,
-                        text: this.props.source,
-                        color: color,
-                        size: '5',
-                        xPercentage: '60',
-                        yPercentage: '-78.1',
-                        rotation: '25' })
+                        width: this.props.width })
                 ) : '',
                 this.props.page === 2 && this.props.loggedIn ? _react2.default.createElement(
                     'div',
@@ -25375,15 +25391,7 @@ var AppContent = function (_React$Component) {
                         url: this.props.usersUrl + this.props.userId,
                         profile: this.state.profile,
                         style: _appContentStyle2.default,
-                        width: this.props.width }),
-                    _react2.default.createElement(_Stamp2.default, {
-                        onTop: false,
-                        text: this.props.source,
-                        color: color,
-                        size: '5',
-                        xPercentage: '60',
-                        yPercentage: '-69.3',
-                        rotation: '25' })
+                        width: this.props.width })
                 ) : '',
                 this.props.page === 3 && this.props.loggedIn ? _react2.default.createElement(
                     'div',
@@ -25392,15 +25400,7 @@ var AppContent = function (_React$Component) {
                         profile: this.state.profile,
                         svgs: this.state.svgs,
                         style: _appContentStyle2.default,
-                        width: this.props.width }),
-                    _react2.default.createElement(_Stamp2.default, {
-                        onTop: false,
-                        text: this.props.source,
-                        color: color,
-                        size: '5',
-                        xPercentage: '60',
-                        yPercentage: '-69',
-                        rotation: '25' })
+                        width: this.props.width })
                 ) : ''
             );
         }
@@ -27983,6 +27983,10 @@ var _loginStyle = __webpack_require__(149);
 
 var _loginStyle2 = _interopRequireDefault(_loginStyle);
 
+var _Stamp = __webpack_require__(131);
+
+var _Stamp2 = _interopRequireDefault(_Stamp);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28014,6 +28018,22 @@ var Login = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { style: _loginStyle2.default.loginBox },
+                _react2.default.createElement(_Stamp2.default, {
+                    onTop: false,
+                    text: 'Demo-email: john.doe@gmail.com',
+                    color: _loginStyle2.default.stampColor,
+                    size: '4',
+                    xPercentage: '30',
+                    yPercentage: '-17.1',
+                    rotation: '20' }),
+                _react2.default.createElement(_Stamp2.default, {
+                    onTop: false,
+                    text: 'Demo-password: password',
+                    color: _loginStyle2.default.stampColor,
+                    size: '4',
+                    xPercentage: '30',
+                    yPercentage: '-7.1',
+                    rotation: '20' }),
                 _react2.default.createElement(
                     'form',
                     {
@@ -28039,6 +28059,15 @@ var Login = function (_React$Component) {
                         type: 'submit',
                         style: _loginStyle2.default.loginButton,
                         value: 'Submit' })
+                ),
+                _react2.default.createElement(
+                    'a',
+                    {
+                        style: _loginStyle2.default.register,
+                        onClick: function onClick(tab) {
+                            return _this2.props.switchPage(tab);
+                        } },
+                    'Create account'
                 )
             );
         }
@@ -28060,9 +28089,217 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
+    stampColor: {
+        r: 139,
+        g: 0,
+        b: 0,
+        a: 0.2
+    },
+    register: {
+        userSelect: 'none',
+        color: '#50bd50',
+        cursor: 'pointer',
+        ':hover': {
+            color: '#208d20',
+            textDecoration: 'underline'
+        }
+    },
     loginBox: {
         margin: '20vh auto',
         textAlign: 'center'
+    },
+    loginInput: {
+        display: 'block',
+        width: '90%',
+        maxWidth: '350px',
+        margin: '10px auto',
+        padding: '10px',
+        borderRadius: '10px',
+        fontSize: '1.1em'
+    },
+    loginButton: {
+        width: '90%',
+        maxWidth: '350px',
+        margin: '10px auto',
+        padding: '10px',
+        borderRadius: '10px',
+        fontSize: '1.1em',
+        backgroundColor: '#50bd50',
+        color: '#ffffff',
+        cursor: 'pointer'
+    }
+};
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+var _registerStyle = __webpack_require__(151);
+
+var _registerStyle2 = _interopRequireDefault(_registerStyle);
+
+var _Stamp = __webpack_require__(131);
+
+var _Stamp2 = _interopRequireDefault(_Stamp);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Register = function (_React$Component) {
+    _inherits(Register, _React$Component);
+
+    function Register(props) {
+        _classCallCheck(this, Register);
+
+        var _this = _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).call(this, props));
+
+        _this.state = {
+            showWrongPassword: false
+        };
+        return _this;
+    }
+
+    _createClass(Register, [{
+        key: 'handleSubmit',
+        value: function handleSubmit(event) {
+            event.preventDefault();
+            var password = document.getElementById('password').value;
+            if (password !== '' && password === document.getElementById('repeatPassword').value) {
+                this.props.register(document.getElementById('firstname').value, document.getElementById('lastname').value, document.getElementById('email').value, document.getElementById('password').value);
+                this.setState({ showWrongPassword: false });
+            } else {
+                this.setState({ showWrongPassword: true });
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                'div',
+                { style: _registerStyle2.default.loginBox },
+                _react2.default.createElement(
+                    'form',
+                    {
+                        onSubmit: function onSubmit(e) {
+                            return _this2.handleSubmit(e);
+                        } },
+                    _react2.default.createElement(
+                        'h1',
+                        null,
+                        'Register'
+                    ),
+                    _react2.default.createElement('input', {
+                        id: 'firstname',
+                        style: _registerStyle2.default.loginInput,
+                        type: 'string',
+                        placeholder: 'Enter Firstname' }),
+                    _react2.default.createElement('input', {
+                        id: 'lastname',
+                        style: _registerStyle2.default.loginInput,
+                        type: 'string',
+                        placeholder: 'Enter Lastname' }),
+                    _react2.default.createElement('input', {
+                        id: 'email',
+                        style: _registerStyle2.default.loginInput,
+                        type: 'email',
+                        placeholder: 'Enter Email' }),
+                    _react2.default.createElement('input', {
+                        id: 'password',
+                        style: _registerStyle2.default.loginInput,
+                        type: 'password',
+                        placeholder: 'Enter Password' }),
+                    _react2.default.createElement('input', {
+                        id: 'repeatPassword',
+                        style: _registerStyle2.default.loginInput,
+                        type: 'password',
+                        placeholder: 'Repeat Password' }),
+                    this.state.showWrongPassword ? _react2.default.createElement(
+                        'p',
+                        { style: _registerStyle2.default.password },
+                        'Passwords are not matching!'
+                    ) : '',
+                    _react2.default.createElement('input', {
+                        type: 'submit',
+                        style: _registerStyle2.default.loginButton,
+                        value: 'Submit' })
+                ),
+                _react2.default.createElement(
+                    'a',
+                    {
+                        style: _registerStyle2.default.cancel,
+                        onClick: function onClick(tab) {
+                            return _this2.props.switchPage(tab);
+                        } },
+                    'Cancel'
+                )
+            );
+        }
+    }]);
+
+    return Register;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(Register);
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    cancel: {
+        userSelect: 'none',
+        color: '#50bd50',
+        cursor: 'pointer',
+        ':hover': {
+            color: '#208d20',
+            textDecoration: 'underline'
+        }
+    },
+    password: {
+        color: '#dd0000'
+    },
+    loginBox: {
+        margin: '5vh auto',
+        textAlign: 'center'
+    },
+    loginInputSmall: {
+        display: 'inline',
+        width: '43%',
+        maxWidth: '175px',
+        margin: '10px auto',
+        padding: '10px',
+        borderRadius: '10px',
+        fontSize: '1.1em'
     },
     loginInput: {
         display: 'block',
