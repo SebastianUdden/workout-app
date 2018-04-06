@@ -14,6 +14,7 @@ export default {
     },
     loginButton: {
         width: '90%',
+        maxWidth: '350px',
         margin: '10px auto',
         padding: '10px',        
         borderRadius: '10px',

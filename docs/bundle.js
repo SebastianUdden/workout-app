@@ -19992,10 +19992,10 @@ var App = function (_React$Component) {
     function App(props) {
         _classCallCheck(this, App);
 
-        // let backEndUrl = 'https://arcane-journey-35345.herokuapp.com/';            
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-        var backEndUrl = 'http://localhost:3005';
+        var backEndUrl = 'https://arcane-journey-35345.herokuapp.com';
+        // let backEndUrl = 'http://localhost:3005';
         _this.state = {
             usersUrl: backEndUrl + '/api/users/',
             registryUrl: backEndUrl + '/api/registry/users/',
@@ -28075,6 +28075,7 @@ exports.default = {
     },
     loginButton: {
         width: '90%',
+        maxWidth: '350px',
         margin: '10px auto',
         padding: '10px',
         borderRadius: '10px',

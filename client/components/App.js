@@ -9,8 +9,8 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         
-        // let backEndUrl = 'https://arcane-journey-35345.herokuapp.com/';            
-        let backEndUrl = 'http://localhost:3005';
+        let backEndUrl = 'https://arcane-journey-35345.herokuapp.com';            
+        // let backEndUrl = 'http://localhost:3005';
         this.state = {
             usersUrl: backEndUrl + '/api/users/',
             registryUrl: backEndUrl + '/api/registry/users/',
