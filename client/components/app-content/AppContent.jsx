@@ -20,9 +20,6 @@ class AppContent extends React.Component {
         super(props);
 
         this.state = {
-            usersUrl: 'http://localhost:3005/api/users/',
-            // usersUrl: 'https://arcane-journey-35345.herokuapp.com/api/users/',
-            userId: '5ac60344808d1f0d0011a59d',
             svgs: {
                 'pullup': PullupSVG,
                 'pushup': PushupSVG,
@@ -31,22 +28,13 @@ class AppContent extends React.Component {
                 'running': RunningSVG,
                 'weight': WeightSVG
             },
-            profile: undefined
+            profile: this.props.profile
         }
-    }
+    }    
 
-    componentDidMount() {
-        fetch(this.state.usersUrl)
-            .then((data) => data.json())
-            .then((data) => {
-                let db = data[0];
-                this.setState({
-                    profile: db
-                })
-            })        
-            .catch((error) => {
-                console.log('Something went wrong...');
-            });            
+    logout() {
+        this.setState({profile: undefined});
+        this.props.logout();
     }
 
     render() {
@@ -57,11 +45,11 @@ class AppContent extends React.Component {
             a: 0.2
         };
         return (
-            <div style={s.container}>                
-                {this.props.page === 1 ? 
+            <div style={s.container}>                           
+                {this.props.page === 1 && this.props.loggedIn ? 
                     <div>
                         <Workout 
-                            url={this.state.usersUrl + this.state.userId}
+                            url={this.props.usersUrl + this.props.userId}
                             profile={this.state.profile}
                             svgs={this.state.svgs} 
                             style={s} 
@@ -76,10 +64,11 @@ class AppContent extends React.Component {
                             rotation="25" />
                     </div>
                 : ''}
-                {this.props.page === 2 ? 
+                {this.props.page === 2 && this.props.loggedIn ? 
                     <div>
                         <Profile 
-                            url={this.state.usersUrl + this.state.userId}
+                            logout={() => this.logout()}
+                            url={this.props.usersUrl + this.props.userId}
                             profile={this.state.profile}
                             style={s} 
                             width={this.props.width} />
@@ -93,7 +82,7 @@ class AppContent extends React.Component {
                             rotation="25" />
                     </div>
                 : ''}
-                {this.props.page === 3 ? 
+                {this.props.page === 3 && this.props.loggedIn ? 
                     <div>
                         <Overview 
                             profile={this.state.profile}

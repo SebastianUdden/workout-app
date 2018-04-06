@@ -5,10 +5,6 @@ import s from './box-container-style';
 import Box from '../box/Box.jsx';
 import CreateBox from './create-box/CreateBox.jsx';
 
-// import pushups from '../../mock-data/pushups';
-// import situps from '../../mock-data/situps';
-// import running10km from '../../mock-data/running10km';
-
 class BoxContainer extends React.Component {
     render() {        
         return (

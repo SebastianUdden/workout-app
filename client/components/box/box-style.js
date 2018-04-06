@@ -1,11 +1,11 @@
 export default {
     container: {
-        // backgroundColor: '#b2f2f2',
         backgroundColor: '#ddd',
         padding: '1vh',
         margin: '5px',
         borderRadius: '10px',
-        height: '58vh'
+        height: '58vh',
+        overflowY: 'scroll'
     },
     header: {
         color: '#000',

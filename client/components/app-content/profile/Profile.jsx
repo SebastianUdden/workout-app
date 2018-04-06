@@ -15,7 +15,7 @@ class profile extends React.Component {
         return (
             <div>
                 <h1 style={sp.textMargin}>Profile</h1>
-                <p style={sp.headerMargin}>{this.props.profile.name}</p>
+                <p style={sp.headerMargin}>{this.props.profile.firstname} {this.props.profile.lastname}</p>
                 
                 <h3 style={sp.textMargin}>Height</h3>
                 <p style={sp.textMargin}>
@@ -119,6 +119,9 @@ class profile extends React.Component {
                             default={this.props.profile.targets.targetWeight} /> : ''}
                     kg
                 </p>
+                <button 
+                    style={s.logoutButton}
+                    onClick={() => this.props.logout()}>Logout</button>
             </div>
         );
     }

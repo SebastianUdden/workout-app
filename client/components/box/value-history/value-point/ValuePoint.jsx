@@ -25,7 +25,7 @@ class ValueHistory extends React.Component {
             <g style={this.props.lastAdded ? s.currentBar : {}}>
                 <text
                     onClick={(e, index) => this.props.deleteWorkout(e, index)}
-                    style={{...s.text, display: this.state.showDeleteButton}}
+                    style={{...s.delete, display: this.state.showDeleteButton}}
                     width={this.state.deleteWidth - 10}
                     y={this.props.lastAdded ? this.props.y + 20: this.props.y + 44}
                     x={0}>x</text>

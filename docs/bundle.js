@@ -2392,11 +2392,11 @@ var _NewValue = __webpack_require__(40);
 
 var _NewValue2 = _interopRequireDefault(_NewValue);
 
-var _NewRunningValue = __webpack_require__(113);
+var _NewRunningValue = __webpack_require__(111);
 
 var _NewRunningValue2 = _interopRequireDefault(_NewRunningValue);
 
-var _ValueHistory = __webpack_require__(114);
+var _ValueHistory = __webpack_require__(112);
 
 var _ValueHistory2 = _interopRequireDefault(_ValueHistory);
 
@@ -2486,12 +2486,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     container: {
-        // backgroundColor: '#b2f2f2',
         backgroundColor: '#ddd',
         padding: '1vh',
         margin: '5px',
         borderRadius: '10px',
-        height: '58vh'
+        height: '58vh',
+        overflowY: 'scroll'
     },
     header: {
         color: '#000',
@@ -19966,11 +19966,15 @@ var _BoxContainer = __webpack_require__(56);
 
 var _BoxContainer2 = _interopRequireDefault(_BoxContainer);
 
-var _AppContent = __webpack_require__(121);
+var _Login = __webpack_require__(148);
+
+var _Login2 = _interopRequireDefault(_Login);
+
+var _AppContent = __webpack_require__(119);
 
 var _AppContent2 = _interopRequireDefault(_AppContent);
 
-var _AppFooter = __webpack_require__(141);
+var _AppFooter = __webpack_require__(139);
 
 var _AppFooter2 = _interopRequireDefault(_AppFooter);
 
@@ -19988,31 +19992,128 @@ var App = function (_React$Component) {
     function App(props) {
         _classCallCheck(this, App);
 
+        // let backEndUrl = 'https://arcane-journey-35345.herokuapp.com/';            
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
+        var backEndUrl = 'http://localhost:3005';
         _this.state = {
-            page: 3
+            usersUrl: backEndUrl + '/api/users/',
+            registryUrl: backEndUrl + '/api/registry/users/',
+            registry: undefined,
+            userId: undefined,
+            profile: undefined,
+            page: 0,
+            loggedIn: false,
+            wrongLogin: 0
         };
         return _this;
     }
 
     _createClass(App, [{
+        key: 'logout',
+        value: function logout() {
+            this.setState({
+                page: 0,
+                loggedIn: false,
+                wrongLogin: 0,
+                profile: undefined
+            });
+        }
+    }, {
+        key: 'login',
+        value: function login(email, password) {
+            var _this2 = this;
+
+            fetch(this.state.registryUrl).then(function (data) {
+                return data.json();
+            }).then(function (data) {
+                _this2.setState({ registry: data });
+            }).catch(function (error) {
+                console.log('Something went wrong...');
+            });
+
+            setTimeout(function () {
+                if (_this2.state.registry) {
+                    var _loop = function _loop(user) {
+                        if (user.email === email && user.password === password) {
+                            _this2.setState({
+                                userId: user.userModelId,
+                                page: 0,
+                                loggedIn: false,
+                                wrongLogin: 0
+                            });
+                            if (_this2.state.userId) {
+                                fetch(_this2.state.usersUrl + _this2.state.userId).then(function (data) {
+                                    return data.json();
+                                }).then(function (data) {
+                                    var profile = data;
+                                    _this2.setState({
+                                        userId: user.userModelId,
+                                        page: 1,
+                                        loggedIn: true,
+                                        wrongLogin: 0,
+                                        profile: profile
+                                    });
+                                }).catch(function (error) {
+                                    console.log('Something went wrong...');
+                                });
+                            }
+                        }
+                    };
+
+                    var _iteratorNormalCompletion = true;
+                    var _didIteratorError = false;
+                    var _iteratorError = undefined;
+
+                    try {
+                        for (var _iterator = _this2.state.registry[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                            var user = _step.value;
+
+                            _loop(user);
+                        }
+                    } catch (err) {
+                        _didIteratorError = true;
+                        _iteratorError = err;
+                    } finally {
+                        try {
+                            if (!_iteratorNormalCompletion && _iterator.return) {
+                                _iterator.return();
+                            }
+                        } finally {
+                            if (_didIteratorError) {
+                                throw _iteratorError;
+                            }
+                        }
+                    }
+
+                    _this2.setState({
+                        userId: undefined,
+                        page: 0,
+                        loggedIn: false,
+                        wrongLogin: _this2.state.wrongLogin + 1
+                    });
+                }
+            }, 100);
+        }
+    }, {
         key: 'switchPage',
         value: function switchPage(number) {
-            this.setState({ page: number });
+            this.setState({ page: this.state.loggedIn ? number : 0 });
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
+            var displayWrongLogin = this.state.wrongLogin > 1 ? 'block' : 'none';
             return _react2.default.createElement(
                 'div',
                 { style: {
-                        // border: '1px solid green',
                         width: '100%',
                         minWidth: '300px',
-                        margin: '0 auto'
+                        margin: '6px auto',
+                        maxHeight: '100vh',
+                        overflowY: 'hidden'
                     } },
                 _react2.default.createElement(
                     'div',
@@ -20022,19 +20123,47 @@ var App = function (_React$Component) {
                             maxWidth: '1200px',
                             minWidth: '300px',
                             margin: '0 auto',
-                            display: 'block'
-                            // border: '1px solid red',                    
+                            display: 'block',
+                            height: '80vh',
+                            overflowY: 'scroll'
                         } },
-                    _react2.default.createElement(_AppContent2.default, {
+                    this.state.profile ? _react2.default.createElement(_AppContent2.default, {
+                        profile: this.state.profile,
+                        usersUrl: this.state.usersUrl,
+                        userId: this.state.userId,
+                        login: function login(email, password) {
+                            return _this3.login(email, password);
+                        },
+                        logout: function logout() {
+                            return _this3.logout();
+                        },
+                        loggedIn: this.state.loggedIn,
                         page: this.state.page,
                         source: 'Mock Data',
-                        width: document.getElementById('Container') })
+                        width: document.getElementById('Container') }) : '',
+                    this.state.page === 0 && !this.state.loggedIn ? _react2.default.createElement(_Login2.default, {
+                        login: function login(email, password) {
+                            return _this3.login(email, password);
+                        }
+                    }) : '',
+                    _react2.default.createElement(
+                        'p',
+                        { style: {
+                                display: displayWrongLogin,
+                                textAlign: 'center',
+                                fontSize: '1.3em',
+                                color: 'red'
+                            } },
+                        'Wrong login (',
+                        this.state.wrongLogin,
+                        ')'
+                    )
                 ),
-                _react2.default.createElement(_AppFooter2.default, {
+                this.state.loggedIn ? _react2.default.createElement(_AppFooter2.default, {
                     switchPage: function switchPage(number) {
-                        return _this2.switchPage(number);
+                        return _this3.switchPage(number);
                     },
-                    width: document.body.clientWidth })
+                    width: document.body.clientWidth }) : ''
             );
         }
     }]);
@@ -20073,7 +20202,7 @@ var _Box = __webpack_require__(38);
 
 var _Box2 = _interopRequireDefault(_Box);
 
-var _CreateBox = __webpack_require__(118);
+var _CreateBox = __webpack_require__(116);
 
 var _CreateBox2 = _interopRequireDefault(_CreateBox);
 
@@ -20084,10 +20213,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import pushups from '../../mock-data/pushups';
-// import situps from '../../mock-data/situps';
-// import running10km from '../../mock-data/running10km';
 
 var BoxContainer = function (_React$Component) {
     _inherits(BoxContainer, _React$Component);
@@ -24614,9 +24739,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 111 */,
-/* 112 */,
-/* 113 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24689,7 +24812,7 @@ var NewRunningValue = function (_React$Component) {
 exports.default = (0, _radium2.default)(NewRunningValue);
 
 /***/ }),
-/* 114 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24709,11 +24832,11 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _valueHistoryStyle = __webpack_require__(115);
+var _valueHistoryStyle = __webpack_require__(113);
 
 var _valueHistoryStyle2 = _interopRequireDefault(_valueHistoryStyle);
 
-var _ValuePoint = __webpack_require__(116);
+var _ValuePoint = __webpack_require__(114);
 
 var _ValuePoint2 = _interopRequireDefault(_ValuePoint);
 
@@ -24780,7 +24903,7 @@ var ValueHistory = function (_React$Component) {
 exports.default = (0, _radium2.default)(ValueHistory);
 
 /***/ }),
-/* 115 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24808,7 +24931,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 116 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24830,7 +24953,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _valuePointStyle = __webpack_require__(117);
+var _valuePointStyle = __webpack_require__(115);
 
 var _valuePointStyle2 = _interopRequireDefault(_valuePointStyle);
 
@@ -24880,7 +25003,7 @@ var ValueHistory = function (_React$Component) {
                         onClick: function onClick(e, index) {
                             return _this2.props.deleteWorkout(e, index);
                         },
-                        style: _extends({}, _valuePointStyle2.default.text, { display: this.state.showDeleteButton }),
+                        style: _extends({}, _valuePointStyle2.default.delete, { display: this.state.showDeleteButton }),
                         width: this.state.deleteWidth - 10,
                         y: this.props.lastAdded ? this.props.y + 20 : this.props.y + 44,
                         x: 0 },
@@ -24925,7 +25048,7 @@ var ValueHistory = function (_React$Component) {
 exports.default = (0, _radium2.default)(ValueHistory);
 
 /***/ }),
-/* 117 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24954,7 +25077,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 118 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24982,7 +25105,7 @@ var _NewValue = __webpack_require__(40);
 
 var _NewValue2 = _interopRequireDefault(_NewValue);
 
-var _WorkoutOptions = __webpack_require__(119);
+var _WorkoutOptions = __webpack_require__(117);
 
 var _WorkoutOptions2 = _interopRequireDefault(_WorkoutOptions);
 
@@ -25032,7 +25155,7 @@ var BoxContainer = function (_React$Component) {
 exports.default = (0, _radium2.default)(BoxContainer);
 
 /***/ }),
-/* 119 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25052,7 +25175,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _workoutOptionsStyle = __webpack_require__(120);
+var _workoutOptionsStyle = __webpack_require__(118);
 
 var _workoutOptionsStyle2 = _interopRequireDefault(_workoutOptionsStyle);
 
@@ -25096,7 +25219,7 @@ var WorkoutOptions = function (_React$Component) {
 exports.default = (0, _radium2.default)(WorkoutOptions);
 
 /***/ }),
-/* 120 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25110,7 +25233,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 121 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25130,47 +25253,47 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _appContentStyle = __webpack_require__(122);
+var _appContentStyle = __webpack_require__(120);
 
 var _appContentStyle2 = _interopRequireDefault(_appContentStyle);
 
-var _Workout = __webpack_require__(123);
+var _Workout = __webpack_require__(121);
 
 var _Workout2 = _interopRequireDefault(_Workout);
 
-var _Profile = __webpack_require__(124);
+var _Profile = __webpack_require__(122);
 
 var _Profile2 = _interopRequireDefault(_Profile);
 
-var _Overview = __webpack_require__(128);
+var _Overview = __webpack_require__(126);
 
 var _Overview2 = _interopRequireDefault(_Overview);
 
-var _Stamp = __webpack_require__(133);
+var _Stamp = __webpack_require__(131);
 
 var _Stamp2 = _interopRequireDefault(_Stamp);
 
-var _PullupSVG = __webpack_require__(135);
+var _PullupSVG = __webpack_require__(133);
 
 var _PullupSVG2 = _interopRequireDefault(_PullupSVG);
 
-var _PushupSVG = __webpack_require__(136);
+var _PushupSVG = __webpack_require__(134);
 
 var _PushupSVG2 = _interopRequireDefault(_PushupSVG);
 
-var _SitupSVG = __webpack_require__(137);
+var _SitupSVG = __webpack_require__(135);
 
 var _SitupSVG2 = _interopRequireDefault(_SitupSVG);
 
-var _SquatSVG = __webpack_require__(138);
+var _SquatSVG = __webpack_require__(136);
 
 var _SquatSVG2 = _interopRequireDefault(_SquatSVG);
 
-var _RunningSVG = __webpack_require__(139);
+var _RunningSVG = __webpack_require__(137);
 
 var _RunningSVG2 = _interopRequireDefault(_RunningSVG);
 
-var _WeightSVG = __webpack_require__(140);
+var _WeightSVG = __webpack_require__(138);
 
 var _WeightSVG2 = _interopRequireDefault(_WeightSVG);
 
@@ -25191,9 +25314,6 @@ var AppContent = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (AppContent.__proto__ || Object.getPrototypeOf(AppContent)).call(this, props));
 
         _this.state = {
-            usersUrl: 'http://localhost:3005/api/users/',
-            // usersUrl: 'https://arcane-journey-35345.herokuapp.com/api/users/',
-            userId: '5ac60344808d1f0d0011a59d',
             svgs: {
                 'pullup': _PullupSVG2.default,
                 'pushup': _PushupSVG2.default,
@@ -25202,30 +25322,22 @@ var AppContent = function (_React$Component) {
                 'running': _RunningSVG2.default,
                 'weight': _WeightSVG2.default
             },
-            profile: undefined
+            profile: _this.props.profile
         };
         return _this;
     }
 
     _createClass(AppContent, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            var _this2 = this;
-
-            fetch(this.state.usersUrl).then(function (data) {
-                return data.json();
-            }).then(function (data) {
-                var db = data[0];
-                _this2.setState({
-                    profile: db
-                });
-            }).catch(function (error) {
-                console.log('Something went wrong...');
-            });
+        key: 'logout',
+        value: function logout() {
+            this.setState({ profile: undefined });
+            this.props.logout();
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var color = {
                 r: 139,
                 g: 0,
@@ -25235,11 +25347,11 @@ var AppContent = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { style: _appContentStyle2.default.container },
-                this.props.page === 1 ? _react2.default.createElement(
+                this.props.page === 1 && this.props.loggedIn ? _react2.default.createElement(
                     'div',
                     null,
                     _react2.default.createElement(_Workout2.default, {
-                        url: this.state.usersUrl + this.state.userId,
+                        url: this.props.usersUrl + this.props.userId,
                         profile: this.state.profile,
                         svgs: this.state.svgs,
                         style: _appContentStyle2.default,
@@ -25253,11 +25365,14 @@ var AppContent = function (_React$Component) {
                         yPercentage: '-78.1',
                         rotation: '25' })
                 ) : '',
-                this.props.page === 2 ? _react2.default.createElement(
+                this.props.page === 2 && this.props.loggedIn ? _react2.default.createElement(
                     'div',
                     null,
                     _react2.default.createElement(_Profile2.default, {
-                        url: this.state.usersUrl + this.state.userId,
+                        logout: function logout() {
+                            return _this2.logout();
+                        },
+                        url: this.props.usersUrl + this.props.userId,
                         profile: this.state.profile,
                         style: _appContentStyle2.default,
                         width: this.props.width }),
@@ -25270,7 +25385,7 @@ var AppContent = function (_React$Component) {
                         yPercentage: '-69.3',
                         rotation: '25' })
                 ) : '',
-                this.props.page === 3 ? _react2.default.createElement(
+                this.props.page === 3 && this.props.loggedIn ? _react2.default.createElement(
                     'div',
                     null,
                     _react2.default.createElement(_Overview2.default, {
@@ -25297,7 +25412,7 @@ var AppContent = function (_React$Component) {
 exports.default = (0, _radium2.default)(AppContent);
 
 /***/ }),
-/* 122 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25310,7 +25425,6 @@ exports.default = {
     container: {
         margin: '10px',
         padding: '10px'
-        // border: '1px solid blue',
     },
     headerMargin: {
         margin: '0 0 15px 0'
@@ -25344,7 +25458,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 123 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25544,7 +25658,7 @@ var WorkoutComponent = function (_React$Component) {
 exports.default = (0, _radium2.default)(WorkoutComponent);
 
 /***/ }),
-/* 124 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25564,11 +25678,11 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _profileStyle = __webpack_require__(125);
+var _profileStyle = __webpack_require__(123);
 
 var _profileStyle2 = _interopRequireDefault(_profileStyle);
 
-var _ProfileSelect = __webpack_require__(126);
+var _ProfileSelect = __webpack_require__(124);
 
 var _ProfileSelect2 = _interopRequireDefault(_ProfileSelect);
 
@@ -25592,6 +25706,8 @@ var profile = function (_React$Component) {
     _createClass(profile, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var sp = this.props.style;
 
             return _react2.default.createElement(
@@ -25605,7 +25721,9 @@ var profile = function (_React$Component) {
                 _react2.default.createElement(
                     'p',
                     { style: sp.headerMargin },
-                    this.props.profile.name
+                    this.props.profile.firstname,
+                    ' ',
+                    this.props.profile.lastname
                 ),
                 _react2.default.createElement(
                     'h3',
@@ -25733,6 +25851,15 @@ var profile = function (_React$Component) {
                         targets: this.props.profile.targets,
                         'default': this.props.profile.targets.targetWeight }) : '',
                     'kg'
+                ),
+                _react2.default.createElement(
+                    'button',
+                    {
+                        style: _profileStyle2.default.logoutButton,
+                        onClick: function onClick() {
+                            return _this2.props.logout();
+                        } },
+                    'Logout'
                 )
             );
         }
@@ -25744,7 +25871,7 @@ var profile = function (_React$Component) {
 exports.default = (0, _radium2.default)(profile);
 
 /***/ }),
-/* 125 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25753,10 +25880,19 @@ exports.default = (0, _radium2.default)(profile);
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = {};
+exports.default = {
+    logoutButton: {
+        backgroundColor: '#990000',
+        color: '#fff',
+        width: '130px',
+        margin: '10px 0',
+        padding: '8px',
+        borderRadius: '10px'
+    }
+};
 
 /***/ }),
-/* 126 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25776,7 +25912,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _profileSelectStyle = __webpack_require__(127);
+var _profileSelectStyle = __webpack_require__(125);
 
 var _profileSelectStyle2 = _interopRequireDefault(_profileSelectStyle);
 
@@ -25894,7 +26030,7 @@ var ProfileSelect = function (_React$Component) {
 exports.default = (0, _radium2.default)(ProfileSelect);
 
 /***/ }),
-/* 127 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25911,7 +26047,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 128 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25931,11 +26067,11 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _overviewStyle = __webpack_require__(129);
+var _overviewStyle = __webpack_require__(127);
 
 var _overviewStyle2 = _interopRequireDefault(_overviewStyle);
 
-var _Graph = __webpack_require__(130);
+var _Graph = __webpack_require__(128);
 
 var _Graph2 = _interopRequireDefault(_Graph);
 
@@ -26017,7 +26153,7 @@ var Overview = function (_React$Component) {
 exports.default = (0, _radium2.default)(Overview);
 
 /***/ }),
-/* 129 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26029,7 +26165,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {};
 
 /***/ }),
-/* 130 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26051,11 +26187,11 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _graphStyle = __webpack_require__(131);
+var _graphStyle = __webpack_require__(129);
 
 var _graphStyle2 = _interopRequireDefault(_graphStyle);
 
-var _TargetSVG = __webpack_require__(132);
+var _TargetSVG = __webpack_require__(130);
 
 var _TargetSVG2 = _interopRequireDefault(_TargetSVG);
 
@@ -26467,7 +26603,7 @@ var Graph = function (_React$Component) {
 exports.default = (0, _radium2.default)(Graph);
 
 /***/ }),
-/* 131 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26582,7 +26718,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 132 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26680,7 +26816,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 133 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26702,7 +26838,7 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _stampStyle = __webpack_require__(134);
+var _stampStyle = __webpack_require__(132);
 
 var _stampStyle2 = _interopRequireDefault(_stampStyle);
 
@@ -26754,7 +26890,7 @@ var Stamp = function (_React$Component) {
 exports.default = (0, _radium2.default)(Stamp);
 
 /***/ }),
-/* 134 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26776,7 +26912,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 135 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26861,7 +26997,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 136 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26952,7 +27088,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 137 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27042,7 +27178,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 138 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27132,7 +27268,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 139 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27279,7 +27415,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 140 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27356,7 +27492,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 141 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27376,11 +27512,11 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _appFooterStyle = __webpack_require__(142);
+var _appFooterStyle = __webpack_require__(140);
 
 var _appFooterStyle2 = _interopRequireDefault(_appFooterStyle);
 
-var _AppFooterButton = __webpack_require__(143);
+var _AppFooterButton = __webpack_require__(141);
 
 var _AppFooterButton2 = _interopRequireDefault(_AppFooterButton);
 
@@ -27433,7 +27569,7 @@ var AppFooter = function (_React$Component) {
 exports.default = (0, _radium2.default)(AppFooter);
 
 /***/ }),
-/* 142 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27445,21 +27581,22 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
     container: {
         position: 'absolute',
+        right: 0,
         bottom: 0,
         left: 0,
-        right: 0,
-        width: '100%',
-        minWidth: '300px',
+        // width: '100%',
+        // minWidth: '300px',
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
         backgroundColor: '#ddd',
-        maxHeight: '120px'
+        overflowY: 'hidden'
+        // maxHeight: '120px',
     }
 };
 
 /***/ }),
-/* 143 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27479,19 +27616,19 @@ var _radium = __webpack_require__(1);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _appFooterButtonStyle = __webpack_require__(144);
+var _appFooterButtonStyle = __webpack_require__(142);
 
 var _appFooterButtonStyle2 = _interopRequireDefault(_appFooterButtonStyle);
 
-var _WorkoutSVG = __webpack_require__(145);
+var _WorkoutSVG = __webpack_require__(143);
 
 var _WorkoutSVG2 = _interopRequireDefault(_WorkoutSVG);
 
-var _ProfileSVG = __webpack_require__(146);
+var _ProfileSVG = __webpack_require__(144);
 
 var _ProfileSVG2 = _interopRequireDefault(_ProfileSVG);
 
-var _OverviewSVG = __webpack_require__(147);
+var _OverviewSVG = __webpack_require__(145);
 
 var _OverviewSVG2 = _interopRequireDefault(_OverviewSVG);
 
@@ -27541,7 +27678,7 @@ exports.default = (0, _radium2.default)(AppFooterButton);
 // <img style={s.image} src={"/images/" + this.props.icon.toLowerCase() + ".svg"} />
 
 /***/ }),
-/* 144 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27569,7 +27706,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 145 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27651,7 +27788,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 146 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27738,7 +27875,7 @@ var OverviewSVG = function (_React$Component) {
 exports.default = (0, _radium2.default)(OverviewSVG);
 
 /***/ }),
-/* 147 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27818,6 +27955,134 @@ var OverviewSVG = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 146 */,
+/* 147 */,
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _radium = __webpack_require__(1);
+
+var _radium2 = _interopRequireDefault(_radium);
+
+var _loginStyle = __webpack_require__(149);
+
+var _loginStyle2 = _interopRequireDefault(_loginStyle);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Login = function (_React$Component) {
+    _inherits(Login, _React$Component);
+
+    function Login(props) {
+        _classCallCheck(this, Login);
+
+        return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+    }
+
+    _createClass(Login, [{
+        key: 'handleSubmit',
+        value: function handleSubmit(event) {
+            event.preventDefault();
+            this.props.login(document.getElementById('email').value, document.getElementById('password').value);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                'div',
+                { style: _loginStyle2.default.loginBox },
+                _react2.default.createElement(
+                    'form',
+                    {
+                        onSubmit: function onSubmit(e) {
+                            return _this2.handleSubmit(e);
+                        } },
+                    _react2.default.createElement(
+                        'h1',
+                        null,
+                        'Login'
+                    ),
+                    _react2.default.createElement('input', {
+                        id: 'email',
+                        style: _loginStyle2.default.loginInput,
+                        type: 'email',
+                        placeholder: 'Email' }),
+                    _react2.default.createElement('input', {
+                        id: 'password',
+                        style: _loginStyle2.default.loginInput,
+                        type: 'password',
+                        placeholder: 'Password' }),
+                    _react2.default.createElement('input', {
+                        type: 'submit',
+                        style: _loginStyle2.default.loginButton,
+                        value: 'Submit' })
+                )
+            );
+        }
+    }]);
+
+    return Login;
+}(_react2.default.Component);
+
+exports.default = (0, _radium2.default)(Login);
+
+/***/ }),
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    loginBox: {
+        margin: '20vh auto',
+        textAlign: 'center'
+    },
+    loginInput: {
+        display: 'block',
+        width: '90%',
+        maxWidth: '350px',
+        margin: '10px auto',
+        padding: '10px',
+        borderRadius: '10px',
+        fontSize: '1.1em'
+    },
+    loginButton: {
+        width: '90%',
+        margin: '10px auto',
+        padding: '10px',
+        borderRadius: '10px',
+        fontSize: '1.1em',
+        backgroundColor: '#50bd50',
+        color: '#ffffff'
+    }
+};
 
 /***/ })
 /******/ ]);
