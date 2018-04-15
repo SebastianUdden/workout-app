@@ -11,7 +11,7 @@ class Register extends React.Component {
 
         this.state = {
             showWrongPassword: false
-        }
+        };
     }
     
     handleSubmit(event) {

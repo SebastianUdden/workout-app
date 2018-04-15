@@ -7,6 +7,21 @@ import ProfileSelect from './profile-select/ProfileSelect.jsx';
 class profile extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            workouts: this.props.profile.workouts,
+            weight: -1
+        };
+    }
+
+    componentDidMount() {
+        if (this.state.workouts) {
+            this.state.workouts.map((workout) => {
+                if (workout.name === 'weight' && workout.values.length > 0) {
+                    this.setState({weight: workout.values[0].value})
+                }
+            });
+        }
     }
 
     render() {
@@ -28,18 +43,12 @@ class profile extends React.Component {
                             default={this.props.profile.height} /> : ''}
                     cm
                 </p>
-                <h3 style={sp.textMargin}>Weight</h3>
-                <p style={sp.textMargin}>
-                    {this.props.profile.weight ? 
-                        <ProfileSelect 
-                            url={this.props.url}
-                            min='0'
-                            max='200' 
-                            type='weight'
-                            targets={this.props.profile.targets} 
-                            default={this.props.profile.weight} /> : ''}
-                    kg
-                </p>
+                {this.state.weight > -1 ? 
+                    <div>
+                        <h3 style={sp.textMargin}>Weight</h3>
+                        <p style={sp.textMargin}>{this.state.weight} kg</p>
+                    </div>
+                : ''}
                 <h3 style={sp.textMargin}>Body Fat</h3>
                 <p style={sp.textMargin}>
                     {this.props.profile.bodyFat ? 
