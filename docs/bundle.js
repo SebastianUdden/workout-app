@@ -20030,6 +20030,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
@@ -20055,6 +20057,10 @@ var _AppContent2 = _interopRequireDefault(_AppContent);
 var _AppFooter = __webpack_require__(143);
 
 var _AppFooter2 = _interopRequireDefault(_AppFooter);
+
+var _appStyle = __webpack_require__(150);
+
+var _appStyle2 = _interopRequireDefault(_appStyle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20182,11 +20188,6 @@ var App = function (_React$Component) {
         key: 'register',
         value: function register(firstname, lastname, email, password) {
             var _this3 = this;
-
-            console.log('email: ', email);
-            console.log('password: ', password);
-            console.log('firstname: ', firstname);
-            console.log('lastname: ', lastname);
 
             var user = {
                 'email': email,
@@ -20321,25 +20322,12 @@ var App = function (_React$Component) {
             var displayWrongLogin = this.state.wrongLogin > 1 ? 'block' : 'none';
             return _react2.default.createElement(
                 'div',
-                { style: {
-                        width: '100%',
-                        minWidth: '300px',
-                        margin: '6px auto',
-                        maxHeight: '100vh',
-                        overflowY: 'hidden'
-                    } },
+                { style: _appStyle2.default.app },
                 _react2.default.createElement(
                     'div',
                     {
                         id: 'Container',
-                        style: {
-                            maxWidth: '1200px',
-                            minWidth: '300px',
-                            margin: '0 auto',
-                            display: 'block',
-                            height: '80vh',
-                            overflowY: 'scroll'
-                        } },
+                        style: _appStyle2.default.container },
                     this.state.profile && this.state.page && this.state.loggedIn ? _react2.default.createElement(_AppContent2.default, {
                         profile: this.state.profile,
                         usersUrl: this.state.usersUrl,
@@ -20372,12 +20360,7 @@ var App = function (_React$Component) {
                     }) : '',
                     _react2.default.createElement(
                         'p',
-                        { style: {
-                                display: displayWrongLogin,
-                                textAlign: 'center',
-                                fontSize: '1.3em',
-                                color: 'red'
-                            } },
+                        { style: _extends({}, _appStyle2.default.error, { display: displayWrongLogin }) },
                         'Wrong login (',
                         this.state.wrongLogin,
                         ')'
@@ -28456,6 +28439,39 @@ var OverviewSVG = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _radium2.default)(OverviewSVG);
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    app: {
+        width: '100%',
+        minWidth: '300px',
+        margin: '6px auto',
+        maxHeight: '100vh',
+        overflowY: 'hidden'
+    },
+    container: {
+        maxWidth: '1200px',
+        minWidth: '300px',
+        margin: '0 auto',
+        display: 'block',
+        height: '80vh',
+        overflowY: 'scroll'
+    },
+    error: {
+        textAlign: 'center',
+        fontSize: '1.3em',
+        color: 'red'
+    }
+};
 
 /***/ })
 /******/ ]);

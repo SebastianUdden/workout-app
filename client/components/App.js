@@ -5,6 +5,7 @@ import Login from './login/Login.jsx';
 import Register from './register/Register.jsx';
 import AppContent from './app-content/AppContent.jsx';
 import AppFooter from './app-footer/AppFooter.jsx';
+import s from './app-style';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -88,11 +89,6 @@ export default class App extends React.Component {
     }
 
     register(firstname, lastname, email, password) {
-        console.log('email: ', email);
-        console.log('password: ', password);
-        console.log('firstname: ', firstname);
-        console.log('lastname: ', lastname);
-        
         let user = {
             'email': email,
             'password': password,
@@ -222,23 +218,10 @@ export default class App extends React.Component {
     render() {
         let displayWrongLogin = this.state.wrongLogin > 1 ? 'block' : 'none';
         return(
-            <div style={{
-                width: '100%',
-                minWidth: '300px',
-                margin: '6px auto',
-                maxHeight: '100vh',
-                overflowY: 'hidden'
-            }}>
+            <div style={s.app}>
                 <div 
                     id="Container"
-                    style={{
-                        maxWidth: '1200px',
-                        minWidth: '300px',
-                        margin: '0 auto',
-                        display: 'block',
-                        height: '80vh',
-                        overflowY: 'scroll'
-                    }}> 
+                    style={s.container}> 
                     {this.state.profile && this.state.page && this.state.loggedIn ? 
                         <AppContent 
                             profile={this.state.profile}
@@ -263,12 +246,7 @@ export default class App extends React.Component {
                             switchPage={(tab) => this.switchPage(0)}
                         />
                     : ''}  
-                    <p style={{
-                        display: displayWrongLogin,
-                        textAlign: 'center',
-                        fontSize: '1.3em',
-                        color: 'red'
-                    }}>Wrong login ({this.state.wrongLogin})</p>
+                    <p style={{...s.error, display: displayWrongLogin}}>Wrong login ({this.state.wrongLogin})</p>
                 </div>                
                 {this.state.loggedIn ? 
                     <AppFooter 
