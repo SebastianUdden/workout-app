@@ -28137,12 +28137,14 @@ var AppFooterButton = function (_React$Component) {
     _createClass(AppFooterButton, [{
         key: 'render',
         value: function render() {
+            var color = '#030104';
+            var width = '30%';
             return _react2.default.createElement(
                 'div',
                 { id: this.props.icon, style: _appFooterButtonStyle2.default.container, onClick: this.props.onClick },
-                this.props.icon === 'Workout' ? _react2.default.createElement(_WorkoutSVG2.default, { width: _appFooterButtonStyle2.default.width, color: _appFooterButtonStyle2.default.color }) : '',
-                this.props.icon === 'Profile' ? _react2.default.createElement(_ProfileSVG2.default, { width: _appFooterButtonStyle2.default.width, color: _appFooterButtonStyle2.default.color }) : '',
-                this.props.icon === 'Overview' ? _react2.default.createElement(_OverviewSVG2.default, { width: _appFooterButtonStyle2.default.width, color: _appFooterButtonStyle2.default.color }) : '',
+                this.props.icon === 'Workout' ? _react2.default.createElement(_WorkoutSVG2.default, { width: width, color: color }) : '',
+                this.props.icon === 'Profile' ? _react2.default.createElement(_ProfileSVG2.default, { width: width, color: color }) : '',
+                this.props.icon === 'Overview' ? _react2.default.createElement(_OverviewSVG2.default, { width: width, color: color }) : '',
                 this.props.width > 300 && this.props.width < 1000 ? _react2.default.createElement(
                     'p',
                     { style: { fontSize: 'calc(1.5em - 0.8vw)', color: color } },
@@ -28183,8 +28185,12 @@ exports.default = {
         maxWidth: '60%',
         maxHeight: '100%'
     },
-    color: '#030104',
-    width: '30#'
+    color: {
+        color: '#030104'
+    },
+    width: {
+        width: '30%'
+    }
 };
 
 /***/ }),

@@ -13,7 +13,11 @@ export default {
         width: '30%',
         maxWidth: '60%',
         maxHeight: '100%',        
-    },    
-    color: '#030104',
-    width: '30#'    
+    },  
+    color: {
+        color: '#030104'
+    },
+    width: {
+        width: '30%'    
+    }
 }
