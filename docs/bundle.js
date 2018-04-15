@@ -20100,6 +20100,7 @@ var App = function (_React$Component) {
             this.setState({
                 wrongLogin: 0
             });
+            localStorage.clear();
         }
     }, {
         key: 'login',

@@ -35,6 +35,7 @@ export default class App extends React.Component {
         this.setState({            
             wrongLogin: 0,
         });
+        localStorage.clear();
     }
 
     login(email, password) {
