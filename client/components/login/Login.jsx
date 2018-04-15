@@ -18,23 +18,7 @@ class Login extends React.Component {
 
     render() {        
         return (
-            <div style={s.loginBox}> 
-                <Stamp 
-                    onTop={false}
-                    text="Demo-email: john.doe@gmail.com"
-                    color={s.stampColor}
-                    size="4"
-                    xPercentage="30"
-                    yPercentage="-17.1"
-                    rotation="20" />
-                <Stamp 
-                    onTop={false}
-                    text="Demo-password: password"
-                    color={s.stampColor}
-                    size="4"
-                    xPercentage="30"
-                    yPercentage="-7.1"
-                    rotation="20" />
+            <div style={s.loginBox}>                 
                 <form
                     onSubmit={(e) => this.handleSubmit(e)}>
                     <h1>Login</h1>
@@ -62,3 +46,20 @@ class Login extends React.Component {
 }
 
 export default Radium(Login);
+
+// <Stamp 
+//                     onTop={false}
+//                     text="Demo-email: john.doe@gmail.com"
+//                     color={s.stampColor}
+//                     size="4"
+//                     xPercentage="30"
+//                     yPercentage="-17.1"
+//                     rotation="20" />
+//                 <Stamp 
+//                     onTop={false}
+//                     text="Demo-password: password"
+//                     color={s.stampColor}
+//                     size="4"
+//                     xPercentage="30"
+//                     yPercentage="-7.1"
+//                     rotation="20" />

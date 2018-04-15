@@ -25499,22 +25499,6 @@ var Login = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { style: _loginStyle2.default.loginBox },
-                _react2.default.createElement(_Stamp2.default, {
-                    onTop: false,
-                    text: 'Demo-email: john.doe@gmail.com',
-                    color: _loginStyle2.default.stampColor,
-                    size: '4',
-                    xPercentage: '30',
-                    yPercentage: '-17.1',
-                    rotation: '20' }),
-                _react2.default.createElement(_Stamp2.default, {
-                    onTop: false,
-                    text: 'Demo-password: password',
-                    color: _loginStyle2.default.stampColor,
-                    size: '4',
-                    xPercentage: '30',
-                    yPercentage: '-7.1',
-                    rotation: '20' }),
                 _react2.default.createElement(
                     'form',
                     {
@@ -25558,6 +25542,23 @@ var Login = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _radium2.default)(Login);
+
+// <Stamp 
+//                     onTop={false}
+//                     text="Demo-email: john.doe@gmail.com"
+//                     color={s.stampColor}
+//                     size="4"
+//                     xPercentage="30"
+//                     yPercentage="-17.1"
+//                     rotation="20" />
+//                 <Stamp 
+//                     onTop={false}
+//                     text="Demo-password: password"
+//                     color={s.stampColor}
+//                     size="4"
+//                     xPercentage="30"
+//                     yPercentage="-7.1"
+//                     rotation="20" />
 
 /***/ }),
 /* 121 */
@@ -28136,15 +28137,12 @@ var AppFooterButton = function (_React$Component) {
     _createClass(AppFooterButton, [{
         key: 'render',
         value: function render() {
-            var color = '#030104';
-            var width = '30%';
-            // let color = 'red'
             return _react2.default.createElement(
                 'div',
-                { style: _appFooterButtonStyle2.default.container, onClick: this.props.onClick },
-                this.props.icon === 'Workout' ? _react2.default.createElement(_WorkoutSVG2.default, { width: width, color: color }) : '',
-                this.props.icon === 'Profile' ? _react2.default.createElement(_ProfileSVG2.default, { width: width, color: color }) : '',
-                this.props.icon === 'Overview' ? _react2.default.createElement(_OverviewSVG2.default, { width: width, color: color }) : '',
+                { id: this.props.icon, style: _appFooterButtonStyle2.default.container, onClick: this.props.onClick },
+                this.props.icon === 'Workout' ? _react2.default.createElement(_WorkoutSVG2.default, { width: _appFooterButtonStyle2.default.width, color: _appFooterButtonStyle2.default.color }) : '',
+                this.props.icon === 'Profile' ? _react2.default.createElement(_ProfileSVG2.default, { width: _appFooterButtonStyle2.default.width, color: _appFooterButtonStyle2.default.color }) : '',
+                this.props.icon === 'Overview' ? _react2.default.createElement(_OverviewSVG2.default, { width: _appFooterButtonStyle2.default.width, color: _appFooterButtonStyle2.default.color }) : '',
                 this.props.width > 300 && this.props.width < 1000 ? _react2.default.createElement(
                     'p',
                     { style: { fontSize: 'calc(1.5em - 0.8vw)', color: color } },
@@ -28158,8 +28156,6 @@ var AppFooterButton = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _radium2.default)(AppFooterButton);
-
-// <img style={s.image} src={"/images/" + this.props.icon.toLowerCase() + ".svg"} />
 
 /***/ }),
 /* 146 */
@@ -28186,7 +28182,9 @@ exports.default = {
         width: '30%',
         maxWidth: '60%',
         maxHeight: '100%'
-    }
+    },
+    color: '#030104',
+    width: '30#'
 };
 
 /***/ }),

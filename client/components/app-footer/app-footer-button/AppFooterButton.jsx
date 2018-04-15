@@ -12,14 +12,11 @@ class AppFooterButton extends React.Component {
     }
 
     render() {
-        let color = '#030104'
-        let width = '30%'
-        // let color = 'red'
         return (
-            <div style={s.container} onClick={this.props.onClick}>                
-                {this.props.icon === 'Workout' ? <Workout width={width} color={color} /> : ''}
-                {this.props.icon === 'Profile' ? <Profile width={width} color={color} /> : ''}
-                {this.props.icon === 'Overview' ? <Overview width={width} color={color} /> : ''}
+            <div id={this.props.icon} style={s.container} onClick={this.props.onClick}>                
+                {this.props.icon === 'Workout' ? <Workout width={s.width} color={s.color} /> : ''}
+                {this.props.icon === 'Profile' ? <Profile width={s.width} color={s.color} /> : ''}
+                {this.props.icon === 'Overview' ? <Overview width={s.width} color={s.color} /> : ''}
                 {this.props.width > 300 &&  this.props.width < 1000 ? 
                     <p style={{fontSize: 'calc(1.5em - 0.8vw)', color: color}}>{this.props.icon}</p>
                 : ''}
@@ -29,5 +26,3 @@ class AppFooterButton extends React.Component {
 }
 
 export default Radium(AppFooterButton);
-
-// <img style={s.image} src={"/images/" + this.props.icon.toLowerCase() + ".svg"} />
