@@ -4,7 +4,8 @@ export default {
         minWidth: '300px',
         margin: '6px auto',
         maxHeight: '100vh',
-        overflowY: 'hidden'
+        overflowY: 'hidden',
+        color: '#444'
     }, 
     container: {
         maxWidth: '1200px',

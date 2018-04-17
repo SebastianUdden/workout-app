@@ -16,7 +16,7 @@ class Login extends React.Component {
             document.getElementById('password').value);
     }
 
-    render() {        
+    render() {
         return (
             <div style={s.loginBox}>                 
                 <form
