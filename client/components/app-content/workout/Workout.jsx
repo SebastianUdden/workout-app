@@ -32,12 +32,16 @@ class WorkoutComponent extends React.Component {
                     });
                 }                         
             });
-            this.setState({ workouts: workouts });
+            this.setState({ workouts: workouts });            
             this.api('PUT', this.props.url, {
                 "workouts": workouts
             })
             .then(data => console.log(data))
-            .catch(error => console.error(error))
+            .catch(error => console.error(error));
+            
+            let profile = this.props.profile;
+            profile.workouts = workouts;
+            this.props.saveProfile(profile);
         }
     }
 

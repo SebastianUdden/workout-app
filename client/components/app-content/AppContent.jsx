@@ -44,6 +44,7 @@ class AppContent extends React.Component {
                     <div>
                         <Workout 
                             url={this.props.usersUrl + this.props.userId}
+                            saveProfile={(profile) => this.props.saveProfile(profile)}
                             profile={this.state.profile}
                             svgs={this.state.svgs} 
                             style={s} 
@@ -53,9 +54,10 @@ class AppContent extends React.Component {
                 {this.props.page === 2 && this.props.loggedIn ? 
                     <div>
                         <Profile 
-                            logout={() => this.logout()}
                             url={this.props.usersUrl + this.props.userId}
+                            saveProfile={(profile) => this.props.saveProfile(profile)}
                             profile={this.state.profile}
+                            logout={() => this.logout()}
                             style={s} 
                             width={this.props.width} />
                     </div>

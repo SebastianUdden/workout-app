@@ -15,18 +15,26 @@ export default class App extends React.Component {
         // let backEndUrl = 'http://localhost:3005';
         let page = localStorage.getItem( 'currentPage' ) || 0;
         let loggedIn = localStorage.getItem( 'loggedIn' ) || false;
+        let userId = localStorage.getItem( 'userId' ) || undefined;
         let profile = JSON.parse(localStorage.getItem( 'profile' )) || undefined;
 
         this.state = {
             usersUrl: backEndUrl + '/api/users/',
             registryUrl: backEndUrl + '/api/registry/users/',
             registry: undefined,
-            userId: undefined,
-            profile: profile,
+            userId: userId,
             page: page,
             loggedIn: loggedIn,
+            profile: profile,
             wrongLogin: 0
         };
+    }
+
+    componentDidMount() {
+        let page = parseInt(localStorage.getItem( 'currentPage' )) || 1;
+        setTimeout(() => {
+            this.setState({page: page});
+        }, 10);
     }
 
     logout() {
@@ -64,10 +72,8 @@ export default class App extends React.Component {
                                 .then((data) => data.json())
                                 .then((data) => {                                    
                                     let profile = data;
-                                    this.setState({
-                                        userId: user.userModelId,                                        
-                                        wrongLogin: 0                                        
-                                    });
+                                    this.setState({ wrongLogin: 0 });
+                                    this.saveUserId(user.userModelId);
                                     this.saveProfile(profile);
                                     this.saveLoggedIn(true);
                                     this.switchPage(1);
@@ -78,10 +84,8 @@ export default class App extends React.Component {
                         }                                   
                     }
                 }
-                this.setState({
-                    userId: undefined,
-                    wrongLogin: this.state.wrongLogin + 1
-                });
+                this.setState({ wrongLogin: this.state.wrongLogin + 1 });
+                this.saveUserId(undefined);
                 this.saveLoggedIn(false);
                 this.switchPage(0);
             }
@@ -210,7 +214,15 @@ export default class App extends React.Component {
         localStorage.setItem( 'loggedIn', loggedIn );
     }
 
+    saveUserId(userId) {
+        this.setState({ userId: userId });
+        localStorage.setItem( 'userId', userId );
+    }
+
     saveProfile(profile) {
+        console.log('==============================');
+        console.log('App-Profile:', profile);
+        console.log('==============================');        
         this.setState({profile: profile});
         localStorage.setItem( 'profile', JSON.stringify(profile));
     }
@@ -224,6 +236,7 @@ export default class App extends React.Component {
                     style={s.container}> 
                     {this.state.profile && this.state.page && this.state.loggedIn ? 
                         <AppContent 
+                            saveProfile={(profile) => this.saveProfile(profile)}
                             profile={this.state.profile}
                             usersUrl={this.state.usersUrl}
                             userId={this.state.userId}

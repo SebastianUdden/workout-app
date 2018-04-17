@@ -12,12 +12,6 @@ export default {
     image: {
         width: '30%',
         maxWidth: '60%',
-        maxHeight: '100%',        
-    },  
-    color: {
-        color: '#030104'
-    },
-    width: {
-        width: '30%'    
+        maxHeight: '100%'   
     }
 }

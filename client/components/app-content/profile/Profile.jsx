@@ -24,6 +24,36 @@ class profile extends React.Component {
         }
     }
 
+    updateTargets(type, targets) {
+        console.log('targets: ', targets);
+        this.putData(this.props.url, {
+                [type]: document.getElementById(type  + 'ID').value,
+                "targets": targets
+            })
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+
+        let profile = this.props.profile;
+        profile.targets = targets;
+        this.props.saveProfile(profile);
+    }
+    
+    putData(url, data) {
+        return fetch(url, {
+            body: JSON.stringify(data),
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+                'content-type': 'application/json'
+            },
+            method: 'PUT',
+            mode: 'cors',
+            redirect: 'follow',
+            referrer: 'no-referrer'
+        })
+        .then(response => response.json())
+    }
+
     render() {
         let sp = this.props.style;        
 
@@ -36,6 +66,7 @@ class profile extends React.Component {
                 <p style={sp.textMargin}>
                     {this.props.profile.height ? 
                         <ProfileSelect 
+                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
                             url={this.props.url}
                             min='0'
                             max='240' 
@@ -53,6 +84,7 @@ class profile extends React.Component {
                 <p style={sp.textMargin}>
                     {this.props.profile.bodyFat ? 
                         <ProfileSelect 
+                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
                             url={this.props.url}
                             min='0'
                             max='50' 
@@ -65,6 +97,7 @@ class profile extends React.Component {
                 <p style={sp.textMargin}>
                     {this.props.profile.targets.pullup ? 
                         <ProfileSelect 
+                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
                             url={this.props.url}
                             min='0'
                             max='100'
@@ -76,6 +109,7 @@ class profile extends React.Component {
                 <p style={sp.textMargin}>
                     {this.props.profile.targets.pushup ? 
                         <ProfileSelect 
+                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
                             url={this.props.url}
                             min='0'
                             max='200' 
@@ -87,6 +121,7 @@ class profile extends React.Component {
                 <p style={sp.textMargin}>
                     {this.props.profile.targets.running ? 
                         <ProfileSelect 
+                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
                             url={this.props.url}
                             min='0'
                             max='100' 
@@ -97,7 +132,8 @@ class profile extends React.Component {
                 </p>
                 <p style={sp.textMargin}>
                     {this.props.profile.targets.situp ? 
-                        <ProfileSelect 
+                        <ProfileSelect  
+                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
                             url={this.props.url}
                             min='0'
                             max='200' 
@@ -109,6 +145,7 @@ class profile extends React.Component {
                 <p style={sp.textMargin}>
                     {this.props.profile.targets.squat ? 
                         <ProfileSelect 
+                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
                             url={this.props.url}
                             min='0'
                             max='300' 
@@ -120,6 +157,7 @@ class profile extends React.Component {
                 <p style={sp.textMargin}>
                     {this.props.profile.targets.targetWeight ? 
                         <ProfileSelect 
+                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
                             url={this.props.url}
                             min='0'
                             max='150'

@@ -20082,22 +20082,33 @@ var App = function (_React$Component) {
         // let backEndUrl = 'http://localhost:3005';
         var page = localStorage.getItem('currentPage') || 0;
         var loggedIn = localStorage.getItem('loggedIn') || false;
+        var userId = localStorage.getItem('userId') || undefined;
         var profile = JSON.parse(localStorage.getItem('profile')) || undefined;
 
         _this.state = {
             usersUrl: backEndUrl + '/api/users/',
             registryUrl: backEndUrl + '/api/registry/users/',
             registry: undefined,
-            userId: undefined,
-            profile: profile,
+            userId: userId,
             page: page,
             loggedIn: loggedIn,
+            profile: profile,
             wrongLogin: 0
         };
         return _this;
     }
 
     _createClass(App, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            var page = parseInt(localStorage.getItem('currentPage')) || 1;
+            setTimeout(function () {
+                _this2.setState({ page: page });
+            }, 10);
+        }
+    }, {
         key: 'logout',
         value: function logout() {
             this.switchPage(0);
@@ -20111,38 +20122,36 @@ var App = function (_React$Component) {
     }, {
         key: 'login',
         value: function login(email, password) {
-            var _this2 = this;
+            var _this3 = this;
 
             fetch(this.state.registryUrl).then(function (data) {
                 return data.json();
             }).then(function (data) {
-                _this2.setState({ registry: data });
+                _this3.setState({ registry: data });
             }).catch(function (error) {
                 console.log('Something went wrong...');
             });
 
             setTimeout(function () {
-                if (_this2.state.registry) {
+                if (_this3.state.registry) {
                     var _loop = function _loop(user) {
                         if (user.email === email && user.password === password) {
-                            _this2.switchPage(0);
-                            _this2.setState({
+                            _this3.switchPage(0);
+                            _this3.setState({
                                 userId: user.userModelId,
                                 wrongLogin: 0
                             });
-                            _this2.saveLoggedIn(false);
-                            if (_this2.state.userId) {
-                                fetch(_this2.state.usersUrl + _this2.state.userId).then(function (data) {
+                            _this3.saveLoggedIn(false);
+                            if (_this3.state.userId) {
+                                fetch(_this3.state.usersUrl + _this3.state.userId).then(function (data) {
                                     return data.json();
                                 }).then(function (data) {
                                     var profile = data;
-                                    _this2.setState({
-                                        userId: user.userModelId,
-                                        wrongLogin: 0
-                                    });
-                                    _this2.saveProfile(profile);
-                                    _this2.saveLoggedIn(true);
-                                    _this2.switchPage(1);
+                                    _this3.setState({ wrongLogin: 0 });
+                                    _this3.saveUserId(user.userModelId);
+                                    _this3.saveProfile(profile);
+                                    _this3.saveLoggedIn(true);
+                                    _this3.switchPage(1);
                                 }).catch(function (error) {
                                     console.log('Something went wrong...');
                                 });
@@ -20155,7 +20164,7 @@ var App = function (_React$Component) {
                     var _iteratorError = undefined;
 
                     try {
-                        for (var _iterator = _this2.state.registry[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                        for (var _iterator = _this3.state.registry[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                             var user = _step.value;
 
                             _loop(user);
@@ -20175,19 +20184,17 @@ var App = function (_React$Component) {
                         }
                     }
 
-                    _this2.setState({
-                        userId: undefined,
-                        wrongLogin: _this2.state.wrongLogin + 1
-                    });
-                    _this2.saveLoggedIn(false);
-                    _this2.switchPage(0);
+                    _this3.setState({ wrongLogin: _this3.state.wrongLogin + 1 });
+                    _this3.saveUserId(undefined);
+                    _this3.saveLoggedIn(false);
+                    _this3.switchPage(0);
                 }
             }, 100);
         }
     }, {
         key: 'register',
         value: function register(firstname, lastname, email, password) {
-            var _this3 = this;
+            var _this4 = this;
 
             var user = {
                 'email': email,
@@ -20251,7 +20258,7 @@ var App = function (_React$Component) {
             this.api('POST', this.state.usersUrl, user).then(function (data) {
                 return console.log(data);
             }).then(function () {
-                _this3.api('GET', _this3.state.usersUrl).then(function (data) {
+                _this4.api('GET', _this4.state.usersUrl).then(function (data) {
                     for (var i = 0; i < data.length; i++) {
                         if (data[i].email === user.email) {
                             var registryUser = {
@@ -20259,7 +20266,7 @@ var App = function (_React$Component) {
                                 'password': user.password,
                                 'userModelId': data[i]._id
                             };
-                            _this3.api('POST', _this3.state.registryUrl, registryUser).then(function (data) {
+                            _this4.api('POST', _this4.state.registryUrl, registryUser).then(function (data) {
                                 return console.log(data);
                             }).catch(function (error) {
                                 return console.error(error);
@@ -20309,15 +20316,24 @@ var App = function (_React$Component) {
             localStorage.setItem('loggedIn', loggedIn);
         }
     }, {
+        key: 'saveUserId',
+        value: function saveUserId(userId) {
+            this.setState({ userId: userId });
+            localStorage.setItem('userId', userId);
+        }
+    }, {
         key: 'saveProfile',
         value: function saveProfile(profile) {
+            console.log('==============================');
+            console.log('App-Profile:', profile);
+            console.log('==============================');
             this.setState({ profile: profile });
             localStorage.setItem('profile', JSON.stringify(profile));
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this4 = this;
+            var _this5 = this;
 
             var displayWrongLogin = this.state.wrongLogin > 1 ? 'block' : 'none';
             return _react2.default.createElement(
@@ -20329,14 +20345,17 @@ var App = function (_React$Component) {
                         id: 'Container',
                         style: _appStyle2.default.container },
                     this.state.profile && this.state.page && this.state.loggedIn ? _react2.default.createElement(_AppContent2.default, {
+                        saveProfile: function saveProfile(profile) {
+                            return _this5.saveProfile(profile);
+                        },
                         profile: this.state.profile,
                         usersUrl: this.state.usersUrl,
                         userId: this.state.userId,
                         login: function login(email, password) {
-                            return _this4.login(email, password);
+                            return _this5.login(email, password);
                         },
                         logout: function logout() {
-                            return _this4.logout();
+                            return _this5.logout();
                         },
                         loggedIn: this.state.loggedIn,
                         page: this.state.page,
@@ -20344,18 +20363,18 @@ var App = function (_React$Component) {
                         width: document.getElementById('Container') }) : '',
                     this.state.page === 0 && !this.state.loggedIn ? _react2.default.createElement(_Login2.default, {
                         login: function login(email, password) {
-                            return _this4.login(email, password);
+                            return _this5.login(email, password);
                         },
                         switchPage: function switchPage(tab) {
-                            return _this4.switchPage(4);
+                            return _this5.switchPage(4);
                         }
                     }) : '',
                     this.state.page === 4 ? _react2.default.createElement(_Register2.default, {
                         register: function register(firstname, lastname, email, password) {
-                            return _this4.register(firstname, lastname, email, password);
+                            return _this5.register(firstname, lastname, email, password);
                         },
                         switchPage: function switchPage(tab) {
-                            return _this4.switchPage(0);
+                            return _this5.switchPage(0);
                         }
                     }) : '',
                     _react2.default.createElement(
@@ -20368,7 +20387,7 @@ var App = function (_React$Component) {
                 ),
                 this.state.loggedIn ? _react2.default.createElement(_AppFooter2.default, {
                     switchPage: function switchPage(number) {
-                        return _this4.switchPage(number);
+                        return _this5.switchPage(number);
                     },
                     width: document.body.clientWidth }) : ''
             );
@@ -25940,6 +25959,9 @@ var AppContent = function (_React$Component) {
                     null,
                     _react2.default.createElement(_Workout2.default, {
                         url: this.props.usersUrl + this.props.userId,
+                        saveProfile: function saveProfile(profile) {
+                            return _this2.props.saveProfile(profile);
+                        },
                         profile: this.state.profile,
                         svgs: this.state.svgs,
                         style: _appContentStyle2.default,
@@ -25949,11 +25971,14 @@ var AppContent = function (_React$Component) {
                     'div',
                     null,
                     _react2.default.createElement(_Profile2.default, {
+                        url: this.props.usersUrl + this.props.userId,
+                        saveProfile: function saveProfile(profile) {
+                            return _this2.props.saveProfile(profile);
+                        },
+                        profile: this.state.profile,
                         logout: function logout() {
                             return _this2.logout();
                         },
-                        url: this.props.usersUrl + this.props.userId,
-                        profile: this.state.profile,
                         style: _appContentStyle2.default,
                         width: this.props.width })
                 ) : '',
@@ -26099,6 +26124,10 @@ var WorkoutComponent = function (_React$Component) {
                 }).catch(function (error) {
                     return console.error(error);
                 });
+
+                var profile = this.props.profile;
+                profile.workouts = workouts;
+                this.props.saveProfile(profile);
             }
         }
     }, {
@@ -26252,6 +26281,8 @@ var _ProfileSelect2 = _interopRequireDefault(_ProfileSelect);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -26287,6 +26318,40 @@ var profile = function (_React$Component) {
             }
         }
     }, {
+        key: 'updateTargets',
+        value: function updateTargets(type, targets) {
+            var _putData;
+
+            console.log('targets: ', targets);
+            this.putData(this.props.url, (_putData = {}, _defineProperty(_putData, type, document.getElementById(type + 'ID').value), _defineProperty(_putData, "targets", targets), _putData)).then(function (data) {
+                return console.log(data);
+            }).catch(function (error) {
+                return console.error(error);
+            });
+
+            var profile = this.props.profile;
+            profile.targets = targets;
+            this.props.saveProfile(profile);
+        }
+    }, {
+        key: 'putData',
+        value: function putData(url, data) {
+            return fetch(url, {
+                body: JSON.stringify(data),
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                method: 'PUT',
+                mode: 'cors',
+                redirect: 'follow',
+                referrer: 'no-referrer'
+            }).then(function (response) {
+                return response.json();
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this3 = this;
@@ -26317,6 +26382,9 @@ var profile = function (_React$Component) {
                     'p',
                     { style: sp.textMargin },
                     this.props.profile.height ? _react2.default.createElement(_ProfileSelect2.default, {
+                        updateTargets: function updateTargets(type, targets) {
+                            return _this3.updateTargets(type, targets);
+                        },
                         url: this.props.url,
                         min: '0',
                         max: '240',
@@ -26348,6 +26416,9 @@ var profile = function (_React$Component) {
                     'p',
                     { style: sp.textMargin },
                     this.props.profile.bodyFat ? _react2.default.createElement(_ProfileSelect2.default, {
+                        updateTargets: function updateTargets(type, targets) {
+                            return _this3.updateTargets(type, targets);
+                        },
                         url: this.props.url,
                         min: '0',
                         max: '50',
@@ -26365,6 +26436,9 @@ var profile = function (_React$Component) {
                     'p',
                     { style: sp.textMargin },
                     this.props.profile.targets.pullup ? _react2.default.createElement(_ProfileSelect2.default, {
+                        updateTargets: function updateTargets(type, targets) {
+                            return _this3.updateTargets(type, targets);
+                        },
                         url: this.props.url,
                         min: '0',
                         max: '100',
@@ -26377,6 +26451,9 @@ var profile = function (_React$Component) {
                     'p',
                     { style: sp.textMargin },
                     this.props.profile.targets.pushup ? _react2.default.createElement(_ProfileSelect2.default, {
+                        updateTargets: function updateTargets(type, targets) {
+                            return _this3.updateTargets(type, targets);
+                        },
                         url: this.props.url,
                         min: '0',
                         max: '200',
@@ -26389,6 +26466,9 @@ var profile = function (_React$Component) {
                     'p',
                     { style: sp.textMargin },
                     this.props.profile.targets.running ? _react2.default.createElement(_ProfileSelect2.default, {
+                        updateTargets: function updateTargets(type, targets) {
+                            return _this3.updateTargets(type, targets);
+                        },
                         url: this.props.url,
                         min: '0',
                         max: '100',
@@ -26401,6 +26481,9 @@ var profile = function (_React$Component) {
                     'p',
                     { style: sp.textMargin },
                     this.props.profile.targets.situp ? _react2.default.createElement(_ProfileSelect2.default, {
+                        updateTargets: function updateTargets(type, targets) {
+                            return _this3.updateTargets(type, targets);
+                        },
                         url: this.props.url,
                         min: '0',
                         max: '200',
@@ -26413,6 +26496,9 @@ var profile = function (_React$Component) {
                     'p',
                     { style: sp.textMargin },
                     this.props.profile.targets.squat ? _react2.default.createElement(_ProfileSelect2.default, {
+                        updateTargets: function updateTargets(type, targets) {
+                            return _this3.updateTargets(type, targets);
+                        },
                         url: this.props.url,
                         min: '0',
                         max: '300',
@@ -26425,6 +26511,9 @@ var profile = function (_React$Component) {
                     'p',
                     { style: sp.textMargin },
                     this.props.profile.targets.targetWeight ? _react2.default.createElement(_ProfileSelect2.default, {
+                        updateTargets: function updateTargets(type, targets) {
+                            return _this3.updateTargets(type, targets);
+                        },
                         url: this.props.url,
                         min: '0',
                         max: '150',
@@ -26499,8 +26588,6 @@ var _profileSelectStyle2 = _interopRequireDefault(_profileSelectStyle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -26525,8 +26612,6 @@ var ProfileSelect = function (_React$Component) {
     _createClass(ProfileSelect, [{
         key: 'handleChange',
         value: function handleChange(type) {
-            var _putData;
-
             var date = new Date();
 
             if (this.state.lastSelect >= date.getTime() - this.state.delay) {
@@ -26549,33 +26634,8 @@ var ProfileSelect = function (_React$Component) {
                 }
             }
 
-            this.putData(this.props.url, (_putData = {}, _defineProperty(_putData, type, document.getElementById(type + 'ID').value), _defineProperty(_putData, "targets", targets), _putData)).then(function (data) {
-                return console.log(data);
-            }) // JSON from `response.json()` call
-            .catch(function (error) {
-                return console.error(error);
-            });
-
+            this.props.updateTargets(type, targets);
             this.setState({ lastSelect: date.getTime() });
-        }
-    }, {
-        key: 'putData',
-        value: function putData(url, data) {
-            // Default options are marked with *
-            return fetch(url, {
-                body: JSON.stringify(data), // must match 'Content-Type' header
-                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-                credentials: 'same-origin', // include, same-origin, *omit
-                headers: {
-                    'content-type': 'application/json'
-                },
-                method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-                mode: 'cors', // no-cors, cors, *same-origin
-                redirect: 'follow', // *manual, follow, error
-                referrer: 'no-referrer' // *client, no-referrer
-            }).then(function (response) {
-                return response.json();
-            }); // parses response to JSON
         }
     }, {
         key: 'render',
@@ -28184,12 +28244,6 @@ exports.default = {
         width: '30%',
         maxWidth: '60%',
         maxHeight: '100%'
-    },
-    color: {
-        color: '#030104'
-    },
-    width: {
-        width: '30%'
     }
 };
 
