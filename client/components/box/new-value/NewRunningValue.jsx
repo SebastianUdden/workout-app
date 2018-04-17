@@ -10,9 +10,9 @@ class NewRunningValue extends React.Component {
     render() {        
         return (
             <div style={{...this.props.boxStyle}}>
-                <input id={this.props.id} type="number" style={{...s.smallInput, margin: '0 8px 0 0'}} placeholder="Distance (km)" />
-                <input id={this.props.id + 1} type="number" style={s.smallInput} placeholder="Time (min)" />
-                <input id={this.props.id + 2} type="number" style={s.smallInput} placeholder="Time (sec)" />
+                <input id={this.props.id} type="number" style={{...s.smallInput, margin: '0 8px 0 0'}} placeholder="Km" />
+                <input id={this.props.id + 1} type="number" style={{...s.smallInput, margin: '0 8px 0 0'}} placeholder="Min" />
+                <input id={this.props.id + 2} type="number" style={s.smallInput} placeholder="Sec" />
                 <span 
                     style={s.add} 
                     onClick={() => this.props.addRunningValue(

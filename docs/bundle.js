@@ -25016,9 +25016,9 @@ var NewRunningValue = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { style: _extends({}, this.props.boxStyle) },
-                _react2.default.createElement('input', { id: this.props.id, type: 'number', style: _extends({}, _newValueStyle2.default.smallInput, { margin: '0 8px 0 0' }), placeholder: 'Distance (km)' }),
-                _react2.default.createElement('input', { id: this.props.id + 1, type: 'number', style: _newValueStyle2.default.smallInput, placeholder: 'Time (min)' }),
-                _react2.default.createElement('input', { id: this.props.id + 2, type: 'number', style: _newValueStyle2.default.smallInput, placeholder: 'Time (sec)' }),
+                _react2.default.createElement('input', { id: this.props.id, type: 'number', style: _extends({}, _newValueStyle2.default.smallInput, { margin: '0 8px 0 0' }), placeholder: 'Km' }),
+                _react2.default.createElement('input', { id: this.props.id + 1, type: 'number', style: _extends({}, _newValueStyle2.default.smallInput, { margin: '0 8px 0 0' }), placeholder: 'Min' }),
+                _react2.default.createElement('input', { id: this.props.id + 2, type: 'number', style: _newValueStyle2.default.smallInput, placeholder: 'Sec' }),
                 _react2.default.createElement(
                     'span',
                     {
