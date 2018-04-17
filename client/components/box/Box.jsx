@@ -31,7 +31,7 @@ class Box extends React.Component {
                         <NewRunningValue
                             id="1"                             
                             boxStyle={s.instance}
-                            addRunningValue={(km, min) => this.props.addRunningValue(km, min)} />                        
+                            addRunningValue={(km, min, sec) => this.props.addRunningValue(km, min, sec)} />
                     </div>
                 :
                     <div>

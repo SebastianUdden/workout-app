@@ -14,7 +14,8 @@ export default {
     smallInput: {
         position: 'relative',
         top: '-5px',        
-        width: '38%',        
+        width: '25%',  
+        maxWidth: '150px',        
         padding: '8px',
         borderRadius: '7px'
     },

@@ -33,7 +33,11 @@ export default class App extends React.Component {
     componentDidMount() {
         let page = parseInt(localStorage.getItem( 'currentPage' )) || 1;
         setTimeout(() => {
-            this.setState({page: page});
+            if (this.state.loggedIn) {
+                this.setState({page: page});
+            } else {
+                this.setState({page: 0});
+            }
         }, 10);
     }
 
@@ -41,9 +45,7 @@ export default class App extends React.Component {
         this.switchPage(0);
         this.saveLoggedIn(false);
         this.saveProfile(undefined);
-        this.setState({            
-            wrongLogin: 0,
-        });
+        this.setState({wrongLogin: 0});
         localStorage.clear();
     }
 
@@ -220,9 +222,6 @@ export default class App extends React.Component {
     }
 
     saveProfile(profile) {
-        console.log('==============================');
-        console.log('App-Profile:', profile);
-        console.log('==============================');        
         this.setState({profile: profile});
         localStorage.setItem( 'profile', JSON.stringify(profile));
     }

@@ -45,11 +45,13 @@ class WorkoutComponent extends React.Component {
         }
     }
 
-    getRunningValue(distance, time, values) {
-        if (distance !== '' && time !== '') {
-            let targetDistance = 10;
+    getRunningValue(km, min, sec, values) {
+        if (km !== '' && min !== '' && min !== '') {
+            let time = parseInt(min) + parseInt(sec) / 60; 
+            let targetKm = 10;
             let modifier = 1.15;
-            let input = Math.round(time * Math.pow((targetDistance / distance), modifier));
+            let input = Math.round((time * Math.pow((targetKm / km), modifier)) * 100) / 100;
+            console.log('input: ', input);
             this.newWorkout(input, 'running', values);
         }
     }
@@ -64,7 +66,7 @@ class WorkoutComponent extends React.Component {
                 "workouts": workouts
             })
             .then(data => console.log(data))
-            .catch(error => console.error(error))
+            .catch(error => console.error(error));
         }
     }
 
@@ -104,7 +106,7 @@ class WorkoutComponent extends React.Component {
                 let workoutname = workout.name !== 'weight' ? workout.name : 'targetWeight';
                 return <Box 
                             key={index + 1}
-                            addWorkout={(input, workoutType) => this.newWorkout(input, workout.name, workout.values)}
+                            addWorkout={(input, workoutValues) => this.newWorkout(input, workout.name, workout.values)}
                             deleteWorkout={(e, i, wi) => this.deleteWorkout(e, i, index)}
                             header={workout.header} 
                             type={workout.type} 
@@ -113,7 +115,7 @@ class WorkoutComponent extends React.Component {
             } else if (this.state.tab === index + 1 && workout.name === 'running') {
                 return <Box 
                             key={index + 1}
-                            addRunningValue={(km, min, workoutType) => this.getRunningValue(km, min, workout.values)}
+                            addRunningValue={(km, min, sec, workoutValues) => this.getRunningValue(km, min, sec, workout.values)}
                             deleteWorkout={(e, i, wi) => this.deleteWorkout(e, i, index)}
                             header={workout.header} 
                             type={workout.type} 

@@ -2517,8 +2517,8 @@ var Box = function (_React$Component) {
                     _react2.default.createElement(_NewRunningValue2.default, {
                         id: '1',
                         boxStyle: _boxStyle2.default.instance,
-                        addRunningValue: function addRunningValue(km, min) {
-                            return _this2.props.addRunningValue(km, min);
+                        addRunningValue: function addRunningValue(km, min, sec) {
+                            return _this2.props.addRunningValue(km, min, sec);
                         } })
                 ) : _react2.default.createElement(
                     'div',
@@ -2678,7 +2678,8 @@ exports.default = {
     smallInput: {
         position: 'relative',
         top: '-5px',
-        width: '38%',
+        width: '25%',
+        maxWidth: '150px',
         padding: '8px',
         borderRadius: '7px'
     },
@@ -20105,7 +20106,11 @@ var App = function (_React$Component) {
 
             var page = parseInt(localStorage.getItem('currentPage')) || 1;
             setTimeout(function () {
-                _this2.setState({ page: page });
+                if (_this2.state.loggedIn) {
+                    _this2.setState({ page: page });
+                } else {
+                    _this2.setState({ page: 0 });
+                }
             }, 10);
         }
     }, {
@@ -20114,9 +20119,7 @@ var App = function (_React$Component) {
             this.switchPage(0);
             this.saveLoggedIn(false);
             this.saveProfile(undefined);
-            this.setState({
-                wrongLogin: 0
-            });
+            this.setState({ wrongLogin: 0 });
             localStorage.clear();
         }
     }, {
@@ -20324,9 +20327,6 @@ var App = function (_React$Component) {
     }, {
         key: 'saveProfile',
         value: function saveProfile(profile) {
-            console.log('==============================');
-            console.log('App-Profile:', profile);
-            console.log('==============================');
             this.setState({ profile: profile });
             localStorage.setItem('profile', JSON.stringify(profile));
         }
@@ -25018,12 +25018,13 @@ var NewRunningValue = function (_React$Component) {
                 { style: _extends({}, this.props.boxStyle) },
                 _react2.default.createElement('input', { id: this.props.id, type: 'number', style: _extends({}, _newValueStyle2.default.smallInput, { margin: '0 8px 0 0' }), placeholder: 'Distance (km)' }),
                 _react2.default.createElement('input', { id: this.props.id + 1, type: 'number', style: _newValueStyle2.default.smallInput, placeholder: 'Time (min)' }),
+                _react2.default.createElement('input', { id: this.props.id + 2, type: 'number', style: _newValueStyle2.default.smallInput, placeholder: 'Time (sec)' }),
                 _react2.default.createElement(
                     'span',
                     {
                         style: _newValueStyle2.default.add,
                         onClick: function onClick() {
-                            return _this2.props.addRunningValue(document.getElementById(_this2.props.id).value, document.getElementById(_this2.props.id + 1).value);
+                            return _this2.props.addRunningValue(document.getElementById(_this2.props.id).value, document.getElementById(_this2.props.id + 1).value, document.getElementById(_this2.props.id + 2).value);
                         }
                     },
                     '+'
@@ -26132,11 +26133,13 @@ var WorkoutComponent = function (_React$Component) {
         }
     }, {
         key: 'getRunningValue',
-        value: function getRunningValue(distance, time, values) {
-            if (distance !== '' && time !== '') {
-                var targetDistance = 10;
+        value: function getRunningValue(km, min, sec, values) {
+            if (km !== '' && min !== '' && min !== '') {
+                var time = parseInt(min) + parseInt(sec) / 60;
+                var targetKm = 10;
                 var modifier = 1.15;
-                var input = Math.round(time * Math.pow(targetDistance / distance, modifier));
+                var input = Math.round(time * Math.pow(targetKm / km, modifier) * 100) / 100;
+                console.log('input: ', input);
                 this.newWorkout(input, 'running', values);
             }
         }
@@ -26202,7 +26205,7 @@ var WorkoutComponent = function (_React$Component) {
                     var workoutname = workout.name !== 'weight' ? workout.name : 'targetWeight';
                     return _react2.default.createElement(_Box2.default, {
                         key: index + 1,
-                        addWorkout: function addWorkout(input, workoutType) {
+                        addWorkout: function addWorkout(input, workoutValues) {
                             return _this2.newWorkout(input, workout.name, workout.values);
                         },
                         deleteWorkout: function deleteWorkout(e, i, wi) {
@@ -26215,8 +26218,8 @@ var WorkoutComponent = function (_React$Component) {
                 } else if (_this2.state.tab === index + 1 && workout.name === 'running') {
                     return _react2.default.createElement(_Box2.default, {
                         key: index + 1,
-                        addRunningValue: function addRunningValue(km, min, workoutType) {
-                            return _this2.getRunningValue(km, min, workout.values);
+                        addRunningValue: function addRunningValue(km, min, sec, workoutValues) {
+                            return _this2.getRunningValue(km, min, sec, workout.values);
                         },
                         deleteWorkout: function deleteWorkout(e, i, wi) {
                             return _this2.deleteWorkout(e, i, index);
