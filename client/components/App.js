@@ -53,45 +53,43 @@ export default class App extends React.Component {
         fetch(this.state.registryUrl)
             .then((data) => data.json())
             .then((data) => {           
-                this.setState({registry: data});                             
+                this.setState({registry: data});    
+                
+                if (this.state.registry) {
+                    for (let user of this.state.registry) {
+                        if (user.email === email && user.password === password) {
+                            this.switchPage(0);
+                            this.setState({
+                                userId: user.userModelId,
+                                wrongLogin: 0
+                            });
+                            this.saveLoggedIn(false);
+                            if (this.state.userId) {
+                                fetch(this.state.usersUrl + this.state.userId)
+                                    .then((data) => data.json())
+                                    .then((data) => {                                    
+                                        let profile = data;
+                                        this.setState({ wrongLogin: 0 });
+                                        this.saveUserId(user.userModelId);
+                                        this.saveProfile(profile);
+                                        this.saveLoggedIn(true);
+                                        this.switchPage(1);
+                                    })        
+                                    .catch((error) => {
+                                        console.log('Something went wrong...');
+                                    });
+                            }                                   
+                        }
+                    }
+                    this.setState({ wrongLogin: this.state.wrongLogin + 1 });
+                    this.saveUserId(undefined);
+                    this.saveLoggedIn(false);
+                    this.switchPage(0);
+                }
             })        
             .catch((error) => {
                 console.log('Something went wrong...');
             });
-        
-        setTimeout(() => { 
-            if (this.state.registry) {
-                for (let user of this.state.registry) {
-                    if (user.email === email && user.password === password) {
-                        this.switchPage(0);
-                        this.setState({
-                            userId: user.userModelId,
-                            wrongLogin: 0
-                        });
-                        this.saveLoggedIn(false);
-                        if (this.state.userId) {
-                            fetch(this.state.usersUrl + this.state.userId)
-                                .then((data) => data.json())
-                                .then((data) => {                                    
-                                    let profile = data;
-                                    this.setState({ wrongLogin: 0 });
-                                    this.saveUserId(user.userModelId);
-                                    this.saveProfile(profile);
-                                    this.saveLoggedIn(true);
-                                    this.switchPage(1);
-                                })        
-                                .catch((error) => {
-                                    console.log('Something went wrong...');
-                                });
-                        }                                   
-                    }
-                }
-                this.setState({ wrongLogin: this.state.wrongLogin + 1 });
-                this.saveUserId(undefined);
-                this.saveLoggedIn(false);
-                this.switchPage(0);
-            }
-        }, 100);
     }
 
     register(firstname, lastname, email, password) {

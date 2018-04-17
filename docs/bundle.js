@@ -20131,11 +20131,7 @@ var App = function (_React$Component) {
                 return data.json();
             }).then(function (data) {
                 _this3.setState({ registry: data });
-            }).catch(function (error) {
-                console.log('Something went wrong...');
-            });
 
-            setTimeout(function () {
                 if (_this3.state.registry) {
                     var _loop = function _loop(user) {
                         if (user.email === email && user.password === password) {
@@ -20192,7 +20188,9 @@ var App = function (_React$Component) {
                     _this3.saveLoggedIn(false);
                     _this3.switchPage(0);
                 }
-            }, 100);
+            }).catch(function (error) {
+                console.log('Something went wrong...');
+            });
         }
     }, {
         key: 'register',
