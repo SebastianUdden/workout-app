@@ -20,7 +20,8 @@ class Box extends React.Component {
             Math, 
             this.props.values.map((v) => { 
                 return v.value; 
-        }));        
+            })
+        );        
 
         return (
             <div style={s.container}>

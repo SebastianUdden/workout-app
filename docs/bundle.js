@@ -26096,6 +26096,18 @@ var WorkoutComponent = function (_React$Component) {
     }
 
     _createClass(WorkoutComponent, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var tab = parseInt(localStorage.getItem('currentTab')) || 1;
+            this.setState({ tab: tab });
+        }
+    }, {
+        key: 'setTab',
+        value: function setTab(tab) {
+            this.setState({ tab: tab });
+            localStorage.setItem('currentTab', tab);
+        }
+    }, {
         key: 'newWorkout',
         value: function newWorkout(input, name, values) {
             if (input !== '' && this.props.profile.workouts) {
@@ -26195,7 +26207,7 @@ var WorkoutComponent = function (_React$Component) {
                     {
                         key: index + 1,
                         onClick: function onClick() {
-                            return _this2.setState({ tab: index + 1 });
+                            return _this2.setTab(index + 1);
                         } },
                     _react2.default.createElement(Svg, {
                         width: 100 / (_this2.props.profile.workouts.length * 1.4) + '%',
@@ -26742,6 +26754,18 @@ var Overview = function (_React$Component) {
     }
 
     _createClass(Overview, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var tab = parseInt(localStorage.getItem('currentTab')) || 1;
+            this.setState({ tab: tab });
+        }
+    }, {
+        key: 'setTab',
+        value: function setTab(tab) {
+            this.setState({ tab: tab });
+            localStorage.setItem('currentTab', tab);
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
@@ -26754,7 +26778,7 @@ var Overview = function (_React$Component) {
                     {
                         key: index + 1,
                         onClick: function onClick() {
-                            return _this2.setState({ tab: index + 1 });
+                            return _this2.setTab(index + 1);
                         } },
                     _react2.default.createElement(Svg, {
                         width: 100 / (_this2.props.profile.workouts.length * 1.4) + '%',

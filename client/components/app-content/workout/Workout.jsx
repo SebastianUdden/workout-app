@@ -10,9 +10,19 @@ class WorkoutComponent extends React.Component {
         this.state = {
             tab: 1,
             workouts: undefined
-        }
+        };
+    }
+
+    componentDidMount() {
+        let tab = parseInt(localStorage.getItem( 'currentTab' )) || 1;
+        this.setState({tab: tab});
     }
     
+    setTab(tab) {
+        this.setState({tab: tab});
+        localStorage.setItem( 'currentTab', tab );
+    }
+
     newWorkout(input, name, values) {
         if (input !== '' && this.props.profile.workouts) {  
             let today = new Date().toISOString().substring(0, 10);          
@@ -97,7 +107,7 @@ class WorkoutComponent extends React.Component {
             icons.push(
                 <span 
                     key={index + 1} 
-                    onClick={() => this.setState({tab: index + 1})}>
+                    onClick={() => this.setTab(index + 1)}>
                     <Svg 
                         width={100 / (this.props.profile.workouts.length * 1.4) + '%'}
                         style={this.props.style.icon} />                            

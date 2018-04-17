@@ -29,7 +29,7 @@ class AppContent extends React.Component {
                 'weight': WeightSVG
             },
             profile: this.props.profile
-        }
+        };
     }    
 
     logout() {

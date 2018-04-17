@@ -10,8 +10,18 @@ class Overview extends React.Component {
 
         this.state = {
             tab: 1
-        }
+        };
     }    
+
+    componentDidMount() {
+        let tab = parseInt(localStorage.getItem( 'currentTab' )) || 1;
+        this.setState({tab: tab});        
+    }
+    
+    setTab(tab) {
+        this.setState({tab: tab});
+        localStorage.setItem( 'currentTab', tab );
+    }
 
     render() {
         let icons = [];
@@ -20,7 +30,7 @@ class Overview extends React.Component {
             icons.push(
                 <span 
                     key={index + 1}
-                    onClick={() => this.setState({tab: index + 1})}>
+                    onClick={() => this.setTab(index + 1)}>
                     <Svg 
                         width={100 / (this.props.profile.workouts.length * 1.4) + '%'}
                         style={this.props.style.icon} />                            
