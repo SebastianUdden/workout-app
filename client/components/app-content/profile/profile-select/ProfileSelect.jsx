@@ -15,27 +15,18 @@ class ProfileSelect extends React.Component {
     handleChange(type) {
         let date = new Date();
         
-        if (this.state.lastSelect >= ( date.getTime() - this.state.delay)) {
+        if (this.state.lastSelect >= (date.getTime() - this.state.delay)) {
             return;
         }
 
-        let targets = {
-            "pullup": this.props.targets.pullup,
-            "pushup": this.props.targets.pushup,
-            "running": this.props.targets.running,
-            "situp": this.props.targets.situp,
-            "squat": this.props.targets.squat,
-            "targetWeight": this.props.targets.targetWeight
-        };
-        
-        for (let target in targets) {
+        for (let target in this.props.targets) {
             if (target === type) {
-                targets[type] = document.getElementById(type  + 'ID').value;
-                console.log(target, ': ', targets[type]);     
+                this.props.targets[type] = document.getElementById(type  + 'ID').value;
+                console.log(target, ': ', this.props.targets[type]);     
             }
         }
         
-        this.props.updateTargets(type, targets);
+        this.props.updateTargets(type, this.props.targets);
         this.setState({ lastSelect: date.getTime() });
     }    
 
@@ -46,13 +37,16 @@ class ProfileSelect extends React.Component {
         }
         
         return (
-            <select 
-                id={this.props.type + 'ID'}
-                style={s.select} 
-                defaultValue={this.props.default}
-                onChange={(type) => this.handleChange(this.props.type)}>
-                {options}
-            </select>
+            <p style={this.props.margin}>                
+                <select 
+                    id={this.props.type + 'ID'}
+                    style={s.select} 
+                    defaultValue={this.props.default}
+                    onChange={(type) => this.handleChange(this.props.type)}>
+                    {options}
+                </select>
+                {this.props.text}
+            </p>
         );
     }
 }

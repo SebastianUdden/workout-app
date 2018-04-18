@@ -55,117 +55,104 @@ class profile extends React.Component {
     }
 
     render() {
-        let sp = this.props.style;        
-
+        let sp = this.props.style; 
+        let targetTypes = [
+            {
+                type: 'pullup',
+                text: 'pull-ups',
+                min: '0',
+                max: '100'
+            },
+            {
+                type: 'pushup',
+                text: 'push-ups',
+                min: '0',
+                max: '200'
+            },
+            {
+                type: 'running',
+                text: 'min (10 km)',
+                min: '0',
+                max: '100'
+            },
+            {
+                type: 'situp',
+                text: 'sit-ups',
+                min: '0',
+                max: '300'
+            },
+            {
+                type: 'squat',
+                text: 'squats',
+                min: '0',
+                max: '300'
+            },
+            {
+                type: 'targetWeight',
+                text: 'kg',
+                min: '0',
+                max: '150'
+            }
+        ];
+               
         return (
             <div>
                 <h1 style={sp.textMargin}>Profile</h1>
                 <p style={sp.headerMargin}>{this.props.profile.firstname} {this.props.profile.lastname}</p>
                 
-                <h3 style={sp.textMargin}>Height</h3>
-                <p style={sp.textMargin}>
-                    {this.props.profile.height ? 
+                {this.props.profile.height ? 
+                    <div>
+                        <h3 style={sp.textMargin}>Height</h3>
                         <ProfileSelect 
+                            text="cm"
+                            margin={sp.textMargin}
                             updateTargets={(type, targets) => this.updateTargets(type, targets)}
                             url={this.props.url}
                             min='0'
                             max='240' 
                             type='height'
-                            default={this.props.profile.height} /> : ''}
-                    cm
-                </p>
+                            default={this.props.profile.height} />
+                    </div> 
+                : ''}                
                 {this.state.weight > -1 ? 
                     <div>
                         <h3 style={sp.textMargin}>Weight</h3>
                         <p style={sp.textMargin}>{this.state.weight} kg</p>
                     </div>
                 : ''}
-                <h3 style={sp.textMargin}>Body Fat</h3>
-                <p style={sp.textMargin}>
-                    {this.props.profile.bodyFat ? 
+                {this.props.profile.bodyFat ? 
+                    <div>
+                        <h3 style={sp.textMargin}>Body Fat</h3>
                         <ProfileSelect 
+                            text="%"
+                            margin={sp.textMargin}
                             updateTargets={(type, targets) => this.updateTargets(type, targets)}
                             url={this.props.url}
                             min='0'
                             max='50' 
                             type='bodyFat'
                             targets={this.props.profile.targets} 
-                            default={this.props.profile.bodyFat} /> : ''}        
-                    %
-                </p>
+                            default={this.props.profile.bodyFat} /> 
+                    </div>
+                : ''}        
+
                 <h3 style={sp.subHeaderMargin}>Target Values</h3>
-                <p style={sp.textMargin}>
-                    {this.props.profile.targets.pullup ? 
-                        <ProfileSelect 
-                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
-                            url={this.props.url}
-                            min='0'
-                            max='100'
-                            type='pullup'
-                            targets={this.props.profile.targets} 
-                            default={this.props.profile.targets.pullup} /> : ''}
-                    pull-ups
-                </p>
-                <p style={sp.textMargin}>
-                    {this.props.profile.targets.pushup ? 
-                        <ProfileSelect 
-                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
-                            url={this.props.url}
-                            min='0'
-                            max='200' 
-                            type='pushup'
-                            targets={this.props.profile.targets} 
-                            default={this.props.profile.targets.pushup} /> : ''}
-                    push-ups
-                </p>
-                <p style={sp.textMargin}>
-                    {this.props.profile.targets.running ? 
-                        <ProfileSelect 
-                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
-                            url={this.props.url}
-                            min='0'
-                            max='100' 
-                            type='running'
-                            targets={this.props.profile.targets} 
-                            default={this.props.profile.targets.running} /> : ''}
-                    min (10 km)
-                </p>
-                <p style={sp.textMargin}>
-                    {this.props.profile.targets.situp ? 
-                        <ProfileSelect  
-                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
-                            url={this.props.url}
-                            min='0'
-                            max='200' 
-                            type='situp'
-                            targets={this.props.profile.targets} 
-                            default={this.props.profile.targets.situp} /> : ''}
-                    sit-ups
-                </p>
-                <p style={sp.textMargin}>
-                    {this.props.profile.targets.squat ? 
-                        <ProfileSelect 
-                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
-                            url={this.props.url}
-                            min='0'
-                            max='300' 
-                            type='squat'
-                            targets={this.props.profile.targets} 
-                            default={this.props.profile.targets.squat} /> : ''}
-                    squats
-                </p>
-                <p style={sp.textMargin}>
-                    {this.props.profile.targets.targetWeight ? 
-                        <ProfileSelect 
-                            updateTargets={(type, targets) => this.updateTargets(type, targets)}
-                            url={this.props.url}
-                            min='0'
-                            max='150'
-                            type='targetWeight'
-                            targets={this.props.profile.targets} 
-                            default={this.props.profile.targets.targetWeight} /> : ''}
-                    kg
-                </p>
+                {targetTypes.map((target) => {
+                    if (this.props.profile.targets[target.type]) {
+                        return <ProfileSelect 
+                                    key={target.type}
+                                    text={target.text}
+                                    margin={sp.textMargin}
+                                    updateTargets={(type, targets) => this.updateTargets(type, targets)}
+                                    url={this.props.url}
+                                    min={target.min}
+                                    max={target.max}
+                                    type={target.type}
+                                    targets={this.props.profile.targets} 
+                                    default={this.props.profile.targets[target.type]} />
+                        }
+                    }
+                )}          
                 <button 
                     style={s.logoutButton}
                     onClick={() => this.props.logout()}>Logout</button>

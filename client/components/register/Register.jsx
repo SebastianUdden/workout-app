@@ -3,7 +3,7 @@ import React from 'react';
 import Radium from 'radium';
 import s from './register-style';
 
-import Stamp from '../tools/stamp/Stamp.jsx';
+import Input from '../input/Input.jsx';
 
 class Register extends React.Component {
     constructor(props) {
@@ -29,44 +29,58 @@ class Register extends React.Component {
         }
     }
 
-    render() {        
+    render() {       
+        let firstname = {
+            id: 'firstname',
+            type: 'string',
+            placeholder: 'Enter Firstname',
+            style: s.loginInput
+        };
+        let lastname = {
+            id: 'lastname',
+            type: 'string',
+            placeholder: 'Enter Lastname',
+            style: s.loginInput
+        };
+        let email = {
+            id: 'email',
+            type: 'email',
+            placeholder: 'Enter Email',
+            style: s.loginInput
+        };
+        let password = {
+            id: 'password',
+            type: 'password',
+            placeholder: 'Enter Password',
+            style: s.loginInput
+        };
+        let repeatPassword = {
+            id: 'repeatPassword',
+            type: 'password',
+            placeholder: 'Repeat Password',
+            style: s.loginInput
+        };
+        let submit = {
+            id: 'submit',
+            type: 'submit',
+            value: 'Submit',
+            style: s.loginButton
+        };
+
         return (
             <div style={s.loginBox}> 
                 <form
                     onSubmit={(e) => this.handleSubmit(e)}>
                     <h1>Register</h1>
-                    <input 
-                        id="firstname"
-                        style={s.loginInput} 
-                        type="string" 
-                        placeholder="Enter Firstname" />
-                    <input 
-                        id="lastname"
-                        style={s.loginInput} 
-                        type="string" 
-                        placeholder="Enter Lastname" />
-                    <input 
-                        id="email"
-                        style={s.loginInput} 
-                        type="email" 
-                        placeholder="Enter Email" />
-                    <input 
-                        id="password"
-                        style={s.loginInput} 
-                        type="password" 
-                        placeholder="Enter Password" />
-                    <input 
-                        id="repeatPassword"
-                        style={s.loginInput} 
-                        type="password" 
-                        placeholder="Repeat Password" />
+                    <Input input={firstname} />
+                    <Input input={lastname} />
+                    <Input input={email} />
+                    <Input input={password} />
+                    <Input input={repeatPassword} />                    
                     {this.state.showWrongPassword ? 
                         <p style={s.password}>Passwords are not matching!</p>
                     : ''}
-                    <input
-                        type="submit" 
-                        style={s.loginButton}
-                        value="Submit" />
+                    <Input input={submit} />
                 </form>
                 <a
                     style={s.cancel} 

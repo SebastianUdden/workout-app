@@ -14,11 +14,12 @@ class AppFooter extends React.Component {
     }
 
     render() {
+        let color = '#030104';
         return (
             <div style={s.container}>
-                <AppFooterButton width={this.props.width} icon="Workout" onClick={() => this.onClick(1)} />
-                <AppFooterButton width={this.props.width} icon="Profile" onClick={() => this.onClick(2)} />
-                <AppFooterButton width={this.props.width} icon="Overview" onClick={() => this.onClick(3)} />
+                <AppFooterButton color={color} width={this.props.width} icon="Workout" onClick={() => this.onClick(1)} />
+                <AppFooterButton color={color} width={this.props.width} icon="Profile" onClick={() => this.onClick(2)} />
+                <AppFooterButton color={color} width={this.props.width} icon="Overview" onClick={() => this.onClick(3)} />
             </div>
         );
     }

@@ -1,5 +1,4 @@
 import React from 'react';
-import BoxContainer from './box-container/BoxContainer.jsx';
 
 import Login from './login/Login.jsx';
 import Register from './register/Register.jsx';
@@ -13,10 +12,10 @@ export default class App extends React.Component {
         
         let backEndUrl = 'https://arcane-journey-35345.herokuapp.com';
         // let backEndUrl = 'http://localhost:3005';
-        let page = localStorage.getItem( 'currentPage' ) || 0;
-        let loggedIn = localStorage.getItem( 'loggedIn' ) || false;
-        let userId = localStorage.getItem( 'userId' ) || undefined;
-        let profile = JSON.parse(localStorage.getItem( 'profile' )) || undefined;
+        let page = localStorage.getItem('currentPage') || 0;
+        let loggedIn = localStorage.getItem('loggedIn') || false;
+        let userId = localStorage.getItem('userId') || undefined;
+        let profile = JSON.parse(localStorage.getItem('profile')) || undefined;
 
         this.state = {
             usersUrl: backEndUrl + '/api/users/',
@@ -31,7 +30,7 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        let page = parseInt(localStorage.getItem( 'currentPage' )) || 1;
+        let page = parseInt(localStorage.getItem('currentPage')) || 1;
         setTimeout(() => {
             if (this.state.loggedIn) {
                 this.setState({page: page});
@@ -81,7 +80,7 @@ export default class App extends React.Component {
                             }                                   
                         }
                     }
-                    this.setState({ wrongLogin: this.state.wrongLogin + 1 });
+                    this.setState({wrongLogin: this.state.wrongLogin + 1});
                     this.saveUserId(undefined);
                     this.saveLoggedIn(false);
                     this.switchPage(0);
@@ -182,9 +181,7 @@ export default class App extends React.Component {
             .catch(error => console.error(error));
         
 
-        this.setState({
-            wrongLogin: 0
-        });
+        this.setState({wrongLogin: 0});
         this.saveProfile(undefined);
         this.saveLoggedIn(false);
         this.switchPage(0);
@@ -206,22 +203,22 @@ export default class App extends React.Component {
 
     switchPage(number) {
         this.setState({page: number});
-        localStorage.setItem( 'currentPage', number );
+        localStorage.setItem('currentPage', number);
     }
 
     saveLoggedIn(loggedIn) {
         this.setState({loggedIn: loggedIn});
-        localStorage.setItem( 'loggedIn', loggedIn );
+        localStorage.setItem('loggedIn', loggedIn);
     }
 
     saveUserId(userId) {
-        this.setState({ userId: userId });
-        localStorage.setItem( 'userId', userId );
+        this.setState({userId: userId});
+        localStorage.setItem('userId', userId);
     }
 
     saveProfile(profile) {
         this.setState({profile: profile});
-        localStorage.setItem( 'profile', JSON.stringify(profile));
+        localStorage.setItem('profile', JSON.stringify(profile));
     }
     
     render() {

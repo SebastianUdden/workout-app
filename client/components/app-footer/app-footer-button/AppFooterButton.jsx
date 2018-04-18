@@ -11,16 +11,15 @@ class AppFooterButton extends React.Component {
         super(props); 
     }
 
-    render() {
-        let color = '#030104';
-        let width = '30%';
+    render() {        
+        let svgWidth = '30%';
         return (
             <div id={this.props.icon} style={s.container} onClick={this.props.onClick}>                
-                {this.props.icon === 'Workout' ? <Workout width={width} color={color} /> : ''}
-                {this.props.icon === 'Profile' ? <Profile width={width} color={color} /> : ''}
-                {this.props.icon === 'Overview' ? <Overview width={width} color={color} /> : ''}
+                {this.props.icon === 'Workout' ? <Workout width={svgWidth} color={this.props.color} /> : ''}
+                {this.props.icon === 'Profile' ? <Profile width={svgWidth} color={this.props.color} /> : ''}
+                {this.props.icon === 'Overview' ? <Overview width={svgWidth} color={this.props.color} /> : ''}
                 {this.props.width > 300 &&  this.props.width < 1000 ? 
-                    <p style={{fontSize: 'calc(1.5em - 0.8vw)', color: color}}>{this.props.icon}</p>
+                    <p style={{fontSize: 'calc(1.5em - 0.8vw)', color: this.props.color}}>{this.props.icon}</p>
                 : ''}
             </div>
         );
