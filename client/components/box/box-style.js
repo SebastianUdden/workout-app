@@ -9,7 +9,7 @@ export default {
     },
     header: {
         color: '#000',
-        margin: '5px 0 0 10px'
+        margin: '5px 0 7px 10px'
     },
     instance: {        
         color: '#000',        

@@ -49,9 +49,7 @@ class WorkoutComponent extends React.Component {
             .then(data => console.log(data))
             .catch(error => console.error(error));
             
-            let profile = this.props.profile;
-            profile.workouts = workouts;
-            this.props.saveProfile(profile);
+            this.saveToProfile(workouts);
         }
     }
 
@@ -77,6 +75,8 @@ class WorkoutComponent extends React.Component {
             })
             .then(data => console.log(data))
             .catch(error => console.error(error));
+            
+            this.saveToProfile(workouts);
         }
     }
 
@@ -92,6 +92,12 @@ class WorkoutComponent extends React.Component {
             referrer: 'no-referrer'
         })
         .then(response => response.json());
+    }
+
+    saveToProfile(workouts) {
+        let profile = this.props.profile;
+        profile.workouts = workouts;
+        this.props.saveProfile(profile);
     }
 
     render() {

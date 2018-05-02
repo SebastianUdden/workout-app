@@ -156,7 +156,7 @@ export default class App extends React.Component {
                     'values': []
                 }
             ]
-        }
+        };
 
         this.api('POST', this.state.usersUrl, user)
             .then(data => console.log(data))

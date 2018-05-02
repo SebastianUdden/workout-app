@@ -6,6 +6,7 @@ class OverviewSVG extends React.Component {
         let view = '0 0 258.75 258.75'
         return (
             <svg 
+                id="Profile"
                 viewBox={view} 
                 style={{...this.props.style, 
                     width: this.props.width, 

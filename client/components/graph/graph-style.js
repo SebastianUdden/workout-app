@@ -12,7 +12,7 @@ export default {
         borderRadius: '10px'
     },
     h2: {
-        fontSize: '29px',
+        fontSize: '25px',
         userSelect: 'none',
         ':hover': {
             cursor: 'pointer'

@@ -14,13 +14,13 @@ class Overview extends React.Component {
     }    
 
     componentDidMount() {
-        let tab = parseInt(localStorage.getItem( 'currentTab' )) || 1;
+        let tab = parseInt(localStorage.getItem('currentTab')) || 1;
         this.setState({tab: tab});        
     }
     
     setTab(tab) {
         this.setState({tab: tab});
-        localStorage.setItem( 'currentTab', tab );
+        localStorage.setItem('currentTab', tab);
     }
 
     render() {
@@ -34,7 +34,8 @@ class Overview extends React.Component {
                     <Svg 
                         width={100 / (this.props.profile.workouts.length * 1.4) + '%'}
                         style={this.props.style.icon} />                            
-                </span>);
+                </span>
+            );
             if (this.state.tab === index + 1) {
                 let workoutname = workout.name !== 'weight' ? workout.name : 'targetWeight';
                 return <Graph 

@@ -10,7 +10,8 @@ class ValueHistory extends React.Component {
     }    
     
     render() {        
-        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        const monthNames = [
+            "Jan", "Feb", "Mar", "Apr", "May", "Jun",
             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
         ];
         

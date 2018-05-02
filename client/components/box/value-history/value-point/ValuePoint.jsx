@@ -22,14 +22,17 @@ class ValueHistory extends React.Component {
     
     render() {
         return (
-            <g style={this.props.lastAdded ? s.currentBar : {}}>
+            <g                 
+                style={this.props.lastAdded ? s.currentBar : {}}>
                 <text
+                    id={this.props.lastAdded ? 'DeleteLatestEntry' : 'DeleteEntry' + this.props.date}
                     onClick={(e, index) => this.props.deleteWorkout(e, index)}
                     style={{...s.delete, display: this.state.showDeleteButton}}
                     width={this.state.deleteWidth - 10}
                     y={this.props.lastAdded ? this.props.y + 20: this.props.y + 44}
                     x={0}>x</text>
                 <rect    
+                    id={this.props.lastAdded ? 'LatestEntry' : 'Entry' + this.props.date}
                     onClick={() => this.showDeleteButton()}
                     width={this.props.width} 
                     height={this.props.lastAdded ? 30 : 19}

@@ -18,15 +18,16 @@ class ProfileSelect extends React.Component {
         if (this.state.lastSelect >= (date.getTime() - this.state.delay)) {
             return;
         }
-
-        for (let target in this.props.targets) {
+        
+        let targets = this.props.targets;
+        for (let target in targets) {
             if (target === type) {
-                this.props.targets[type] = document.getElementById(type  + 'ID').value;
-                console.log(target, ': ', this.props.targets[type]);     
+                targets[type] = document.getElementById(type  + 'ID').value;
+                console.log(target, ': ', targets[type]);     
             }
         }
         
-        this.props.updateTargets(type, this.props.targets);
+        this.props.updateTargets(type, targets);
         this.setState({ lastSelect: date.getTime() });
     }    
 

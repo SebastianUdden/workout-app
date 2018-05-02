@@ -6,8 +6,6 @@ import Workout from './workout/Workout.jsx';
 import Profile from './profile/Profile.jsx';
 import Overview from './overview/Overview.jsx';
 
-import Stamp from '../tools/stamp/Stamp.jsx';
-
 import PullupSVG from '../svgs/PullupSVG.jsx';
 import PushupSVG from '../svgs/PushupSVG.jsx';
 import SitupSVG from '../svgs/SitupSVG.jsx';

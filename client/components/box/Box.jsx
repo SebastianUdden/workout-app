@@ -25,19 +25,19 @@ class Box extends React.Component {
 
         return (
             <div style={s.container}>
-                <h1 style={s.header}>{this.props.header}</h1>
+                <h2 style={s.header}>{this.props.header}</h2>
                 <hr />
                 {this.props.header === 'Running (est. 10km)' ? 
-                    <div>
+                    <div>                        
                         <NewRunningValue
-                            id="1"                             
+                            id={1}
                             boxStyle={s.instance}
                             addRunningValue={(km, min, sec) => this.props.addRunningValue(km, min, sec)} />
                     </div>
                 :
                     <div>
                         <NewValue 
-                            id="1" 
+                            id={1}
                             placeholder={this.props.placeholder} 
                             boxStyle={s.instance}
                             onClick={(input) => this.props.addWorkout(input)} />                        
