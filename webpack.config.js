@@ -26,9 +26,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new BrowserSyncPlugin({
-      // browse to http://localhost:3000/ during development,
-      // ./public directory is being served
+    new BrowserSyncPlugin({      
       host: 'localhost',
       port: 3000,
       server: { baseDir: ['docs'] }

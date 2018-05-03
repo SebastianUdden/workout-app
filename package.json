@@ -1,6 +1,6 @@
 {
   "name": "workout-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An app created with React.js to update and track workout progress.",
   "main": "index.js",
   "scripts": {

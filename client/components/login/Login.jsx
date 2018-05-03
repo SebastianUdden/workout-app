@@ -7,6 +7,27 @@ import Input from '../input/Input.jsx';
 class Login extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            email: {
+                id: 'email',
+                type: 'email',
+                placeholder: 'Enter Email',
+                style: s.loginInput
+            },
+            password: {
+                id: 'password',
+                type: 'password',
+                placeholder: 'Enter Password',
+                style: s.loginInput
+            },
+            submit: {
+                id: 'submit',
+                type: 'submit',
+                value: 'Submit',
+                style: s.loginButton
+            }
+        }
     }
     
     handleSubmit(event) {
@@ -17,32 +38,13 @@ class Login extends React.Component {
     }
 
     render() {
-        let email = {
-            id: 'email',
-            type: 'email',
-            placeholder: 'Email',
-            style: s.loginInput
-        };
-        let password = {
-            id: 'password',
-            type: 'password',
-            placeholder: 'Password',
-            style: s.loginInput
-        };
-        let submit = {
-            id: 'submit',
-            type: 'submit',
-            value: 'Submit',
-            style: s.loginButton
-        };
-
         return (
             <div style={s.loginBox}>                 
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     <h1>Login</h1>
-                    <Input input={email} />
-                    <Input input={password} />
-                    <Input input={submit} />
+                    <Input input={this.state.email} />
+                    <Input input={this.state.password} />
+                    <Input input={this.state.submit} />
                 </form>
                 <a
                     style={s.register} 

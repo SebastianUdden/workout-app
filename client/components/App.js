@@ -77,7 +77,7 @@ export default class App extends React.Component {
                                     .catch((error) => {
                                         console.log('Something went wrong...');
                                     });
-                            }                                   
+                            }                                
                         }
                     }
                     this.setState({wrongLogin: this.state.wrongLogin + 1});

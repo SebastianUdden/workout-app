@@ -20179,7 +20179,29 @@ var Login = function (_React$Component) {
     function Login(props) {
         _classCallCheck(this, Login);
 
-        return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+
+        _this.state = {
+            email: {
+                id: 'email',
+                type: 'email',
+                placeholder: 'Enter Email',
+                style: _loginStyle2.default.loginInput
+            },
+            password: {
+                id: 'password',
+                type: 'password',
+                placeholder: 'Enter Password',
+                style: _loginStyle2.default.loginInput
+            },
+            submit: {
+                id: 'submit',
+                type: 'submit',
+                value: 'Submit',
+                style: _loginStyle2.default.loginButton
+            }
+        };
+        return _this;
     }
 
     _createClass(Login, [{
@@ -20192,25 +20214,6 @@ var Login = function (_React$Component) {
         key: 'render',
         value: function render() {
             var _this2 = this;
-
-            var email = {
-                id: 'email',
-                type: 'email',
-                placeholder: 'Email',
-                style: _loginStyle2.default.loginInput
-            };
-            var password = {
-                id: 'password',
-                type: 'password',
-                placeholder: 'Password',
-                style: _loginStyle2.default.loginInput
-            };
-            var submit = {
-                id: 'submit',
-                type: 'submit',
-                value: 'Submit',
-                style: _loginStyle2.default.loginButton
-            };
 
             return _react2.default.createElement(
                 'div',
@@ -20225,9 +20228,9 @@ var Login = function (_React$Component) {
                         null,
                         'Login'
                     ),
-                    _react2.default.createElement(_Input2.default, { input: email }),
-                    _react2.default.createElement(_Input2.default, { input: password }),
-                    _react2.default.createElement(_Input2.default, { input: submit })
+                    _react2.default.createElement(_Input2.default, { input: this.state.email }),
+                    _react2.default.createElement(_Input2.default, { input: this.state.password }),
+                    _react2.default.createElement(_Input2.default, { input: this.state.submit })
                 ),
                 _react2.default.createElement(
                     'a',
@@ -24818,7 +24821,43 @@ var Register = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).call(this, props));
 
         _this.state = {
-            showWrongPassword: false
+            showWrongPassword: false,
+            firstname: {
+                id: 'firstname',
+                type: 'string',
+                placeholder: 'Enter Firstname',
+                style: _registerStyle2.default.loginInput
+            },
+            lastname: {
+                id: 'lastname',
+                type: 'string',
+                placeholder: 'Enter Lastname',
+                style: _registerStyle2.default.loginInput
+            },
+            email: {
+                id: 'email',
+                type: 'email',
+                placeholder: 'Enter Email',
+                style: _registerStyle2.default.loginInput
+            },
+            password: {
+                id: 'password',
+                type: 'password',
+                placeholder: 'Enter Password',
+                style: _registerStyle2.default.loginInput
+            },
+            repeatPassword: {
+                id: 'repeatPassword',
+                type: 'password',
+                placeholder: 'Repeat Password',
+                style: _registerStyle2.default.loginInput
+            },
+            submit: {
+                id: 'submit',
+                type: 'submit',
+                value: 'Submit',
+                style: _registerStyle2.default.loginButton
+            }
         };
         return _this;
     }
@@ -24840,43 +24879,6 @@ var Register = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
-            var firstname = {
-                id: 'firstname',
-                type: 'string',
-                placeholder: 'Enter Firstname',
-                style: _registerStyle2.default.loginInput
-            };
-            var lastname = {
-                id: 'lastname',
-                type: 'string',
-                placeholder: 'Enter Lastname',
-                style: _registerStyle2.default.loginInput
-            };
-            var email = {
-                id: 'email',
-                type: 'email',
-                placeholder: 'Enter Email',
-                style: _registerStyle2.default.loginInput
-            };
-            var password = {
-                id: 'password',
-                type: 'password',
-                placeholder: 'Enter Password',
-                style: _registerStyle2.default.loginInput
-            };
-            var repeatPassword = {
-                id: 'repeatPassword',
-                type: 'password',
-                placeholder: 'Repeat Password',
-                style: _registerStyle2.default.loginInput
-            };
-            var submit = {
-                id: 'submit',
-                type: 'submit',
-                value: 'Submit',
-                style: _registerStyle2.default.loginButton
-            };
-
             return _react2.default.createElement(
                 'div',
                 { style: _registerStyle2.default.loginBox },
@@ -24891,17 +24893,17 @@ var Register = function (_React$Component) {
                         null,
                         'Register'
                     ),
-                    _react2.default.createElement(_Input2.default, { input: firstname }),
-                    _react2.default.createElement(_Input2.default, { input: lastname }),
-                    _react2.default.createElement(_Input2.default, { input: email }),
-                    _react2.default.createElement(_Input2.default, { input: password }),
-                    _react2.default.createElement(_Input2.default, { input: repeatPassword }),
+                    _react2.default.createElement(_Input2.default, { input: this.state.firstname }),
+                    _react2.default.createElement(_Input2.default, { input: this.state.lastname }),
+                    _react2.default.createElement(_Input2.default, { input: this.state.email }),
+                    _react2.default.createElement(_Input2.default, { input: this.state.password }),
+                    _react2.default.createElement(_Input2.default, { input: this.state.repeatPassword }),
                     this.state.showWrongPassword ? _react2.default.createElement(
                         'p',
                         { style: _registerStyle2.default.password },
                         'Passwords are not matching!'
                     ) : '',
-                    _react2.default.createElement(_Input2.default, { input: submit })
+                    _react2.default.createElement(_Input2.default, { input: this.state.submit })
                 ),
                 _react2.default.createElement(
                     'a',
